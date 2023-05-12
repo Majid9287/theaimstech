@@ -50,8 +50,8 @@ function contact() {
  
   return (
     <div>
-      <div class="bg-gray-100">
-        <section class="pb-32 text-gray-800">
+      <div className="bg-gray-100">
+        <section className="pb-32 text-gray-800">
           <div
             className="relative overflow-hidden bg-no-repeat bg-cover h-[3]"
             style={{
@@ -70,63 +70,63 @@ function contact() {
                 backdropFilter: "blur(30px)",
               }}
             >
-              <div class="flex flex-wrap items-center justify-center">
-                <div class="grow-0 shrink-0 basis-auto w-full xl:w-7/12">
-                  <div class="flex flex-wrap">
-                    <div class="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
-                      <div class="flex items-start">
-                        <div class="shrink-0">
-                          <div class="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+              <div className="flex flex-wrap items-center justify-center">
+                <div className="grow-0 shrink-0 basis-auto w-full xl:w-7/12">
+                  <div className="flex flex-wrap">
+                    <div className="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+                      <div className="flex items-start">
+                        <div className="shrink-0">
+                          <div className="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
                           <FontAwesomeIcon icon={faMapMarkerAlt} style={{ color: 'white', fontSize: '2rem' }} />
                           </div>
                         </div>
-                        <div class="grow ml-6">
-                          <p class="font-bold mb-1">Address</p>
-                          <p class="text-gray-500"> Multhan, Punjab, Pakistan</p>
+                        <div className="grow ml-6">
+                          <p className="font-bold mb-1">Address</p>
+                          <p className="text-gray-500"> Multhan, Punjab, Pakistan</p>
 
                         </div>
                       </div>
                     </div>
-                    <div class="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
-                      <div class="flex items-start">
-                        <div class="shrink-0">
-                          <div class="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+                    <div className="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+                      <div className="flex items-start">
+                        <div className="shrink-0">
+                          <div className="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
                           <FontAwesomeIcon icon={faPhone} style={{ color: 'white', fontSize: '2rem' }} />
     
                           </div>
                         </div>
-                        <div class="grow ml-6">
-                          <p class="font-bold mb-1">Call Number</p>
-                          <p class="text-gray-500">(+92)323-8760847</p>
+                        <div className="grow ml-6">
+                          <p className="font-bold mb-1">Call Number</p>
+                          <p className="text-gray-500">(+92)323-8760847</p>
                          
                         </div>
                       </div>
                     </div>
-                    <div class="mb-12 md:mb-0 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
-                      <div class="flex align-start">
-                        <div class="shrink-0">
-                          <div class="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+                    <div className="mb-12 md:mb-0 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+                      <div className="flex align-start">
+                        <div className="shrink-0">
+                          <div className="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
                           <FontAwesomeIcon icon={faEnvelope} style={{ color: 'white', fontSize: '2rem' }} />
                           </div>
                         </div>
-                        <div class="grow ml-6">
-                          <p class="font-bold mb-1">Mail Address</p>
-                          <p class="text-gray-500">theaimstech@example.com</p>
+                        <div className="grow ml-6">
+                          <p className="font-bold mb-1">Mail Address</p>
+                          <p className="text-gray-500">theaimstech@example.com</p>
                      
                         </div>
                       </div>
                     </div>
-                    <div class="grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
-                      <div class="flex align-start">
-                        <div class="shrink-0">
-                          <div class="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+                    <div className="grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+                      <div className="flex align-start">
+                        <div className="shrink-0">
+                          <div className="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
                           <FontAwesomeIcon icon={faWhatsapp} style={{ color: "white", fontSize: "2rem" }} />
                           </div>
                         </div>
-                        <div class="grow ml-6">
-                          <p class="font-bold mb-1">Whatapps Number</p>
+                        <div className="grow ml-6">
+                          <p className="font-bold mb-1">Whatapps Number</p>
                     
-                          <p class="text-gray-500">(+92)323-8760847</p>
+                          <p className="text-gray-500">(+92)323-8760847</p>
                         </div>
                       </div>
                     </div>

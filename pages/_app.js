@@ -16,8 +16,7 @@ export default function App({ Component, pageProps }) {
   const jwt = require("jsonwebtoken");
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
   const [UserId, setUserId] = useState(false);
-  console.log(isAdmin);
-  console.log(isUserLoggedIn);
+  
   const LoadingIndicator = () => {
     useEffect(() => {
       const handleStart = () => {

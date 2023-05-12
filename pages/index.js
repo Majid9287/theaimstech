@@ -68,11 +68,11 @@ export default function Home({ courses, handleEnrollment }) {
           height="40"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <g fill="none" fill-rule="evenodd">
+          <g fill="none" fillRule="evenodd">
             <path
               d="m221.503 210.324c-105.235 50.083-170.545 8.18-212.352-17.271-2.587-1.604-6.984.375-3.169 4.757 13.928 16.888 59.573 57.593 119.153 57.593 59.621 0 95.09-32.532 99.527-38.207 4.407-5.627 1.294-8.731-3.16-6.872zm29.555-16.322c-2.826-3.68-17.184-4.366-26.22-3.256-9.05 1.078-22.634 6.609-21.453 9.93.606 1.244 1.843.686 8.06.127 6.234-.622 23.698-2.826 27.337 1.931 3.656 4.79-5.57 27.608-7.255 31.288-1.628 3.68.622 4.629 3.68 2.178 3.016-2.45 8.476-8.795 12.14-17.774 3.639-9.028 5.858-21.622 3.71-24.424z"
               fill="#FFA000"
-              fill-rule="nonzero"
+              fillRule="nonzero"
             />
             <path
               d="m150.744 108.13c0 13.141.332 24.1-6.31 35.77-5.361 9.489-13.853 15.324-23.341 15.324-12.952 0-20.495-9.868-20.495-24.432 0-28.75 25.76-33.968 50.146-33.968zm34.015 82.216c-2.23 1.992-5.456 2.135-7.97.806-11.196-9.298-13.189-13.615-19.356-22.487-18.502 18.882-31.596 24.527-55.601 24.527-28.37 0-50.478-17.506-50.478-52.565 0-27.373 14.85-46.018 35.96-55.126 18.313-8.066 43.884-9.489 63.43-11.718v-4.365c0-8.018.616-17.506-4.08-24.432-4.128-6.215-12.003-8.777-18.93-8.777-12.856 0-24.337 6.594-27.136 20.257-.57 3.037-2.799 6.026-5.835 6.168l-32.735-3.51c-2.751-.618-5.787-2.847-5.028-7.07 7.543-39.66 43.36-51.616 75.43-51.616 16.415 0 37.858 4.365 50.81 16.795 16.415 15.323 14.849 35.77 14.849 58.02v52.565c0 15.798 6.547 22.724 12.714 31.264 2.182 3.036 2.657 6.69-.095 8.966-6.879 5.74-19.119 16.415-25.855 22.393l-.095-.095"
@@ -81,7 +81,7 @@ export default function Home({ courses, handleEnrollment }) {
             <path
               d="m221.503 210.324c-105.235 50.083-170.545 8.18-212.352-17.271-2.587-1.604-6.984.375-3.169 4.757 13.928 16.888 59.573 57.593 119.153 57.593 59.621 0 95.09-32.532 99.527-38.207 4.407-5.627 1.294-8.731-3.16-6.872zm29.555-16.322c-2.826-3.68-17.184-4.366-26.22-3.256-9.05 1.078-22.634 6.609-21.453 9.93.606 1.244 1.843.686 8.06.127 6.234-.622 23.698-2.826 27.337 1.931 3.656 4.79-5.57 27.608-7.255 31.288-1.628 3.68.622 4.629 3.68 2.178 3.016-2.45 8.476-8.795 12.14-17.774 3.639-9.028 5.858-21.622 3.71-24.424z"
               fill="#FFA000"
-              fill-rule="nonzero"
+              fillRule="nonzero"
             />
             <path
               d="m150.744 108.13c0 13.141.332 24.1-6.31 35.77-5.361 9.489-13.853 15.324-23.341 15.324-12.952 0-20.495-9.868-20.495-24.432 0-28.75 25.76-33.968 50.146-33.968zm34.015 82.216c-2.23 1.992-5.456 2.135-7.97.806-11.196-9.298-13.189-13.615-19.356-22.487-18.502 18.882-31.596 24.527-55.601 24.527-28.37 0-50.478-17.506-50.478-52.565 0-27.373 14.85-46.018 35.96-55.126 18.313-8.066 43.884-9.489 63.43-11.718v-4.365c0-8.018.616-17.506-4.08-24.432-4.128-6.215-12.003-8.777-18.93-8.777-12.856 0-24.337 6.594-27.136 20.257-.57 3.037-2.799 6.026-5.835 6.168l-32.735-3.51c-2.751-.618-5.787-2.847-5.028-7.07 7.543-39.66 43.36-51.616 75.43-51.616 16.415 0 37.858 4.365 50.81 16.795 16.415 15.323 14.849 35.77 14.849 58.02v52.565c0 15.798 6.547 22.724 12.714 31.264 2.182 3.036 2.657 6.69-.095 8.966-6.879 5.74-19.119 16.415-25.855 22.393l-.095-.095"
@@ -105,7 +105,7 @@ export default function Home({ courses, handleEnrollment }) {
       Create New Listings Single / Variation Style`,
       svg: (
         <svg
-          enable-background="new 704.081 796 200 200"
+          enableBackground="new 704.081 796 200 200"
           width="40"
           height="40"
           viewBox="704.081 796 200 200"
@@ -349,39 +349,39 @@ export default function Home({ courses, handleEnrollment }) {
             </div>
           </div>
 
-          <section class="bg-gray-100 text-lg text-white ">
-            <div class="relative min-h-screen " id="service_id">
+          <section className="bg-gray-100 text-lg text-white ">
+            <div className="relative min-h-screen " id="service_id">
               <div
-                class="absolute inset-0 bg-cover bg-no-repeat z-0 "
+                className="absolute inset-0 bg-cover bg-no-repeat z-0 "
                 style={{
                   backgroundImage: 'url("/images/service.jpg")',
                 }}
               ></div>
-              <div class="container mx-auto flex flex-col md:flex-row justify-center items-center px-4 py-8 relative z-10">
-                <div class="flex flex-col flex-grow md:pl-24">
-                  <h2 class="text-3xl font-bold   mb-8 pb-16 pt-4 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
+              <div className="container mx-auto flex flex-col md:flex-row justify-center items-center px-4 py-8 relative z-10">
+                <div className="flex flex-col flex-grow md:pl-24">
+                  <h2 className="text-3xl font-bold   mb-8 pb-16 pt-4 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
                     Expertise <span className="text-amber-500">&</span> Services
                   </h2>
                   {services.map((service) => (
                     <div
                       key={service.name}
-                      class={`cursor-pointer p-4  rounded-xl   ${
+                      className={`cursor-pointer p-4  rounded-xl   ${
                         selectedService && service.name === selectedService.name
                           ? "bg-amber-500 drop-filter backdrop-blur-lg bg-opacity-30"
                           : ""
                       }`}
                       onClick={() => handleClick(service)}
                     >
-                      <div class="flex items-center ">
-                        <h3 class="flex items-center font-medium">
-                          <span class="pr-4 ">{service.svg}</span>
+                      <div className="flex items-center ">
+                        <h3 className="flex items-center font-medium">
+                          <span className="pr-4 ">{service.svg}</span>
 
                           <span>{service.name}</span>
                         </h3>
-                        <div class="flex-grow border-r-2 border-gray-300 h-4"></div>
+                        <div className="flex-grow border-r-2 border-gray-300 h-4"></div>
                       </div>
                       {selectedService && (
-                        <div class="md:hidden mt-2">
+                        <div className="md:hidden mt-2">
                           {service.name === selectedService.name && (
                             <ul>
                               {selectedService.description
@@ -422,10 +422,10 @@ export default function Home({ courses, handleEnrollment }) {
                 </div>
 
                 {selectedService && (
-                  <div class="md:w-2/3 hidden md:block">
-                    <div class="flex items-center md:pl-4">
-                      <div class="md:pl-20 ">
-                        <h3 class="font-medium mb-4 pt-4">
+                  <div className="md:w-2/3 hidden md:block">
+                    <div className="flex items-center md:pl-4">
+                      <div className="md:pl-20 ">
+                        <h3 className="font-medium mb-4 pt-4">
                           {selectedService.name}
                         </h3>
                         <ul>
@@ -622,34 +622,34 @@ export default function Home({ courses, handleEnrollment }) {
             </div>
           </section>
 
-          <section class="bg-gray-100 py-8">
-            <div class="bg-gradient-to-r  from-red-500 to-yellow-500 p-1 shadow-xl container mx-auto px-10 -mt-14 rounded-lg shadow-lg">
-              <div class="flex justify-between items-center">
-                <div class="  flex flex-col mr-4 justify-between items-center">
-                  <h2 class="text-2xl font-bold text-white mb-4 p-4 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
+          <section className="bg-gray-100 py-8">
+            <div className="bg-gradient-to-r  from-red-500 to-yellow-500 p-1 shadow-xl container mx-auto px-10 -mt-14 rounded-lg shadow-lg">
+              <div className="flex justify-between items-center">
+                <div className="  flex flex-col mr-4 justify-between items-center">
+                  <h2 className="text-2xl font-bold text-white mb-4 p-4 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
                     Practical skills development
                   </h2>
-                  <p class="mb-8 text-1xl text-white text-center">
+                  <p className="mb-8 text-1xl text-white text-center">
                     Our courses are not just about acquiring new skills, but
                     also about personal growth and development, helping students
                     to become the best version of themselves.{" "}
                   </p>
                 </div>
-                <div class="flex items-center border-l pl-4">
+                <div className="flex items-center border-l pl-4">
                   <button
                     onClick={() => router.push("/course")}
-                    class="flex items-center justify-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                    className="flex items-center justify-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
                   >
                     Enroll Course
                     <svg
                       viewBox="0 0 20 20"
                       fill="currentColor"
-                      class="chevron-right w-6 h-6 ml-2"
+                      className="chevron-right w-6 h-6 ml-2"
                     >
                       <path
-                        fill-rule="evenodd"
+                        fillRule="evenodd"
                         d="M7.293 15.707a1 1 0 001.414 0l5.707-5.707a2 2 0 000-2.828L8.707 4.293a1 1 0 00-1.414 1.414L11.586 10l-4.293 4.293a1 1 0 000 1.414z"
-                        clip-rule="evenodd"
+                        clipRule="evenodd"
                       ></path>
                     </svg>
                   </button>

@@ -7,7 +7,7 @@ export default function course({courses, handleEnrollment}) {
   const router = useRouter();
   return (
     <div className="bg-gray-100">
-      <section class="pb-32 text-gray-800">
+      <section className="pb-32 text-gray-800">
         <div
           className="relative overflow-hidden bg-no-repeat bg-cover h-[3]"
           style={{

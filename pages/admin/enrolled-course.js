@@ -13,7 +13,7 @@ const EnrolledCourses = () => {
         }
         const data = await response.json();
         setErolledCourses(data);
-        console.log(data);
+        
       } catch (error) {
         console.error(error);
         // You can set an error state here to display a message to the user

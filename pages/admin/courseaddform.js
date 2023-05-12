@@ -35,7 +35,7 @@ function CourseForm() {
       });
 
       const data = await res.json();
-      console.log(data);
+      
     } catch (error) {
       console.error(error);
     }
