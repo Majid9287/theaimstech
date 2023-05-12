@@ -65,7 +65,7 @@ export default function App({ Component, pageProps }) {
     } else {
       setIsUserLoggedIn(false);
     }
-  }, [isUserLoggedIn, token]);
+  }, [token]);
   const handleSignIn = (isLoggedIn) => {
     setIsUserLoggedIn(isLoggedIn);
   };
