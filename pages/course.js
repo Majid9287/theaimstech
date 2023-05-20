@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { useEffect, useState } from "react";
+
+
 import styles from "../styles/Home.module.css";
 import { useRouter } from "next/router";
 export default function course({courses, handleEnrollment}) {
-
+  
   const router = useRouter();
   return (
     <div className="bg-gray-100">

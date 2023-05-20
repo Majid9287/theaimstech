@@ -11,46 +11,46 @@ const AdminLayout = ({ children }) => {
           <span className="font-bold text-lg">Admin Panel</span>
         </div>
         <ul className="hidden  md:flex flex-col flex-1">
-          <Link href="/admin/course">
+          <Link href="/admin/course/course">
             <li
               className={`p-4 hover:bg-amber-400  ${
-                router.pathname === "/admin/course" ? "bg-amber-500" : ""
+                router.pathname === "/admin/course/course" ? "bg-amber-500" : ""
               }`}
             >
               Courses
             </li>
           </Link>
-          <Link href="/admin/project">
+          <Link href="/admin/project/project">
           <li
             className={`p-4 hover:bg-amber-400 ${
-              router.pathname === "/admin/project" ? "bg-amber-500" : ""
+              router.pathname === "/admin/project/project" ? "bg-amber-500" : ""
             }`}
           >
             Projects
           </li>
           </Link>
-          <Link href="/admin/student">
+          <Link href="/admin/user/student">
           <li
             className={`p-4 hover:bg-amber-400 ${
-              router.pathname === "/admin/student" ? "bg-amber-500" : ""
+              router.pathname === "/admin/user/student" ? "bg-amber-500" : ""
             }`}
           >
             Students
           </li>
           </Link>
-          <Link href="/admin/message">
+          <Link href="/admin/message/message">
           <li
             className={`p-4 hover:bg-amber-400 ${
-              router.pathname === "/admin/message" ? "bg-amber-500" : ""
+              router.pathname === "/admin/message//message" ? "bg-amber-500" : ""
             }`}
           >
             Message
           </li>
           </Link>
-          <Link href="/admin/enrolled-course">
+          <Link href="/admin/course/enrolled-course">
           <li
             className={`p-4 hover:bg-amber-400 ${
-              router.pathname === "/admin/enrolled-course" ? "bg-amber-500" : ""
+              router.pathname === "/admin/course/enrolled-course" ? "bg-amber-500" : ""
             }`}
           >
             Enrolled Course
@@ -59,46 +59,46 @@ const AdminLayout = ({ children }) => {
         </ul>
         <div className="md:hidden p-4 flex flex-col justify-center  ">
           <button
-            onClick={() => router.push("/admin/course")}
+            onClick={() => router.push("/admin/course/course")}
             type="button"
             className={` text-black border border-current py-2 px-4 rounded-md ${
-              router.pathname === "/admin/course" ? "bg-amber-500" : ""
+              router.pathname === "/admin/course/course" ? "bg-amber-500" : ""
             }`}
           >
             Courses
           </button>
           <button
-            onClick={() => router.push("/admin/project")}
+            onClick={() => router.push("/admin/project/project")}
             type="button"
             className={` text-black border border-current py-2 px-4 rounded-md ${
-              router.pathname === "/admin/project" ? "bg-amber-500" : ""
+              router.pathname === "/admin/project/project" ? "bg-amber-500" : ""
             }`}
           >
             Projects
           </button>
           <button
-            onClick={() => router.push("/admin/message")}
+            onClick={() => router.push("/admin/message/message")}
             type="button"
             className={` text-black border border-current py-2 px-4 rounded-md ${
-              router.pathname === "/admin/message" ? "bg-amber-500" : ""
+              router.pathname === "/admin/message/message" ? "bg-amber-500" : ""
             }`}
           >
             Messages
           </button>
           <button
-            onClick={() => router.push("/admin/student")}
+            onClick={() => router.push("/admin/user/student")}
             type="button"
             className={` text-black border border-current py-2 px-4 rounded-md ${
-              router.pathname === "/admin/student" ? "bg-amber-500" : ""
+              router.pathname === "/admin/user/student" ? "bg-amber-500" : ""
             }`}
           >
             Students
           </button>
           <button
-            onClick={() => router.push("/admin/enrolled-course")}
+            onClick={() => router.push("/admin/course/enrolled-course")}
             type="button"
             className={` text-black border border-current py-2 px-4 rounded-md ${
-              router.pathname === "/admin/enrolled-course" ? "bg-amber-500" : ""
+              router.pathname === "/admin/course/enrolled-course" ? "bg-amber-500" : ""
             }`}
           >
             Enrolled Course

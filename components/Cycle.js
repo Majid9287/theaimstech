@@ -7,7 +7,7 @@ const Cycle = ({ items }) => {
 
   useEffect(() => {
     const timerId = setInterval(() => {
-      setCurrentIndex((currentIndex + 1) % items.length);
+      setCurrentIndex((currentIndex + items.length - 1) % items.length);
     }, 3000);
     return () => clearInterval(timerId);
   }, [currentIndex, items.length]);
@@ -21,8 +21,7 @@ const Cycle = ({ items }) => {
           [styles['cycle-item--prev']]: index === (currentIndex + items.length - 1) % items.length,
         });
         return (
-            <div className={`${classes} cont bg-red-600`} key={index} style={{ backgroundImage: `url(${item.img})` }}>
-            
+          <div className={`${classes} cont bg-red-600`} key={index} style={{ backgroundImage: `url(${item.img})` }}>
           </div>
         );
       })}

@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
-function UserProfile({ UserId }) {
+import { useRouter } from "next/router";
+function UserProfile({ UserId,token }) {
   const [name, setName] = useState("John Doe");
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [isAdmin, setIsAdmin] = useState("");
+  const router = useRouter();
 
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -12,10 +14,10 @@ function UserProfile({ UserId }) {
   const [passwordError, setpasswordError] = useState("");
 
   useEffect(() => {
-    // Fetch the course details using the courseId prop
+   
     const fetchCourseDetails = async () => {
       try {
-        const res = await fetch(`/api/get-user?id=${UserId}`);
+        const res = await fetch(`/api/user/get-user?id=${UserId}`);
         const data = await res.json();
         setName(data.name);
         setAddress(data.address);
@@ -29,7 +31,8 @@ function UserProfile({ UserId }) {
     if (UserId) {
       fetchCourseDetails();
     }
-  }, [UserId]);
+  }, [token]);
+  
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -43,7 +46,7 @@ function UserProfile({ UserId }) {
     password && (data.password = password);
     console.log(data);
     try {
-      const res = await fetch(`/api/update-user?id=${UserId}`, {
+      const res = await fetch(`/api/user/update-user?id=${UserId}`, {
         method: "PUT",
         body: JSON.stringify(data),
         headers: {

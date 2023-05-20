@@ -24,7 +24,7 @@ function contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("/api/add-messege", {
+      const response = await fetch("/api/message/add-messege", {
         method: "POST",
         body: JSON.stringify(formData),
         headers: {

@@ -9,7 +9,7 @@ export default function portfolio() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch(`/api/get-projects`);
+        const response = await fetch(`/api/project/get-projects`);
         if (!response.ok) {
           throw new Error('Failed to fetch projects');
         }

@@ -7,7 +7,7 @@ function EnrolledCourses({UserId}) {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch(`/api/get-enrollment?userId=${UserId}`);
+        const response = await fetch(`/api/enrollment/get-enrollment?userId=${UserId}`);
         if (!response.ok) {
           throw new Error('Failed to fetch enrolled courses');
         }
@@ -22,7 +22,7 @@ function EnrolledCourses({UserId}) {
   }, [UserId]);
   const handleDelete = async (id) => {
     try {
-      const res = await fetch(`/api/delete-enrollment?id=${id}`, { method: "DELETE" });
+      const res = await fetch(`/api/enrollment/delete-enrollment?id=${id}`, { method: "DELETE" });
       if (res.ok) {
         setCourses((prevCourses) => prevCourses.filter((c) => c._id !== id));
       } else {

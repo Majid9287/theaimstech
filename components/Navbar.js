@@ -34,7 +34,7 @@ function Navbar({ isUserLoggedIn, isAdmin, isLogout, token }) {
   return (
     <div>
       <nav
-        className={`fixed w-full z-30 top-0 text-white lg:text-amber-500 ${
+        className={`fixed w-full z-30 top-0  text-white lg:text-amber-500 ${
           scrollpos > 10
             ? "bg-gray-200 drop-filter backdrop-blur-lg bg-opacity-30 border-b border-gray-200"
             : ""
@@ -84,11 +84,11 @@ function Navbar({ isUserLoggedIn, isAdmin, isLogout, token }) {
             </button>
           </div>
           <di
-            className={`w-full  lg:w-auto lg:flex-grow lg:flex lg:items-center ${ isNavOpen ? " block flex text-center bg-amber-500   h-screen pt-12 lg:static lg:h-auto lg:pt-0": "hidden"}  lg:bg-transparent   lg:p-0 mt-2 lg:mt-0 z-20 transition-opacity duration-300 ease-in-out`}
+            className={`w-full  lg:w-auto lg:flex-grow lg:flex lg:items-center ${ isNavOpen ? " block flex text-center lg:text-left bg-amber-500   h-screen pt-12 lg:static lg:h-auto lg:pt-0": "hidden"}  lg:bg-transparent   lg:p-0 mt-2 lg:mt-0 z-20 transition-opacity duration-300 ease-in-out`}
             id="nav-content"
           >
             <ul className="list-reset flex-1 items-center justify-end lg:flex">
-              <li className="mr-3">
+              <li className="mr-3 py-3">
                 <Link
                   href="/"
                   onClick={handleNavToggle}
@@ -97,16 +97,18 @@ function Navbar({ isUserLoggedIn, isAdmin, isLogout, token }) {
                   Home
                 </Link>
               </li>
-              <li className="mr-3">
+              <hr className="mx-4"></hr>
+              <li className="mr-3 py-3">
                 <Link
                   href="/portfolio"
                   onClick={handleNavToggle}
-                  className={`no-underline font-bold py-2 px-4 inline-blocktext-black  ${router.pathname === "/portfolio" ? "text-black" : "" }`}
+                  className={`no-underline font-bold py-2 px-4 inline-block   ${router.pathname === "/portfolio" ? "text-black" : "" }`}
                 >
                   Portfolio
                 </Link>
               </li>
-              <li className="mr-3">
+              <hr className="mx-4"></hr>
+              <li className="mr-3 py-3">
                 <Link
                   href="/contact"
                   onClick={handleNavToggle}
@@ -115,15 +117,17 @@ function Navbar({ isUserLoggedIn, isAdmin, isLogout, token }) {
                   Contact Us
                 </Link>
               </li>
-              <li className="mr-3">
+              <hr className="mx-4"></hr>
+              <li className="mr-3 py-5">
                 <Link
                   href="/course"
                   onClick={handleNavToggle}
-                  className={`no-underline font-bold py-2 px-4 inline-block ${router.pathname === "/course" ? "text-black" : "" }`}
+                  className={`no-underline font-bold py-2 px-4  ${router.pathname === "/course" ? "text-black" : "" }`}
                 >
                   Courses
                 </Link>
               </li>
+              <hr className="mx-4"></hr>
               {loggedIn ? (
                 <>
                   <div
@@ -154,7 +158,7 @@ function Navbar({ isUserLoggedIn, isAdmin, isLogout, token }) {
                           <li>
                             <Link
                               href="/profile"
-                              className="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white"
+                              className="block  px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white"
                             >
                               Profile
                             </Link>
@@ -181,7 +185,7 @@ function Navbar({ isUserLoggedIn, isAdmin, isLogout, token }) {
                           <li>
                             <button
                               onClick={isLogout}
-                              className="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white w-full text-left"
+                              className="block px-4 py-2 text-black hover:bg-indigo-500 hover:text-white w-full text-left"
                             >
                               Logout
                             </button>
@@ -193,7 +197,8 @@ function Navbar({ isUserLoggedIn, isAdmin, isLogout, token }) {
                   <div
                     className={` ${isNavOpen ? " block  " : "hidden" } lg:hidden`}
                   >
-                    <li className="mr-3">
+                    <hr className="mx-4" />
+                    <li className="mr-3 py-3">
                       <Link
                         href="/profile"
                         onClick={handleNavToggle}
@@ -202,8 +207,9 @@ function Navbar({ isUserLoggedIn, isAdmin, isLogout, token }) {
                         Profile
                       </Link>
                     </li>
+                    <hr className="mx-4"/>
                     {isAdmin ? (
-                      <li>
+                      <li className="py-3">
                         <Link
                           href="/admin"
                           onClick={handleNavToggle}
@@ -212,8 +218,10 @@ function Navbar({ isUserLoggedIn, isAdmin, isLogout, token }) {
                           Admin Dashboard
                         </Link>
                       </li>
+                      
                     ) : (
-                      <li>
+                      
+                      <li className="py-3">
                         <Link
                           href="/enrolled-course"
                           onClick={handleNavToggle}
@@ -223,12 +231,12 @@ function Navbar({ isUserLoggedIn, isAdmin, isLogout, token }) {
                         </Link>
                       </li>
                     )}
-
-                    <li className="pb-12">
+                    <hr className="mx-4"/>
+                    <li className="pb-12 pt-5">
                       {" "}
                       <button
                         onClick={isLogout}
-                        className="no-underline font-bold py-2 px-4 inline-block bg-white  rounded-full hover:bg-gray-200"
+                        className="no-underline text-black font-bold py-2 px-4 inline-block bg-white  rounded-full hover:bg-gray-200"
                       >
                         Logout
                       </button>
@@ -239,7 +247,7 @@ function Navbar({ isUserLoggedIn, isAdmin, isLogout, token }) {
                 <li className="mr-3 my-2  ">
                   <Link
                     href="/signin"
-
+                    onClick={handleNavToggle}
                     className=" text-black lg:text-amber-500 no-underline font-bold py-2 px-4 inline-block bg-white  rounded-full hover:bg-gray-200"
                   >
                     Log in

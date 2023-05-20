@@ -3,26 +3,37 @@ import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import { useState, useEffect, useRef } from "react";
 
-
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-
 
 import Cycle from "../components/Cycle";
 
 import hero from "./lotti/hero.json";
 import Lottie from "lottie-react";
 const inter = Inter({ subsets: ["latin"] });
+import "swiper/css";
+import "swiper/css/bundle";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+const reviews = [
+  { id: 1, title: "Card 1", image: "path/to/image1.jpg" },
+  { id: 2, title: "Card 2", image: "path/to/image2.jpg" },
+  { id: 3, title: "Card 3", image: "path/to/image3.jpg" },
+];
+
 export default function Home({ courses, handleEnrollment }) {
+  SwiperCore.use([Navigation, Pagination, Autoplay]);
   const router = useRouter();
   useEffect(() => {
-    if (typeof window !== 'undefined' && localStorage.getItem('token')) {
+    if (typeof window !== "undefined" && localStorage.getItem("token")) {
       setTimeout(function () {
-        localStorage.removeItem('token');
+        localStorage.removeItem("token");
       }, 24 * 60 * 60 * 1000);
     }
   }, []);
-
 
   const items = [
     {
@@ -223,8 +234,8 @@ export default function Home({ courses, handleEnrollment }) {
       </Head>
       <main>
         <div className=" bg-gray-100">
-          <div className="pt-5 md:pt-24 bg-gray-100 min-h-screen">
-            <div className="container px-3 mx-auto flex flex-col items-center justify-center md:flex-row pt-20 sm:pt-8 ">
+          <div className="pt-5 md:pt-24  bg-gray-100 min-h-screen">
+            <div className="container px-3  mx-auto flex flex-col items-center justify-center md:flex-row pt-20 sm:pt-8 ">
               <div className="text-center md:text-left md:w-3/5">
                 <h1 className=" relative text-3xl md:text-5xl  leading-tight my-4">
                   <span className="text-amber-500 font-bold drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
@@ -287,9 +298,9 @@ export default function Home({ courses, handleEnrollment }) {
             <div className="container mx-auto lg:px-20">
               <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 h-full pb-40 ">
                 <div className="border-r border-gray-300 mx-3 lg:pl-20">
-                  <div className="py-10 pb-3 mt-5 sm:mt-72 h-autso sm:h-4/6 relative bg-purple-100 group hover:bg-purple-200 cursor-pointer transition ease-out duration-300 overflow-hidden">
-                    <div className="px-7 mt-5 sm:mt-20">
-                      <h1 className=" bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-red-500 text-6xl  font-bold group-hover:text-purple-300 transition ease-out duration-300">
+                  <div className="py-10 pb-3 mt-5 sm:mt-5 h-auto sm:h-4/6 relative bg-pink-100 group hover:bg-pink-200 cursor-pointer transition ease-out duration-300 overflow-hidden">
+                    <div className="px-7 mt-5 sm:mt-5">
+                      <h1 className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-red-500 text-6xl font-bold group-hover:text-pink-400 transition ease-out duration-300">
                         01.
                       </h1>
                       <h2 className="text-1xl mt-4 font-bold">
@@ -305,6 +316,7 @@ export default function Home({ courses, handleEnrollment }) {
                     </div>
                   </div>
                 </div>
+
                 <div className="border-r border-gray-300 mx-3 lg:pl-20">
                   <div className="py-10 pb-3 mt-5 sm:mt-32 h-auto sm:h-4/6 relative bg-indigo-100 group hover:bg-indigo-200 cursor-pointer transition ease-out duration-300 overflow-hidden">
                     <div className="px-7 mt-5 sm:mt-20">
@@ -325,10 +337,11 @@ export default function Home({ courses, handleEnrollment }) {
                     </div>
                   </div>
                 </div>
+
                 <div className="border-r border-gray-300 mx-3 lg:pl-20">
-                  <div className="py-10 pb-3 mt-5 sm:mt-5 h-auto sm:h-4/6 relative bg-pink-100 group hover:bg-pink-200 cursor-pointer transition ease-out duration-300 overflow-hidden">
-                    <div className="px-7 mt-5 sm:mt-5">
-                      <h1 className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-red-500 text-6xl font-bold group-hover:text-pink-400 transition ease-out duration-300">
+                  <div className="py-10 pb-3 mt-5 sm:mt-72 h-autso sm:h-4/6 relative bg-purple-100 group hover:bg-purple-200 cursor-pointer transition ease-out duration-300 overflow-hidden">
+                    <div className="px-7 mt-5 sm:mt-20">
+                      <h1 className=" bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-red-500 text-6xl  font-bold group-hover:text-purple-300 transition ease-out duration-300">
                         03.
                       </h1>
                       <h2 className="text-1xl mt-4 font-bold">
@@ -340,7 +353,7 @@ export default function Home({ courses, handleEnrollment }) {
                         help you stay ahead of the competition. We provide
                         ongoing support and optimization, constantly refining
                         your e-commerce strategy to ensure that you maximize
-                        your ROI and achieve your business goals.
+                        your ROI and achieve your.
                       </p>
                     </div>
                   </div>
@@ -658,18 +671,33 @@ export default function Home({ courses, handleEnrollment }) {
             </div>
           </section>
 
-          <section className="bg-gray-100 py-8">
-            <div className="container mx-auto px-2">
-              <div className={styles.courseWrapper}>
-                <div className={styles.courseList}>
-                  {courses.map((course, index) => (
-                    <div
-                      key={index}
-                      className={`opacity-100 transition-opacity duration-500 ease-in-out mx-4 ${styles.courseCard}`}
-                    >
+          <section className="">
+            <div
+              className="min-h-screen flex items-center justify-center bg-gray-100"
+              style={{ fontFamily: "Arial, sans-serif" }}
+            >
+              <div className=" max-w-screen-lg w-full swiper-container">
+                <Swiper
+                  pagination={{ clickable: true, dynamicBullets: true }}
+                  
+                  loop={true}
+                  centeredSlides={true}
+                  grabCursor={true}
+                  navigation
+                  slidesPerView={3}
+                  
+                  breakpoints={{
+                    0: { slidesPerView: 1 },
+                    520: { slidesPerView: 2 },
+                    950: { slidesPerView: 3 },
+                  }}
+                  
+                >
+                  {courses.map((course) => (
+                    <SwiperSlide key={course._id}>
                       <div
-                        className="bg-white rounded-lg shadow-md mx-2 md:mx-4 lg:mx-6 px-6 py-4 flex-shrink-0"
-                        style={{ width: "320px" }}
+                        className="bg-white rounded-lg shadow-md px-6 py-4 mx-10 "
+                       
                       >
                         <img
                           className="w-full h-48 object-cover rounded-md mb-4"
@@ -693,7 +721,7 @@ export default function Home({ courses, handleEnrollment }) {
                             onClick={() => handleEnrollment(course._id)}
                             className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full"
                           >
-                            Enroll Now
+                            Enroll
                           </button>
                           <button
                             onClick={() =>
@@ -703,24 +731,193 @@ export default function Home({ courses, handleEnrollment }) {
                             }
                             className="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-2 px-4 rounded-full"
                           >
-                            Course Outline
+                            Outline
                           </button>
                         </div>
                       </div>
-                    </div>
+                    </SwiperSlide>
                   ))}
-                </div>
-              </div>
-              <div className="flex justify-center my-4">
-                <button
-                  onClick={() => router.push("/course")}
-                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                >
-                  View All Courses
-                </button>
+                </Swiper>
               </div>
             </div>
           </section>
+          <h2 class="text-3xl font-bold mb-12 text-center">
+      What Customer <span class="text-blue-600">About Us</span>
+    </h2>
+          <section className="py-8 mx-2">
+           
+
+            <div
+              className=" py-6 flex items-center justify-center bg-gray-100"
+              style={{ fontFamily: "Arial, sans-serif" }}
+            >
+              <div className="max-w-screen-lg w-full swiper-container">
+                <Swiper
+                  pagination={{ clickable: true, dynamicBullets: true }}
+                  spaceBetween={16}
+                  loop={true}
+                  
+                  slidesPerView={1}
+                  autoplay={{
+                    delay: 5000,
+
+                  }}
+                >
+                  {reviews.map((card) => (
+                    <SwiperSlide key={card.id}>
+                      <div className="mb-2 border border-gray-300 shadow-lg rounded-lg rounded-t-8xl rounded-b-5xl overflow-hidden">
+                        <div className="pt-3  pb-3 md:pb-1 px-4 md:px-16 bg-gray-300 bg-opacity-40">
+                          <div className="flex flex-wrap items-center">
+                            <img
+                              className="mr-6 rounded-lg"
+                              width={50}
+                              height={50}
+                              src="images/user.png"
+                              alt=""
+                            />
+                            <h4 className="w-full md:w-auto text-xl font-heading font-medium">
+                              Faustina H. Fawn
+                            </h4>
+                            <div className="w-full md:w-px h-2 md:h-8 mx-8 bg-transparent md:bg-gray-200"></div>
+                            <span className="mr-4 text-xl font-heading font-medium">
+                              5.0
+                            </span>
+                            <div className="inline-flex">
+                              <a className="inline-block mr-1" href="#">
+                                <svg
+                                  width="20"
+                                  height="20"
+                                  viewbox="0 0 20 20"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M20 7.91677H12.4167L10 0.416763L7.58333 7.91677H0L6.18335 12.3168L3.81668 19.5834L10 15.0834L16.1834 19.5834L13.8167 12.3168L20 7.91677Z"
+                                    fill="#FFCB00"
+                                  ></path>
+                                </svg>
+                              </a>
+                              <a className="inline-block mr-1" href="#">
+                                <svg
+                                  width="20"
+                                  height="20"
+                                  viewbox="0 0 20 20"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M20 7.91677H12.4167L10 0.416763L7.58333 7.91677H0L6.18335 12.3168L3.81668 19.5834L10 15.0834L16.1834 19.5834L13.8167 12.3168L20 7.91677Z"
+                                    fill="#FFCB00"
+                                  ></path>
+                                </svg>
+                              </a>
+                              <a className="inline-block mr-1" href="#">
+                                <svg
+                                  width="20"
+                                  height="20"
+                                  viewbox="0 0 20 20"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M20 7.91677H12.4167L10 0.416763L7.58333 7.91677H0L6.18335 12.3168L3.81668 19.5834L10 15.0834L16.1834 19.5834L13.8167 12.3168L20 7.91677Z"
+                                    fill="#FFCB00"
+                                  ></path>
+                                </svg>
+                              </a>
+                              <a className="inline-block mr-1" href="#">
+                                <svg
+                                  width="20"
+                                  height="20"
+                                  viewbox="0 0 20 20"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M20 7.91677H12.4167L10 0.416763L7.58333 7.91677H0L6.18335 12.3168L3.81668 19.5834L10 15.0834L16.1834 19.5834L13.8167 12.3168L20 7.91677Z"
+                                    fill="#FFCB00"
+                                  ></path>
+                                </svg>
+                              </a>
+                              <a
+                                className="inline-block text-gray-200"
+                                href="#"
+                              >
+                                <svg
+                                  width="20"
+                                  height="20"
+                                  viewbox="0 0 20 20"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M20 7.91677H12.4167L10 0.416763L7.58333 7.91677H0L6.18335 12.3168L3.81668 19.5834L10 15.0834L16.1834 19.5834L13.8167 12.3168L20 7.91677Z"
+                                    fill="#FFCB00"
+                                  ></path>
+                                </svg>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="px-4 overflow-hidden md:px-16 pt-8  bg-white">
+                          <div className="flex flex-wrap ">
+                            <div className="w-full md:w-2/3 mb-6 md:mb-0">
+                              <p className="mb-8 max-w-2xl text-darkBlueGray-400 leading-loose ">
+                                I haretra neque non mi aliquam, finibus hart
+                                bibendum molestie. Vestibulum suscipit sagittis
+                                dignissim mauris.
+                              </p>
+                            </div>
+                            <div className="w-full md:w-1/3 text-right">
+                              <p className="mb-8 text-sm text-gray-300">
+                                Added 2 months ago
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </div>
+            </div>
+          </section>
+
+          
+          
+<div class="container py-24 px-6 mx-auto">
+  <section class="pb-32 text-center lg:text-left">
+    <h2 class="text-3xl font-bold mb-12 text-center">
+      Meet the <span class="text-blue-600">team</span>
+    </h2>
+
+    <div class="grid grid-cols-2 gap-1 md:grid-cols-3 md:gap-6 xl:gap-x-12">
+      
+      <div class="mb-6 lg:mb-0">
+        <div class="relative block rounded-lg shadow-lg bg-white p-6">
+          <div class="lg:flex flex-row items-center">
+            <div class="grow-0 shrink-0 basis-auto w-full lg:w-5/12 lg:pr-6">
+              <img
+                  src="https://mdbootstrap.com/img/new/avatars/12.jpg"
+                  alt="Trendy Pants and Shoes"
+                  class="w-full rounded-md mb-6 lg:mb-0"
+                  />
+            </div>
+            <div class="grow-0 shrink-0 basis-auto w-full lg:w-7/12">
+              <h5 class="text-lg font-bold mb-2">Avaya Hills</h5>
+              <p class="text-gray-500 mb-4">Copywriter</p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+</div>
+
+          
         </div>
       </main>
     </>

@@ -319,3 +319,10 @@
     transform: rotate(0deg);
   }
 }
+
+
+@media (max-width: 520px) {
+  .swiper-button {
+    display: none;
+  }
+}

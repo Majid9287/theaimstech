@@ -21,7 +21,7 @@ function signup() {
     }
 
     // Check if email is already registered
-    fetch(`/api/emailcheck?email=${email}`)
+    fetch(`/api/user/emailcheck?email=${email}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Error occurred while checking email");
@@ -45,7 +45,7 @@ function signup() {
           console.log(formData);
 
           // Make an API call to your backend server to save the user data
-          fetch("/api/signup", {
+          fetch("/api/user/signup", {
             method: "POST",
             body: JSON.stringify(formData),
             headers: {

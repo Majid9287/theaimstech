@@ -17,7 +17,7 @@ function Signin({ LoggedIn }) {
     };
 
     try {
-      const response = await fetch("/api/signin", {
+      const response = await fetch("/api/user/signin", {
         method: "POST",
         body: JSON.stringify(formData),
         headers: {

@@ -8,38 +8,18 @@ import { useEffect, useState } from 'react';
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
+import jwt from "jsonwebtoken";
 
 export default function App({ Component, pageProps }) {
   const [isAdmin, setIsAdmin] = useState(false);
   const [token, setToken] = useState(null);
   const router = useRouter();
-  const jwt = require("jsonwebtoken");
+  
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
   const [UserId, setUserId] = useState(false);
-  
-  const LoadingIndicator = () => {
-    useEffect(() => {
-      const handleStart = () => {
-        // Remove the loading indicator or add your own custom logic
-        console.log('Page is loading...');
-      };
-  
-      const handleComplete = () => {
-        // Remove the loading indicator or add your own custom logic
-        console.log('Page has loaded!');
-      };
-  
-      Router.events.on('routeChangeStart', handleStart);
-      Router.events.on('routeChangeComplete', handleComplete);
-  
-      return () => {
-        Router.events.off('routeChangeStart', handleStart);
-        Router.events.off('routeChangeComplete', handleComplete);
-      };
-    }, []);
-  
-    return null; // Return null or your custom loading indicator component
-  };
+  const [expirationTime, setExpirationTime] = useState(null);
+
+ 
   useEffect(() => {
     if (typeof window !== "undefined") {
       const storedData = localStorage.getItem("token");
@@ -49,7 +29,9 @@ export default function App({ Component, pageProps }) {
   
   useEffect(() => {
     if (token) {
+      
       const decoded = jwt.decode(token);
+      setExpirationTime(new Date(decoded.expirationTime));
       if (decoded._id) {
         setIsUserLoggedIn(true);
         setUserId(decoded._id);
@@ -66,9 +48,18 @@ export default function App({ Component, pageProps }) {
       setIsUserLoggedIn(false);
     }
   }, [token]);
+
   const handleSignIn = (isLoggedIn) => {
     setIsUserLoggedIn(isLoggedIn);
+    
   };
+  useEffect(() => {
+    if ( isUserLoggedIn&& new Date() > expirationTime) {
+      setIsUserLoggedIn(false);
+      localStorage.removeItem("token");
+    }
+  }, [isUserLoggedIn, expirationTime]);
+
   const handleLogout = () => {
     // handle logout logic here
     setIsUserLoggedIn(false);
@@ -76,7 +67,7 @@ export default function App({ Component, pageProps }) {
   };
   const [courses, setCourses] = useState([]);
   useEffect(() => {
-    fetch("/api/getcourse")
+    fetch("/api/course/getcourse")
       .then((res) => res.json())
       .then((data) => setCourses(data))
       .catch((error) => console.error(error));
@@ -87,7 +78,7 @@ export default function App({ Component, pageProps }) {
       console.log(`Enrolling in course ${courseId}...`);
       console.log(`Enrolling user ${UserId}...`);
 
-      fetch('/api/add-enrollment', {
+      fetch('/api/enrollment/add-enrollment', {
         method: 'POST',
         body: JSON.stringify({
           course: courseId,
@@ -112,7 +103,6 @@ export default function App({ Component, pageProps }) {
   <>
    
    <Navbar  isUserLoggedIn={isUserLoggedIn} isAdmin={isAdmin} isLogout={handleLogout} token={token}/>
-   <LoadingIndicator />
    <Component LoggedIn={handleSignIn} isAdmin={isAdmin} isUserLoggedIn={isUserLoggedIn} courses={courses} UserId={UserId} handleEnrollment={handleEnrollment} {...pageProps} />
    <FloatingWhatsAppButton />
    <Footer/>
