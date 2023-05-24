@@ -26,6 +26,9 @@ function projectForm() {
       });
 
       const data = await res.json();
+    setName("")
+    setDescription("")
+    setPhoto(null)
      
     } catch (error) {
       console.error(error);

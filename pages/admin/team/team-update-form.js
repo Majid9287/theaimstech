@@ -6,29 +6,29 @@ import AdminLayout from "../../../components/AdminLayout";
 
 function CourseForm() {
  const router = useRouter()
-  const { projectId } = router.query
+  const { teamId } = router.query
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [photo, setPhoto] = useState(null);
 
   useEffect(() => {
-    // Fetch the course details using the projectId prop
-    const fetchCourseDetails = async () => {
+    // Fetch the course details using the teamId prop
+    const fetchTeamDetails = async () => {
       try {
-        const res = await fetch(`/api/project/get-project?id=${projectId}`);
+        const res = await fetch(`/api/team/get-team?id=${teamId}`);
         const data = await res.json();
         setName(data.name);
         setDescription(data.description);
-        // Set the image url to display the current photo
+        
         setPhoto(data.photoUrl);
       } catch (error) {
         console.error(error);
       }
     };
-    if (projectId) {
-      fetchCourseDetails();
+    if (teamId) {
+      fetchTeamDetails();
     }
-  }, [projectId]);
+  }, [teamId]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -39,7 +39,7 @@ function CourseForm() {
     formData.append("file", photo);
 
     try {
-      const res = await fetch(`/api/project/update-project/${projectId}`, {
+      const res = await fetch(`/api/team/update-team/${teamId}`, {
         method: "PUT",
         body: formData,
       });
@@ -74,7 +74,7 @@ function CourseForm() {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="name"
               type="text"
-              placeholder="Enter course name"
+              placeholder="Enter team name"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required

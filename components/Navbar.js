@@ -34,7 +34,7 @@ function Navbar({ isUserLoggedIn, isAdmin, isLogout, token }) {
   return (
     <div>
       <nav
-        className={`fixed w-full z-30 top-0  text-white lg:text-amber-500 ${
+        className={`fixed w-full z-30 top-0 md:px-14 text-white lg:text-amber-500 ${
           scrollpos > 10
             ? "bg-gray-200 drop-filter backdrop-blur-lg bg-opacity-30 border-b border-gray-200"
             : ""

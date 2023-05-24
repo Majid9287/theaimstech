@@ -35,6 +35,12 @@ function CourseForm() {
       });
 
       const data = await res.json();
+      setName("");
+      setPrice("");
+      setEnrollment("");
+      setDuration("");
+      setDescription("");
+      setPhoto(null);
       
     } catch (error) {
       console.error(error);

@@ -31,7 +31,7 @@ export default function App({ Component, pageProps }) {
     if (token) {
       
       const decoded = jwt.decode(token);
-      setExpirationTime(new Date(decoded.expirationTime));
+      setExpirationTime(decoded.expirationTime);
       if (decoded._id) {
         setIsUserLoggedIn(true);
         setUserId(decoded._id);
@@ -53,12 +53,7 @@ export default function App({ Component, pageProps }) {
     setIsUserLoggedIn(isLoggedIn);
     
   };
-  useEffect(() => {
-    if ( isUserLoggedIn&& new Date() > expirationTime) {
-      setIsUserLoggedIn(false);
-      localStorage.removeItem("token");
-    }
-  }, [isUserLoggedIn, expirationTime]);
+
 
   const handleLogout = () => {
     // handle logout logic here

@@ -30,7 +30,6 @@ function CourseForm() {
         setEnrollment(data.enrollment);
         setDuration(data.duration);
         setDescription(data.description);
-        // Set the image url to display the current photo
         setPhoto(data.photoUrl);
       } catch (error) {
         console.error(error);
@@ -57,7 +56,14 @@ function CourseForm() {
         method: "PUT",
         body: formData,
       });
-
+     
+      setName("");
+        setPrice("");
+        setEnrollment("");
+        setDuration("");
+        setDescription("");
+        setPhoto(null);
+    
   
    
     } catch (error) {

@@ -56,6 +56,15 @@ const AdminLayout = ({ children }) => {
             Enrolled Course
           </li>
           </Link>
+          <Link href="/admin/team/team">
+          <li
+            className={`p-4 hover:bg-amber-400 ${
+              router.pathname === "/admin/team/team" ? "bg-amber-500" : ""
+            }`}
+          >
+            Team
+          </li>
+          </Link>
         </ul>
         <div className="md:hidden p-4 flex flex-col justify-center  ">
           <button
