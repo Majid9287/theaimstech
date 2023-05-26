@@ -1,4 +1,4 @@
-import Team from "../../models/Team";
+import Project from "../../models/Project";
 import connectDb from "../../../middlewhare/mongoos";
 import nextConnect from "next-connect";
 import multer from "multer";
@@ -39,9 +39,9 @@ apiRoute.post(async (req, res) => {
   try {
     const { name, description } = req.body;
     const photo = `/uploads/profiles/${filename}`;
-    const newTeam = new Team({ name, description, photo });
-    const savedTeam = await newTeam.save();
-    res.status(200).json(savedTeam);
+    const newProject = new Project({ name, description, photo });
+    const savedProject = await newProject.save();
+    res.status(200).json(savedProject);
   } catch (error) {
     res
       .status(500)

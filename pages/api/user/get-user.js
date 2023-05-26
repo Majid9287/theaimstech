@@ -2,6 +2,7 @@ import User from "../../models/User";
 import connectDb from "../../../middlewhare/mongoos";
 import nextConnect from "next-connect";
 
+
 const apiRoute = nextConnect({
   onError(error, req, res) {
     res.status(501).json({ error: `Sorry something Happened! ${error.message}` });

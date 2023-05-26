@@ -9,7 +9,8 @@ const handler = async (req, res) => {
 
     // Check if user with the given email exists
     const user = await User.findOne({ email });
-    var bytes  = CryptoJS.AES.decrypt(user.password, 'majidmuskan123');
+    const privateKey = process.env.PRIVATE_KEY;
+    var bytes  = CryptoJS.AES.decrypt(user.password, privateKey);
        var originalText = bytes.toString(CryptoJS.enc.Utf8);
     if (user) {
         if(req.body.email==user.email && req.body.password== originalText){

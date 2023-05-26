@@ -6,6 +6,7 @@ const handler = async (req, res) => {
   if (req.method == "POST") {
     console.log(req.body);
     const { name, email,phone,address } = req.body;
+    const privateKey = process.env.PRIVATE_KEY;
     let u = new User({
       name,
       email,
@@ -13,7 +14,7 @@ const handler = async (req, res) => {
       address,
       password: CryptoJS.AES.encrypt(
         req.body.password,
-        "majidmuskan123"
+        privateKey
       ).toString(),
     });
 

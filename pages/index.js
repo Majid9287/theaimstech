@@ -243,7 +243,7 @@ export default function Home({ courses, handleEnrollment }) {
   return (
     <>
      <NextSeo
-        title="The Aims Tech | theaimstech | Amazon Services | Ecommerce Services | Boost Your Online Business"
+        title="The Aims Tech | theaimstech | aimstech | Amazon Services | Ecommerce Services | Boost Your Online Business"
         description="Unlock the full potential of e-commerce with The Aims Tech Ecommerce Services. Join us to succeed in the fast-paced world of online retail. Contact us today!"
         viewport="width=device-width, initial-scale=1"
         canonical="https://theaimstech.com"
@@ -504,7 +504,7 @@ export default function Home({ courses, handleEnrollment }) {
 
           <section className="bg-gray-100">
             <div className="container mx-auto pt-8 px-4 md:px-12">
-              <h2 className=" leading-tight text-4xl text-center font-bold mb-8 drop-shadow-[0_1px_1px_rgba(0, 0, 0, 0.2)] ">
+              <h2 className=" leading-tight text-5xl text-center  mb-8 drop-shadow-[0_1px_1px_rgba(0, 0, 0, 0.2)] ">
                 What makes us successful
               </h2>
               <div className="grid md:grid-cols-2 gap-8 pt-6">
@@ -636,7 +636,7 @@ export default function Home({ courses, handleEnrollment }) {
 
           <section className=" container  mx-auto grid grid-cols-1 md:grid-cols-2 items-center py-16">
             <div className="px-10 md:pl-20 text-center md:text-justify">
-              <h2 className="text-4xl font-bold mb-4">
+              <h2 className="text-4xl  mb-4">
                 Tell us about your project
               </h2>
               <p className="text-lg text-gray-600 mb-8">
@@ -765,8 +765,8 @@ export default function Home({ courses, handleEnrollment }) {
               </div>
             </div>
           </section>
-          <h2 class="text-3xl font-bold mb-12 text-center pt-8">
-      What Customer <span class="text-blue-600">About Us</span>
+          <h2 class="text-4xl mb-12 text-center pt-8">
+          What Our <span class="text-amber-500">Customers</span> Are Saying 
     </h2>
           <section className="py-8 mx-2">
            
@@ -911,8 +911,8 @@ export default function Home({ courses, handleEnrollment }) {
           
 <div class="container py-24 px-4 md:px-12 mx-auto">
   <section class="pb-32 text-center lg:text-left">
-    <h2 class="text-3xl font-bold mb-12 text-center">
-      Meet the <span class="text-blue-600">team</span>
+    <h2 class="text-4xl mb-12 text-center">
+      Meet The <span class="text-amber-500">Team</span>
     </h2>
     {team.length > 0 ? (
   <div className="grid grid-cols-2 gap-1 md:grid-cols-3 md:gap-6 xl:gap-x-12">

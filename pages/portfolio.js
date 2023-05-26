@@ -26,15 +26,12 @@ export default function portfolio() {
     <>
       <div className=" bg-gray-100">
         <div className="pt-[25px] bg-gray-100 pb-24">
-          <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+          <div className="container px-4 md:px-12 py-12 mx-auto flex flex-wrap flex-col md:flex-row items-center">
             <div className="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left pt-4">
             <h1 className="relative my-6 text-4xl  text-black leading-tight" >
 
               BY EMPOWERING OUR CLIENTS WITH <span className="font-bold text-amber-500">INNOVATIVE TECHNOLOGIES</span>, WE ENABLE THEIR SUCCESS AND GROWTH. </h1>
-              <p className=" relative leading-normal text-2xl mb-8">
-              We provide cutting-edge e-commerce solutions to drive business success, exceeding client expectations and empowering online growth.
-       
-              </p>
+              
             </div>
             <div className="  w-full md:w-3/5 py-6 text-center md:order-last ">
               <img src="images/portfolio.png"  className=" md:w-5/6 md:ml-auto" alt="" />
@@ -42,7 +39,7 @@ export default function portfolio() {
           </div>
         </div>
 
-        <div className="container  mx-auto text-gray-800 ">
+        <div className="container px-2 md:px-12  mx-auto text-gray-800 ">
           <div
             className="block rounded-lg shadow-lg py-10 md:py-12 px-2 md:px-6"
             style={{
@@ -90,7 +87,7 @@ export default function portfolio() {
           </div>
           </div>
           <section className="bg-gradient-to-r from-pink-400 via-red-500 to-yellow-500 p-1 shadow-xl py-20 mt-16">
-  <div className="container mx-auto">
+  <div className="container px-2 md:px-12 mx-auto">
     <div className="max-w-lg mx-auto text-center">
       <h2 className="text-4xl font-bold text-white mb-8">OUR MISSION</h2>
       <p className="relative text-xl text-white leading-relaxed mb-8">
@@ -135,7 +132,7 @@ export default function portfolio() {
 
 
           <section className="bg-gray-100 py-20">
-  <div className="container mx-auto">
+  <div className="container px-2 md:px-12 mx-auto">
     <div className="flex flex-wrap justify-between items-center mb-20">
       <div className="w-full md:w-1/2 mb-10 md:mb-0 text-center p-4">
         <h2 className="text-4xl font-bold leading-tight mb-6">

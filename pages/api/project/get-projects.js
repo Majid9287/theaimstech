@@ -28,6 +28,6 @@ export default connectDb(apiRoute);
 
 export const config = {
   api: {
-    bodyParser: false, // Disallow body parsing, consume as stream
+    bodyParser: true, // Disallow body parsing, consume as stream
   },
 };
