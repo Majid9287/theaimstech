@@ -1,4 +1,4 @@
-import Course from "../../models/Course";
+import Course from "../../../models/Course";
 import connectDb from "../../../middlewhare/mongoos";
 import nextConnect from "next-connect";
 

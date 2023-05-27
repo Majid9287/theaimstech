@@ -1,4 +1,4 @@
-import Project from "../../models/Project";
+import Project from "../../../models/Project";
 import connectDb from "../../../middlewhare/mongoos";
 import nextConnect from "next-connect";
 import fs from "fs";

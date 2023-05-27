@@ -1,5 +1,5 @@
 
-import User from "../../models/User";
+import User from "../../../models/User";
 import connectDb from "../../../middlewhare/mongoos";
 import nextConnect from "next-connect";
 

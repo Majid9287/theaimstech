@@ -1,6 +1,6 @@
-import Enrollment from "../../models/Enrollment";
-import User from "../../models/User";
-import Course from "../../models/Course";
+import Enrollment from "../../../models/Enrollment";
+import User from "../../../models/User";
+import Course from "../../../models/Course";
 
 import nextConnect from "next-connect";
 import connectDb from "../../../middlewhare/mongoos";

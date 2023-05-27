@@ -1,5 +1,5 @@
 import connectDb from "../../../middlewhare/mongoos";
-import User from "../../models/User";
+import User from "../../../models/User";
 
 const handler = async (req, res) => {
   if (req.method === "GET") {

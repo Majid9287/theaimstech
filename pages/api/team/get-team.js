@@ -1,4 +1,4 @@
-import Team from "../../models/Team";
+import Team from "../../../models/Team";
 import connectDb from "../../../middlewhare/mongoos";
 import nextConnect from "next-connect"
 

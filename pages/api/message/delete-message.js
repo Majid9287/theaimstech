@@ -1,4 +1,4 @@
-import Contact from "../../models/Contact";
+import Contact from "../../../models/Contact";
 
 import nextConnect from "next-connect";
 import connectDb from "../../../middlewhare/mongoos";

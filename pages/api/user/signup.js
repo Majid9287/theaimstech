@@ -1,4 +1,4 @@
-import User from "../../models/User";
+import User from "../../../models/User";
 var CryptoJS = require("crypto-js");
 import connectDb from "../../../middlewhare/mongoos";
 

@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const CourseSchema = new mongoose.Schema({
     name: { type: String, required: true },
@@ -8,5 +8,5 @@ const CourseSchema = new mongoose.Schema({
     price: { type: Number, required: true },
     photo: { type: String, required: false }
   });
-  //mongoose.models={}
+ 
   export default mongoose.models.Course ||mongoose.model("Course",CourseSchema );
