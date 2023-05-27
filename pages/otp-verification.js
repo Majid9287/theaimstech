@@ -1,60 +1,61 @@
 import Link from 'next/link';
 import React, { useState } from "react";
 import { useRouter } from "next/router";
+import { useEffect } from 'react';
 function Forgot() {
-  const [email, setEmail] = useState("");
-  const [emailError, setemailError] = useState("");
+ const router = useRouter()
+ const { email } = router.query
+  const [otp, setOtp] = useState("");
+  const [otpError, setOtpError] = useState("");
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
+  useEffect(() => {
+    
+    if (!email) {
+      router.push('/forgot');
+    }
+  }, [email,router]);
+ 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setLoading(true); // Set loading state to true when the button is clicked
+    setLoading(true);
 
-    fetch(`/api/user/emailcheck?email=${email}`)
+    fetch('/api/user/otp-verify' , {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email,otp }), // Pass email and otp in the request body
+    })
       .then((response) => {
         if (!response.ok) {
-          throw new Error("Error occurred while checking email");
+          return response.json().then((data) => {
+            throw new Error(data.error);
+          });
         }
-        return response.json();
-      })
-      .then((data) => {
-        if (data.exists) {
-          // Email exists, call OTP generation API
-          fetch(`/api/user/otp-generate?email=${email}`, {
-            method: "GET",
-          })
-            .then((response) => {
-              if (!response.ok) {
-                throw new Error("Error occurred while generating OTP");
-              }
-              return response.json();
-            })
-            .then((data) => {
-              // OTP generation successful
-              console.log("OTP generated:", data);
-              setemailError("OTP Send On Email");
-              router.push({
-                pathname: '/otp-verification',
-                query: { email },
-              });
-             
-            })
-            .catch((error) => {
-              console.log(error);
-              alert(error.message);
-            })
-            .finally(() => {
-              setLoading(false); // Set loading state to false when the API call is complete
-            });
-        } else {
-          setemailError("Email is not registered");
-          setLoading(false); // Set loading state to false when the API call is complete
-        }
+       
+
+         
+          router.push({
+            pathname: '/password-reset',
+            query: { email,otp  },
+          });
+          return response.json();
+       
       })
       .catch((error) => {
         console.log(error);
-        alert(error.message);
-        setLoading(false); // Set loading state to false when the API call is complete
+        if (error.response) {
+          // The server responded with an error message
+          error.response.json().then((data) => {
+            alert(data.error); // Display the server-side error message
+          });
+        } else {
+          // An error occurred during the request
+          alert(error.message);
+        }
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
 
@@ -64,49 +65,49 @@ function Forgot() {
         <div className="w-full max-w-md space-y-8">
           <div>
             <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
-              Forgot your password?
+              OTP Verification
             </h2>
             <div className="text-grey-dark text-center mb-4">
               Or/
               <Link
-                href="/signin"
+                href="/forgot"
                 className="relative text-indigo-600 no-underline border-b border-blue text-blue"
               >
-                Login
+                Back
               </Link>
             </div>
           </div>
           <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
             <input type="hidden" name="remember" defaultValue="true" />
             <div className="-space-y-px rounded-md shadow-sm">
-              <div className="text-grey-dark text-center mb-4">
-                Enter the email address associated with your account and we’ll send you a OTP to reset your password.
-              </div>
+            <div className="text-grey-dark text-center mb-4">
+            Enter the OTP which sent on your email address. <br></br>
+           <span className='text-red-500'>Note:</span>  If you do not receive the OTP email, please check your "spam" folder in you email account.
+          </div>
               <div>
-                <label htmlFor="email-address" className="sr-only">
-                  Email address
+                <label htmlFor="otp-address" className="sr-only">
+                  OTP 
                 </label>
 
                 <input
                   type="text"
                   className="relative block border border-grey-light w-full p-3 rounded mb-4"
-                  name="email"
+                  name="otp"
                   required
-                  placeholder="Email"
-                  value={email}
-                  onClick={(e) => setemailError("")}
+                  placeholder="OTP"
+                  value={otp}
+                  onClick={() => setOtpError("")}
                   onChange={(e) => {
-                    setEmail(e.target.value);
-                    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    if (!emailPattern.test(e.target.value)) {
-                      setemailError("Please enter a valid email address.");
-      
+                    setOtp(e.target.value);
+                    const otpPattern = /^\d{6}$/; // Update the pattern to accept only four digits
+                    if (!otpPattern.test(e.target.value)) {
+                      setOtpError("Please enter a valid 6-digit OTP.");
                     } else {
-                      setemailError("");
+                      setOtpError("");
                     }
                   }}
                 />
-                {emailError && <div className="text-red-500">{emailError}</div>}
+                {otpError && <div className="text-red-500">{otpError}</div>}
               </div>
             </div>
 
@@ -114,7 +115,7 @@ function Forgot() {
               <button
                 type="submit"
                 className="group relative flex w-full justify-center rounded-md bg-green-900 py-2 px-3 text-sm font-semibold text-white hover:bg-green-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                disabled={loading} // Disable the button when loading state is true
+                disabled={loading || otpError} // Disable the button when loading state is true
               >
                 <span className="absolute inset-y-0 left-0 flex items-center pl-3">
                   {loading && (

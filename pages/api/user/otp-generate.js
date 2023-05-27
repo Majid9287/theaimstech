@@ -32,7 +32,7 @@ apiRoute.get(async (req, res) => {
     const otp = Math.floor(100000 + Math.random() * 900000);
     
     const otpExpiration = new Date();
-    otpExpiration.setMinutes(otpExpiration.getMinutes() + 30); 
+    otpExpiration.setMinutes(otpExpiration.getMinutes() + 10); 
     const privateKey = process.env.PRIVATE_KEY;
     const encryptedOTP = CryptoJS.AES.encrypt(otp.toString(), privateKey).toString();
 

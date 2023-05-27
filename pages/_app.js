@@ -51,13 +51,23 @@ export default function App({ Component, pageProps }) {
 
   const handleSignIn = (isLoggedIn) => {
     setIsUserLoggedIn(isLoggedIn);
+    const storedData = localStorage.getItem("token");
+    setToken(storedData);
+    const decoded = jwt.decode(storedData);
+    if (decoded._id) {
+      setUserId(decoded._id);
+    }
+    if (decoded.isAdmin) {
+      setIsAdmin(true);
+    }
     
   };
 
 
   const handleLogout = () => {
-    // handle logout logic here
+    
     setIsUserLoggedIn(false);
+    setIsAdmin(false);
     localStorage.removeItem("token");
   };
   const [courses, setCourses] = useState([]);

@@ -53,11 +53,7 @@ function Signin({ LoggedIn }) {
       <div className="h-screen relative   bg-gray-100 flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="w-full max-w-md space-y-8">
           <div>
-            <img
-              className="mx-auto h-12 w-auto"
-              src="images/aims11.png"
-              alt="Your Company"
-            />
+           
             <h2 className="font-bold drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
               Sign in
             </h2>
@@ -71,12 +67,13 @@ function Signin({ LoggedIn }) {
               </Link>
             </div>
           </div>
+          <div className="w-full p-6 bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md dark:bg-gray-800 dark:border-gray-700 sm:p-8">
           <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
             <input type="hidden" name="remember" value="true" />
             <div className="-space-y-px rounded-md shadow-sm">
               <div>
-                <label htmlFor="email-address" className="sr-only">
-                  Email address
+              <label htmlFor="password" className="block mb-1 text-sm font-medium text-gray-900 dark:text-white">
+                  Email
                 </label>
                 <input
                   id="email-address"
@@ -86,13 +83,13 @@ function Signin({ LoggedIn }) {
                   required
                   value={email}
                   onChange={(event) => handleEmailChange(event)}
-                  className="pl-4 relative block w-full rounded-t-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Email address"
                 />
               </div>
               <div>
-                <label htmlFor="password" className="sr-only">
-                  Password
+              <label htmlFor="confirm-password" className="block mb-1 mt-4 text-sm font-medium text-gray-900 dark:text-white">
+                Password
                 </label>
                 <input
                   id="password"
@@ -102,7 +99,7 @@ function Signin({ LoggedIn }) {
                   required
                   value={password}
                   onChange={(event) =>  handlechange(event)}
-                  className="pl-4 relative block w-full rounded-b-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Password"
                 />
               </div>
@@ -148,6 +145,7 @@ function Signin({ LoggedIn }) {
               </button>
             </div>
           </form>
+          </div>
         </div>
       </div>
     </div>

@@ -31,7 +31,7 @@ function UserProfile({ UserId,token }) {
     if (UserId) {
       fetchCourseDetails();
     }
-  }, [token]);
+  }, [token, router]);
   
 
   const handleSubmit = async (event) => {
@@ -53,7 +53,8 @@ function UserProfile({ UserId,token }) {
           "Content-Type": "application/json",
         },
       });
-  
+      setPassword("");
+      setConfirmPassword("");
       console.log(res);
     } catch (error) {
       console.error(error);
