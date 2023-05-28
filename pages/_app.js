@@ -9,7 +9,8 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 import jwt from "jsonwebtoken";
-
+import 'aos/dist/aos.css';
+import AOS from 'aos';
 export default function App({ Component, pageProps }) {
   const [isAdmin, setIsAdmin] = useState(false);
   const [token, setToken] = useState(null);

@@ -2,6 +2,8 @@ import React from "react";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faMapMarkerAlt, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 function contact() {
@@ -73,7 +75,7 @@ function contact() {
               <div className="flex flex-wrap items-center justify-center">
                 <div className="grow-0 shrink-0 basis-auto w-full xl:w-7/12">
                   <div className="flex flex-wrap">
-                    <div className="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+                    <div data-aos="fade-right" className="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
                       <div className="flex items-start">
                         <div className="shrink-0">
                           <div className="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
@@ -87,7 +89,7 @@ function contact() {
                         </div>
                       </div>
                     </div>
-                    <div className="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+                    <div data-aos="fade-left" className="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
                       <div className="flex items-start">
                         <div className="shrink-0">
                           <div className="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
@@ -102,7 +104,7 @@ function contact() {
                         </div>
                       </div>
                     </div>
-                    <div className="mb-12 md:mb-0 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+                    <div data-aos="fade-right" className="mb-12 md:mb-0 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
                       <div className="flex align-start">
                         <div className="shrink-0">
                           <div className="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
@@ -116,7 +118,7 @@ function contact() {
                         </div>
                       </div>
                     </div>
-                    <div className="grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+                    <div data-aos="fade-left" className="grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
                       <div className="flex align-start">
                         <div className="shrink-0">
                           <div className="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
