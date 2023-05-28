@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import React, { useState } from "react";
 import { useRouter } from "next/router";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function Forgot() {
   const [email, setEmail] = useState("");
   const [emailError, setemailError] = useState("");
@@ -13,7 +15,18 @@ function Forgot() {
     fetch(`/api/user/emailcheck?email=${email}`)
       .then((response) => {
         if (!response.ok) {
-          throw new Error("Error occurred while checking email");
+          
+          toast.error('Error occurred while checking email', {
+            position: "top-right",
+            autoClose: 1000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+          return ;
         }
         return response.json();
       })
@@ -25,13 +38,33 @@ function Forgot() {
           })
             .then((response) => {
               if (!response.ok) {
-                throw new Error("Error occurred while generating OTP");
+                
+                toast.error('Error occurred while generating OTP', {
+                  position: "top-right",
+                  autoClose: 1000,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: undefined,
+                  theme: "light",
+                });
+                return ;
               }
               return response.json();
             })
             .then((data) => {
-              // OTP generation successful
-              console.log("OTP generated:", data);
+              
+              toast.success("OTP Send On Email ", {
+                position: "top-right",
+                autoClose: 1000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+              });
               setemailError("OTP Send On Email");
               router.push({
                 pathname: '/otp-verification',
@@ -40,20 +73,48 @@ function Forgot() {
              
             })
             .catch((error) => {
-              console.log(error);
-              alert(error.message);
+              toast.error(error.message, {
+                position: "top-right",
+                autoClose: 1000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+              });
+              
             })
             .finally(() => {
               setLoading(false); // Set loading state to false when the API call is complete
             });
         } else {
+          toast.error('Email is not registered', {
+            position: "top-right",
+            autoClose: 1000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
           setemailError("Email is not registered");
           setLoading(false); // Set loading state to false when the API call is complete
         }
       })
       .catch((error) => {
-        console.log(error);
-        alert(error.message);
+        toast.error(error.message, {
+          position: "top-right",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+       
         setLoading(false); // Set loading state to false when the API call is complete
       });
   };
@@ -61,6 +122,18 @@ function Forgot() {
   return (
     <div>
       <div className="h-screen bg-gray-100 relative flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <ToastContainer
+          position="top-right"
+          autoClose={1000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
         <div className="w-full max-w-md space-y-8">
           <div>
             <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
@@ -113,7 +186,7 @@ function Forgot() {
             <div>
               <button
                 type="submit"
-                className="group relative flex w-full justify-center rounded-md bg-green-900 py-2 px-3 text-sm font-semibold text-white hover:bg-green-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="group relative flex w-full justify-center rounded-md bg-blue-900 py-2 px-3 text-sm font-semibold text-white hover:bg-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 disabled={loading} // Disable the button when loading state is true
               >
                 <span className="absolute inset-y-0 left-0 flex items-center pl-3">

@@ -55,7 +55,7 @@ function Navbar({ isUserLoggedIn, isAdmin, isLogout, token }) {
           </div>
           <div className="lg:hidden pr-4 text-black">
             <button
-              className="flex   items-center p-1  hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
+              className="  flex   items-center p-1  hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
               id="nav-toggle"
               onClick={handleNavToggle}
             >
@@ -63,7 +63,7 @@ function Navbar({ isUserLoggedIn, isAdmin, isLogout, token }) {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 20 20"
-        className="fill-current h-6 w-6"
+        className="fill-current h-8 w-8"
       >
         <title>Close</title>
         <path
@@ -84,7 +84,7 @@ function Navbar({ isUserLoggedIn, isAdmin, isLogout, token }) {
             </button>
           </div>
           <di
-            className={`w-full  lg:w-auto lg:flex-grow lg:flex lg:items-center ${ isNavOpen ? " block flex text-center lg:text-left bg-amber-500   h-screen pt-12 lg:static lg:h-auto lg:pt-0": "hidden"}  lg:bg-transparent   lg:p-0 mt-2 lg:mt-0 z-20 transition-opacity duration-300 ease-in-out`}
+            className={`w-full  lg:w-auto lg:flex-grow lg:flex lg:items-center ${ isNavOpen ? " block flex text-center lg:text-left bg-amber-500    h-screen pt-12 lg:static lg:h-auto lg:pt-0": "hidden"}  lg:bg-transparent   lg:p-0 mt-2 lg:mt-0 z-20 transition-opacity duration-300 ease-in-out`}
             id="nav-content"
           >
             <ul className="list-reset flex-1 items-center justify-end lg:flex">
@@ -185,6 +185,7 @@ function Navbar({ isUserLoggedIn, isAdmin, isLogout, token }) {
                           <li>
                             <button
                               onClick={isLogout}
+                              
                               className="block px-4 py-2 text-black hover:bg-indigo-500 hover:text-white w-full text-left"
                             >
                               Logout
@@ -223,7 +224,7 @@ function Navbar({ isUserLoggedIn, isAdmin, isLogout, token }) {
                       
                       <li className="py-3">
                         <Link
-                          href="/enrolled-course"
+                          href="/enrollcourse"
                           onClick={handleNavToggle}
                           className="no-underline font-bold py-2 px-4 inline-block "
                         >

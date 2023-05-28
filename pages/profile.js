@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-function UserProfile({ UserId,token }) {
+function UserProfile({ UserId,token ,isLogout}) {
   const [name, setName] = useState("John Doe");
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
@@ -12,9 +12,14 @@ function UserProfile({ UserId,token }) {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [confirmPasswordError, setConfirmPasswordError] = useState("");
   const [passwordError, setpasswordError] = useState("");
+ console.log(token,UserId)
+  useEffect(() => {
+    if (!token ||!UserId) {
+      router.push('/signin');
+    }
+  }, [token,router]);
 
   useEffect(() => {
-   
     const fetchCourseDetails = async () => {
       try {
         const res = await fetch(`/api/user/get-user?id=${UserId}`);
@@ -115,7 +120,7 @@ function UserProfile({ UserId,token }) {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="name"
               type="text"
-              placeholder="John Doe"
+              placeholder=""
               value={name}
               onChange={handleNameChange}
             />
@@ -131,7 +136,7 @@ function UserProfile({ UserId,token }) {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="address"
               type="text"
-              placeholder="123 Main St."
+              placeholder=""
               value={address}
               onChange={handleAddressChange}
             />
@@ -147,7 +152,7 @@ function UserProfile({ UserId,token }) {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="phone"
               type="text"
-              placeholder="555-555-5555"
+              placeholder=""
               value={phone}
               onChange={handlePhoneChange}
             />
@@ -163,7 +168,7 @@ function UserProfile({ UserId,token }) {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="email"
               type="email"
-              placeholder="john.doe@example.com"
+              placeholder=""
               value={email}
               onChange={handleEmailChange}
               disabled // email cannot be changed

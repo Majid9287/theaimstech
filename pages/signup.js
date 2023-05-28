@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function signup() {
   const [name, setname] = useState("");
@@ -16,7 +18,17 @@ function signup() {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (confirmPassword !== password) {
-      alert("Passwords do not match");
+      toast.error("Passwords do not match!", {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+
       return;
     }
 
@@ -24,16 +36,33 @@ function signup() {
     fetch(`/api/user/emailcheck?email=${email}`)
       .then((response) => {
         if (!response.ok) {
-          throw new Error("Error occurred while checking email");
+          toast.error("Error occurred while checking email!", {
+            position: "top-right",
+            autoClose: 1000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
         }
         return response.json();
       })
       .then((data) => {
         if (data.exists) {
-          // Email is already registered, show error
+          toast.error("Email is already registered!", {
+            position: "top-right",
+            autoClose: 1000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
           setemailError("Email is already registered");
         } else {
-          // Email is not registered, proceed with sign up
           const formData = {
             name,
             email,
@@ -54,9 +83,27 @@ function signup() {
           })
             .then((response) => {
               if (!response.ok) {
-                throw new Error("Error occurred while submitting the form");
+                toast.error("Error occurred while submitting the form!", {
+                  position: "top-right",
+                  autoClose: 1000,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: undefined,
+                  theme: "light",
+                });
               }
-              alert("Account created successfully");
+              toast.success("Account created successfully", {
+                position: "top-right",
+                autoClose: 1000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+              });
               router.push("/signin");
             })
             .catch((error) => {
@@ -83,10 +130,26 @@ function signup() {
   return (
     <div>
       <div className="bg-gray-100 relative min-h-screen flex flex-col pt-20">
+        <ToastContainer
+          position="top-right"
+          autoClose={1000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
+        {/* Same as */}
+        <ToastContainer />
         <div className="container pb-4 max-w-sm mx-auto flex-1 flex flex-col items-center justify-center  px-2">
           <form onSubmit={handleSubmit}>
             <div className="bg-white relative px-6 py-8 rounded shadow-md text-black w-full">
-              <h1 className=" text-3xl text-center font-bold drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">Sign up</h1>
+              <h1 className=" text-3xl text-center font-bold drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
+                Sign up
+              </h1>
               <div className="text-grey-dark text-center mb-4">
                 Already have an account?
                 <Link
@@ -126,7 +189,7 @@ function signup() {
                 }}
               />
               {emailError && <div className="text-red-500">{emailError}</div>}
-              
+
               <input
                 type="tel"
                 className="relative block border border-grey-light w-full p-3 rounded mb-4"
@@ -136,7 +199,7 @@ function signup() {
                 value={phone}
                 onChange={(e) => {
                   const re = /^[0-9\b]+$/; // regex pattern to match only numbers and backspace
-                  if (e.target.value === '' || re.test(e.target.value)) {
+                  if (e.target.value === "" || re.test(e.target.value)) {
                     setphone(e.target.value);
                   }
                 }}
@@ -188,7 +251,7 @@ function signup() {
 
               <button
                 type="submit"
-                className="relative w-full text-center py-3 rounded bg-green-900 text-white hover:bg-green-dark focus:outline-none my-1"
+                className="relative w-full text-center py-3 rounded bg-blue-900 text-white hover:bg-green-dark focus:outline-none my-1"
               >
                 Create Account
               </button>

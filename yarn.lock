@@ -76,52 +76,6 @@
     "@nodelib/fs.scandir" "2.1.5"
     "fastq" "^1.6.0"
 
-"@react-spring/animated@~9.7.2":
-  "integrity" "sha512-ipvleJ99ipqlnHkz5qhSsgf/ny5aW0ZG8Q+/2Oj9cI7LCc7COdnrSO6V/v8MAX3JOoQNzfz6dye2s5Pt5jGaIA=="
-  "resolved" "https://registry.npmjs.org/@react-spring/animated/-/animated-9.7.2.tgz"
-  "version" "9.7.2"
-  dependencies:
-    "@react-spring/shared" "~9.7.2"
-    "@react-spring/types" "~9.7.2"
-
-"@react-spring/core@~9.7.2":
-  "integrity" "sha512-fF512edZT/gKVCA90ZRxfw1DmELeVwiL4OC2J6bMUlNr707C0h4QRoec6DjzG27uLX2MvS1CEatf9KRjwZR9/w=="
-  "resolved" "https://registry.npmjs.org/@react-spring/core/-/core-9.7.2.tgz"
-  "version" "9.7.2"
-  dependencies:
-    "@react-spring/animated" "~9.7.2"
-    "@react-spring/rafz" "~9.7.2"
-    "@react-spring/shared" "~9.7.2"
-    "@react-spring/types" "~9.7.2"
-
-"@react-spring/rafz@~9.7.2":
-  "integrity" "sha512-kDWMYDQto3+flkrX3vy6DU/l9pxQ4TVW91DglQEc11iDc7shF4+WVDRJvOVLX+xoMP7zyag1dMvlIgvQ+dvA/A=="
-  "resolved" "https://registry.npmjs.org/@react-spring/rafz/-/rafz-9.7.2.tgz"
-  "version" "9.7.2"
-
-"@react-spring/shared@~9.7.2":
-  "integrity" "sha512-6U9qkno+9DxlH5nSltnPs+kU6tYKf0bPLURX2te13aGel8YqgcpFYp5Av8DcN2x3sukinAsmzHUS/FRsdZMMBA=="
-  "resolved" "https://registry.npmjs.org/@react-spring/shared/-/shared-9.7.2.tgz"
-  "version" "9.7.2"
-  dependencies:
-    "@react-spring/rafz" "~9.7.2"
-    "@react-spring/types" "~9.7.2"
-
-"@react-spring/types@~9.7.2":
-  "integrity" "sha512-GEflx2Ex/TKVMHq5g5MxQDNNPNhqg+4Db9m7+vGTm8ttZiyga7YQUF24shgRNebKIjahqCuei16SZga8h1pe4g=="
-  "resolved" "https://registry.npmjs.org/@react-spring/types/-/types-9.7.2.tgz"
-  "version" "9.7.2"
-
-"@react-spring/web@^9.7.2":
-  "integrity" "sha512-7qNc7/5KShu2D05x7o2Ols2nUE7mCKfKLaY2Ix70xPMfTle1sZisoQMBFgV9w/fSLZlHZHV9P0uWJqEXQnbV4Q=="
-  "resolved" "https://registry.npmjs.org/@react-spring/web/-/web-9.7.2.tgz"
-  "version" "9.7.2"
-  dependencies:
-    "@react-spring/animated" "~9.7.2"
-    "@react-spring/core" "~9.7.2"
-    "@react-spring/shared" "~9.7.2"
-    "@react-spring/types" "~9.7.2"
-
 "@swc/helpers@0.4.14":
   "integrity" "sha512-4C7nX/dvpzB7za4Ql9K81xK3HPxCpHMgwTZVyf+9JQ6VUbn9jjZVN7/Nkdz/Ugzs2CSjqnL/UPXroiVBVHUWUw=="
   "resolved" "https://registry.npmjs.org/@swc/helpers/-/helpers-0.4.14.tgz"
@@ -195,15 +149,6 @@
   dependencies:
     "normalize-path" "^3.0.0"
     "picomatch" "^2.0.4"
-
-"aos@^2.3.4":
-  "integrity" "sha512-zh/ahtR2yME4I51z8IttIt4lC1Nw0ktsFtmeDzID1m9naJnWXhCoARaCgNOGXb5CLy3zm+wqmRAEgMYB5E2HUw=="
-  "resolved" "https://registry.npmjs.org/aos/-/aos-2.3.4.tgz"
-  "version" "2.3.4"
-  dependencies:
-    "classlist-polyfill" "^1.0.3"
-    "lodash.debounce" "^4.0.6"
-    "lodash.throttle" "^4.0.1"
 
 "append-field@^1.0.0":
   "integrity" "sha512-klpgFSWLW1ZEs8svjfb7g4qWY0YS5imI82dTg+QahUvJ8YqAY0P10Uk8tTyh9ZGuYEZEMaeJYCF5BFuX552hsw=="
@@ -364,11 +309,6 @@
   optionalDependencies:
     "fsevents" "~2.3.2"
 
-"classlist-polyfill@^1.0.3":
-  "integrity" "sha512-GzIjNdcEtH4ieA2S8NmrSxv7DfEV5fmixQeyTmqmRmRJPGpRBaSnA2a0VrCjyT8iW8JjEdMbKzDotAJf+ajgaQ=="
-  "resolved" "https://registry.npmjs.org/classlist-polyfill/-/classlist-polyfill-1.2.0.tgz"
-  "version" "1.2.0"
-
 "classnames@^2.2.6", "classnames@^2.3.2":
   "integrity" "sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw=="
   "resolved" "https://registry.npmjs.org/classnames/-/classnames-2.3.2.tgz"
@@ -383,6 +323,11 @@
   "integrity" "sha512-3Pe/CF1Nn94hyhIYpjtiLhdCoEoz0DqQ+988E9gmeEdQZlojxnOb74wctFyuwWQHzqyf9X7C7MG8juUpqBJT8w=="
   "resolved" "https://registry.npmjs.org/clone/-/clone-2.1.2.tgz"
   "version" "2.1.2"
+
+"clsx@^1.1.1":
+  "integrity" "sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg=="
+  "resolved" "https://registry.npmjs.org/clsx/-/clsx-1.2.1.tgz"
+  "version" "1.2.1"
 
 "color-name@^1.1.4":
   "integrity" "sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA=="
@@ -1076,16 +1021,6 @@
   dependencies:
     "uc.micro" "^1.0.1"
 
-"lodash.debounce@^4.0.6":
-  "integrity" "sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow=="
-  "resolved" "https://registry.npmjs.org/lodash.debounce/-/lodash.debounce-4.0.8.tgz"
-  "version" "4.0.8"
-
-"lodash.throttle@^4.0.1", "lodash.throttle@^4.1.1":
-  "integrity" "sha512-wIkUCfVKpVsWo3JSZlc+8MB5it+2AN5W8J7YVMST30UrvcQNZ1Okbj+rbVniijTWE6FGYy4XJq/rHkas8qJMLQ=="
-  "resolved" "https://registry.npmjs.org/lodash.throttle/-/lodash.throttle-4.1.1.tgz"
-  "version" "4.1.1"
-
 "lodash@^4.17.21", "lodash@^4.17.4":
   "integrity" "sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg=="
   "resolved" "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
@@ -1600,7 +1535,7 @@
     "iconv-lite" "0.4.24"
     "unpipe" "1.0.0"
 
-"react-dom@^15.5.4 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react-dom@^16 || ^17 || ^18", "react-dom@^16.8.0 || ^17.0.0 || ^18.0.0", "react-dom@^18.2.0", "react-dom@>=0.14.0", "react-dom@>=16.0.0", "react-dom@>=16.8.0", "react-dom@0.13.x || 0.14.x || ^15.0.0-0 || 15.x.x || ^16.0.0-0 || ^16.x.x || ^17.x.x || ^18.x.x", "react-dom@18.2.0":
+"react-dom@^16 || ^17 || ^18", "react-dom@^16.8.0 || ^17.0.0 || ^18.0.0", "react-dom@^18.2.0", "react-dom@>=0.14.0", "react-dom@>=16", "react-dom@>=16.0.0", "react-dom@>=16.8.0", "react-dom@0.13.x || 0.14.x || ^15.0.0-0 || 15.x.x || ^16.0.0-0 || ^16.x.x || ^17.x.x || ^18.x.x", "react-dom@18.2.0":
   "integrity" "sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
   "version" "18.2.0"
@@ -1645,15 +1580,14 @@
     "lodash" "^4.17.4"
     "quill" "^1.3.7"
 
-"react-scroll@^1.8.9":
-  "integrity" "sha512-9m7ztraiX/l6L7erzYAD3fhnveNckei6/NkWfqwN2e0FRdoE2W6Pk4oi2Nah7mWpPCPAeIgegfaqZACTimPOwg=="
-  "resolved" "https://registry.npmjs.org/react-scroll/-/react-scroll-1.8.9.tgz"
-  "version" "1.8.9"
+"react-toastify@^9.1.3":
+  "integrity" "sha512-fPfb8ghtn/XMxw3LkxQBk3IyagNpF/LIKjOBflbexr2AWxAH1MJgvnESwEwBn9liLFXgTKWgBSdZpw9m4OTHTg=="
+  "resolved" "https://registry.npmjs.org/react-toastify/-/react-toastify-9.1.3.tgz"
+  "version" "9.1.3"
   dependencies:
-    "lodash.throttle" "^4.1.1"
-    "prop-types" "^15.7.2"
+    "clsx" "^1.1.1"
 
-"react@^15.5.4 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16 || ^17 || ^18", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^18.2.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>=0.14.0", "react@>=16.0.0", "react@>=16.3", "react@>=16.8.0", "react@0.13.x || 0.14.x || ^15.0.0-0 || 15.x.x || ^16.0.0-0 || ^16.x.x || ^17.x.x || ^18.x.x", "react@0.14 || 15 || 16 || 17 || 18", "react@18.2.0":
+"react@^16 || ^17 || ^18", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^18.2.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>=0.14.0", "react@>=16", "react@>=16.0.0", "react@>=16.3", "react@>=16.8.0", "react@0.13.x || 0.14.x || ^15.0.0-0 || 15.x.x || ^16.0.0-0 || ^16.x.x || ^17.x.x || ^18.x.x", "react@0.14 || 15 || 16 || 17 || 18", "react@18.2.0":
   "integrity" "sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   "version" "18.2.0"

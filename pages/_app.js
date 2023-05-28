@@ -9,8 +9,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 import jwt from "jsonwebtoken";
-import 'aos/dist/aos.css';
-import AOS from 'aos';
+
 export default function App({ Component, pageProps }) {
   const [isAdmin, setIsAdmin] = useState(false);
   const [token, setToken] = useState(null);
@@ -30,13 +29,11 @@ export default function App({ Component, pageProps }) {
   
   useEffect(() => {
     if (token) {
-      
       const decoded = jwt.decode(token);
       setExpirationTime(decoded.expirationTime);
       if (decoded._id) {
         setIsUserLoggedIn(true);
         setUserId(decoded._id);
-        
         if (decoded.isAdmin) {
           setIsAdmin(true);
         }
@@ -70,6 +67,7 @@ export default function App({ Component, pageProps }) {
     setIsUserLoggedIn(false);
     setIsAdmin(false);
     localStorage.removeItem("token");
+    router.push("/");
   };
   const [courses, setCourses] = useState([]);
   useEffect(() => {
@@ -109,7 +107,7 @@ export default function App({ Component, pageProps }) {
   <>
    
    <Navbar  isUserLoggedIn={isUserLoggedIn} isAdmin={isAdmin} isLogout={handleLogout} token={token}/>
-   <Component LoggedIn={handleSignIn} isAdmin={isAdmin} isUserLoggedIn={isUserLoggedIn} courses={courses} UserId={UserId} handleEnrollment={handleEnrollment} {...pageProps} />
+   <Component LoggedIn={handleSignIn} isAdmin={isAdmin}  isLogout={handleLogout} token={token}  isUserLoggedIn={isUserLoggedIn} courses={courses} UserId={UserId} handleEnrollment={handleEnrollment} {...pageProps} />
    <FloatingWhatsAppButton />
    <Footer/>
    </>); 

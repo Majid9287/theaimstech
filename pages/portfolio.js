@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import hero from "./lotti/portfolio.json";
+import styles from "@/styles/Home.module.css";
 import eye from "./lotti/eye.json";
 import Lottie from "lottie-react";
 import { useEffect, useState } from "react";
@@ -28,7 +28,7 @@ export default function portfolio() {
         <div className="pt-[25px] bg-gray-100 pb-24">
           <div className="container px-4 md:px-12 py-12 mx-auto flex flex-wrap flex-col md:flex-row items-center">
             <div className="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left pt-4">
-            <h1 className="relative my-6 text-4xl  text-black leading-tight" >
+            <h1 className={`${styles.fontRaleway} relative my-6 text-4xl  text-black leading-tight`} >
 
               BY EMPOWERING OUR CLIENTS WITH <span className="font-bold text-amber-500">INNOVATIVE TECHNOLOGIES</span>, WE ENABLE THEIR SUCCESS AND GROWTH. </h1>
               

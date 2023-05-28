@@ -263,7 +263,7 @@ export default function Home({ courses, handleEnrollment }) {
                   <span className="text-amber-500 font-bold drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
                     The Aims Tech
                   </span>{" "}
-                  Ecommerce Services
+                 <span className={`${styles.fontRaleway}`}>Ecommerce Services</span> 
                 </h1>
                 <p className="text-lg  leading-normal mb-8 relative ">
                   Discover the principles and practices behind successful online
@@ -394,7 +394,7 @@ export default function Home({ courses, handleEnrollment }) {
               ></div>
               <div className="container   flex flex-col md:flex-row mx-auto justify-center items-center px-4 py-8 relative z-10">
                 <div className="flex flex-col flex-grow md:pl-24">
-                  <h2 className="text-3xl font-bold   mb-8 pb-16 pt-4 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
+                  <h2 className={`${styles.fontRaleway} text-4xl font-bold   mb-8 pb-16 pt-4 pl-2 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]`}>
                     Expertise <span className="text-amber-500">&</span> Services
                   </h2>
                   {services.map((service) => (
@@ -504,7 +504,7 @@ export default function Home({ courses, handleEnrollment }) {
 
           <section className="bg-gray-100">
             <div className="container mx-auto pt-8 px-4 md:px-12">
-              <h2 className=" leading-tight text-5xl text-center  mb-8 drop-shadow-[0_1px_1px_rgba(0, 0, 0, 0.2)] ">
+              <h2 className={`${styles.fontRaleway} leading-tight text-5xl text-center  mb-8 drop-shadow-[0_1px_1px_rgba(0, 0, 0, 0.2)] `}>
                 What makes us successful
               </h2>
               <div className="grid md:grid-cols-2 gap-8 pt-6">
@@ -636,7 +636,7 @@ export default function Home({ courses, handleEnrollment }) {
 
           <section className=" container  mx-auto grid grid-cols-1 md:grid-cols-2 items-center py-16">
             <div className="px-10 md:pl-20 text-center md:text-justify">
-              <h2 className="text-4xl  mb-4">
+              <h2 className={`${styles.fontRaleway} text-4xl font-bold mb-4`}>
                 Tell us about your project
               </h2>
               <p className="text-lg text-gray-600 mb-8">
@@ -765,7 +765,7 @@ export default function Home({ courses, handleEnrollment }) {
               </div>
             </div>
           </section>
-          <h2 class="text-4xl mb-12 text-center pt-8">
+          <h2 class={`text-5xl mb-12 text-center pt-8 ${styles.fontRaleway}`}>
           What Our <span class="text-amber-500">Customers</span> Are Saying 
     </h2>
           <section className="py-8 mx-2">
@@ -852,7 +852,7 @@ export default function Home({ courses, handleEnrollment }) {
           
 <div class="container py-24 px-4 md:px-12 mx-auto">
   <section class="pb-32 text-center lg:text-left">
-    <h2 class="text-4xl mb-12 text-center">
+    <h2 class={`text-5xl mb-12 text-center ${styles.fontRaleway}`}>
       Meet The <span class="text-amber-500">Team</span>
     </h2>
     {team.length > 0 ? (

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from "next/router";
 import Link from 'next/link';
 import { useEffect } from 'react';
@@ -21,6 +22,16 @@ function PasswordReset() {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (password !== confirmPassword) {
+      toast.error("Passwords do not match!", {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
       setPasswordError('Passwords do not match.');
       return;
     }
@@ -38,11 +49,32 @@ function PasswordReset() {
     })
       .then((response) => {
         if (!response.ok) {
-          throw new Error('Error occurred while resetting password');
+          
+          toast.error("Error occurred while resetting password!", {
+            position: "top-right",
+            autoClose: 1000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+          return;
         }
         setPassword("");
         setConfirmPassword("");
         setSuccess("Password Successfully Changed");
+        toast.success("Password Successfully Changed", {
+          position: "top-right",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
         setDisable(true);
 
       })
@@ -70,6 +102,18 @@ function PasswordReset() {
   return (
     <div>
       <section className="relative h-screen bg-gray-50 dark:bg-gray-900 ">
+      <ToastContainer
+          position="top-right"
+          autoClose={1000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
         <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
               Reset password?
@@ -135,7 +179,7 @@ function PasswordReset() {
                 )}
                 <button
                 type="submit"
-                className="group relative flex w-full justify-center rounded-md bg-green-900 py-2 px-3 text-sm font-semibold text-white hover:bg-green-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="group relative flex w-full justify-center rounded-md bg-blue-900 py-2 px-3 text-sm font-semibold text-white hover:bg-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 disabled={loading||disable} // Disable the button when loading state is true
               >
                 <span className="absolute inset-y-0 left-0 flex items-center pl-3">

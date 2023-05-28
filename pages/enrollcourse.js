@@ -1,9 +1,17 @@
 import React from "react";
 import { useEffect, useState } from "react";
-
-function EnrolledCourses({UserId}) {
+import { useRouter } from "next/router";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+function EnrolledCourses({token,UserId}) {
   const [courses, setCourses] = useState([]);
-
+  const router = useRouter();
+  const [confirmDeleteId, setConfirmDeleteId] = useState(null);
+  useEffect(() => {
+    if (!token ||!UserId) {
+      router.push('/signin');
+    }
+  }, [token,router]);
   useEffect(() => {
     async function fetchData() {
       try {
@@ -14,7 +22,17 @@ function EnrolledCourses({UserId}) {
         const data = await response.json();
         setCourses(data);
       } catch (error) {
-        console.error(error);
+        
+        toast.error('There is some issue', {
+          position: "top-right",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
         // You can set an error state here to display a message to the user
       }
     }
@@ -24,17 +42,54 @@ function EnrolledCourses({UserId}) {
     try {
       const res = await fetch(`/api/enrollment/delete-enrollment?id=${id}`, { method: "DELETE" });
       if (res.ok) {
+        toast.warn("Course Delete Successfully", {
+          position: "top-right",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme:"colored"
+        });
         setCourses((prevCourses) => prevCourses.filter((c) => c._id !== id));
-      } else {
-        console.error(res.statusText);
-      }
+      } 
     } catch (error) {
-      console.error(error);
+     
+      toast.error('There is some issue', {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     }
+    hideConfirmation();
+  };
+  const showConfirmation = (id) => {
+    setConfirmDeleteId(id);
   };
 
+  const hideConfirmation = () => {
+    setConfirmDeleteId(null);
+  };
   return (
     <section className="bg-gray-100 py-12  py-24 relative">
+       <ToastContainer
+          position="top-right"
+          autoClose={1000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="colored"
+        />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-8">
           Enrolled Courses
@@ -66,13 +121,13 @@ function EnrolledCourses({UserId}) {
                   <div className="flex justify-center">
                     <button
                       className="mt-2 text-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                      onClick={() => {handleDelete(course._id)}}
+                      onClick={() => showConfirmation(course._id)}
                     >
                       Leave Course
                     </button>
                     <button
                       onClick={() => {
-                        window.open("https://wa.me/1234567890", "_blank");
+                        window.open("https://wa.me/923113471713", "_blank");
                       }}
                       className=" ml-4 mt-2 text-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                     >
@@ -82,6 +137,29 @@ function EnrolledCourses({UserId}) {
                 </div>
               </div>
             ))}
+          </div>
+        )}
+         {confirmDeleteId && (
+          <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
+            <div className="bg-white p-8 rounded-lg">
+              <h3 className="text-lg font-medium text-gray-900 mb-4">
+                Are you sure you want to leave this course?
+              </h3>
+              <div className="flex justify-end">
+                <button
+                  className="text-gray-600 hover:text-gray-900 mr-2"
+                  onClick={hideConfirmation}
+                >
+                  Cancel
+                </button>
+                <button
+                  className="text-red-600 hover:text-red-900"
+                  onClick={() => handleDelete(confirmDeleteId)}
+                >
+                  Leave
+                </button>
+              </div>
+            </div>
           </div>
         )}
       </div>

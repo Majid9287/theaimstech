@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function Signin({ LoggedIn }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -25,18 +26,49 @@ function Signin({ LoggedIn }) {
         },
       });
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error("Please enter valide crdientials");
-      }
-
-      const { token } = await response.json();
+      if (response.ok) {
+        const { token } = await response.json();
       localStorage.setItem("token", token);
       LoggedIn(true);
-      alert("Signed in successfully");
+      toast.success("Signed in successfully", {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+      
       router.push("/");
+      }
+      if (!response.ok) {
+        toast.error("Please enter valide crdientials!", {
+          position: "top-right",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      }
+
+      
     } catch (error) {
       console.error(error);
+      toast.error("Please enter valide crdientials!", {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
       setError("Please enter valide crdientials");
     }
   };
@@ -51,6 +83,18 @@ function Signin({ LoggedIn }) {
   return (
     <div>
       <div className="h-screen relative   bg-gray-100 flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <ToastContainer
+          position="top-right"
+          autoClose={1000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
         <div className="w-full max-w-md space-y-8">
           <div>
            

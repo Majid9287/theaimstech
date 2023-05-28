@@ -2,6 +2,8 @@ import Link from 'next/link';
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import { useEffect } from 'react';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function Forgot() {
  const router = useRouter()
  const { email } = router.query
@@ -29,11 +31,30 @@ function Forgot() {
       .then((response) => {
         if (!response.ok) {
           return response.json().then((data) => {
-            throw new Error(data.error);
+            toast.error(data.error, {
+              position: "top-right",
+              autoClose: 1000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+            });
+          
           });
         }
        
-
+        toast.success("OTP Verification Done", {
+          position: "top-right",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
          
           router.push({
             pathname: '/password-reset',
@@ -47,12 +68,19 @@ function Forgot() {
         if (error.response) {
           // The server responded with an error message
           error.response.json().then((data) => {
-            alert(data.error); // Display the server-side error message
+            
+            toast.error(data.message, {
+              position: "top-right",
+              autoClose: 1000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+            });
           });
-        } else {
-          // An error occurred during the request
-          alert(error.message);
-        }
+        } 
       })
       .finally(() => {
         setLoading(false);
@@ -62,6 +90,18 @@ function Forgot() {
   return (
     <div>
       <div className="h-screen bg-gray-100 relative flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <ToastContainer
+          position="top-right"
+          autoClose={1000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
         <div className="w-full max-w-md space-y-8">
           <div>
             <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
@@ -114,7 +154,7 @@ function Forgot() {
             <div>
               <button
                 type="submit"
-                className="group relative flex w-full justify-center rounded-md bg-green-900 py-2 px-3 text-sm font-semibold text-white hover:bg-green-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="group relative flex w-full justify-center rounded-md bg-blue-900 py-2 px-3 text-sm font-semibold text-white hover:bg-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 disabled={loading || otpError} // Disable the button when loading state is true
               >
                 <span className="absolute inset-y-0 left-0 flex items-center pl-3">
