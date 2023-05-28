@@ -1,10 +1,14 @@
 import { NextSeo } from 'next-seo';
+
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import { useState, useEffect, useRef } from "react";
+
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+
 import Cycle from "../components/Cycle";
+
 import hero from "./lotti/hero.json";
 import Lottie from "lottie-react";
 const inter = Inter({ subsets: ["latin"] });
@@ -14,8 +18,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+
 const reviews = [
   { id: 1, title: "Card 1", image: "path/to/image1.jpg" },
   { id: 2, title: "Card 2", image: "path/to/image2.jpg" },
@@ -32,13 +35,6 @@ export default function Home({ courses, handleEnrollment }) {
         localStorage.removeItem("token");
       }, 24 * 60 * 60 * 1000);
     }
-
-    AOS.init({
-      duration: 1000, // Animation duration in milliseconds
-      offset: 200,
-      easing: 'ease-in-sine',
-      delay: 100, // Offset (in pixels) from the original trigger point
-    });
   }, []);
   useEffect(() => {
     async function fetchData() {
@@ -262,7 +258,7 @@ export default function Home({ courses, handleEnrollment }) {
         <div className=" bg-gray-100">
           <div className="py-5 md:pt-24  bg-gray-100 ">
             <div className="container px-4 md:px-12  mx-auto grid grid-row-2 md:grid-cols-2   pt-20 sm:pt-8 ">
-              <div data-aos="fade-down" className="text-center md:text-left ">
+              <div className="text-center md:text-left ">
                 <h1 className=" relative text-3xl md:text-5xl  leading-tight my-4">
                   <span className="text-amber-500 font-bold drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
                     The Aims Tech
@@ -282,12 +278,12 @@ export default function Home({ courses, handleEnrollment }) {
                 </p>
                 <button
                   onClick={() => router.push("/contact")}
-                   className="bg-amber-500 text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg hover:underline focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
+                  className="bg-amber-500 text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg hover:underline focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
                 >
                   Contact Us
                 </button>
               </div>
-              <div data-aos="fade-up" className="text-right w-full  md:order-last">
+              <div className="text-right w-full  md:order-last">
                 <Lottie
                   animationData={hero}
                   loop={true}
@@ -303,7 +299,7 @@ export default function Home({ courses, handleEnrollment }) {
 
           <section className="bg-gray-100 py-8">
             <div className="container mx-auto px-10 -mt-24">
-              <div data-aos="zoom-out" className="bg-gradient-to-r from-amber-500 via-red-500 to-black rounded-lg shadow-lg px-9 py-9 mx-auto w-full lg:w-auto text-center">
+              <div className="bg-gradient-to-r from-amber-500 via-red-500 to-black rounded-lg shadow-lg px-9 py-9 mx-auto w-full lg:w-auto text-center">
                 <h2 className="text-2xl font-bold mb-4 text-white drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
                   OUR WORKING PROCESS
                 </h2>
@@ -326,13 +322,13 @@ export default function Home({ courses, handleEnrollment }) {
                 <div className="border-r border-gray-300 mx-3 lg:pl-20">
                   <div className="py-10 pb-3 mt-5 sm:mt-5 h-auto sm:h-4/6 relative bg-pink-100 group hover:bg-pink-200 cursor-pointer transition ease-out duration-300 overflow-hidden">
                     <div className="px-7 mt-5 sm:mt-5">
-                      <h1 data-aos="fade-right" className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-red-500 text-6xl font-bold group-hover:text-pink-400 transition ease-out duration-300">
+                      <h1 className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-red-500 text-6xl font-bold group-hover:text-pink-400 transition ease-out duration-300">
                         01.
                       </h1>
-                      <h2 data-aos="fade-left" className="text-1xl mt-4 font-bold">
+                      <h2 className="text-1xl mt-4 font-bold">
                         Discovering Your Business Needs
                       </h2>
-                      <p data-aos="fade-up" className="mt-2 opacity-60 group-hover:opacity-70">
+                      <p className="mt-2 opacity-60 group-hover:opacity-70">
                         We start by conducting an in-depth analysis of your
                         business, identifying key opportunities for growth and
                         optimization. This enables us to develop a tailored
@@ -346,13 +342,13 @@ export default function Home({ courses, handleEnrollment }) {
                 <div className="border-r border-gray-300 mx-3 lg:pl-20">
                   <div className="py-10 pb-3 mt-5 sm:mt-32 h-auto sm:h-4/6 relative bg-indigo-100 group hover:bg-indigo-200 cursor-pointer transition ease-out duration-300 overflow-hidden">
                     <div className="px-7 mt-5 sm:mt-20">
-                      <h1 data-aos="fade-right" className=" bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-red-500  text-6xl font-bold group-hover:text-indigo-300 transition ease-out duration-300">
+                      <h1 className=" bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-red-500  text-6xl font-bold group-hover:text-indigo-300 transition ease-out duration-300">
                         02.
                       </h1>
-                      <h2  data-aos="fade-left" className="text-1xl mt-4 font-bold">
+                      <h2 className="text-1xl mt-4 font-bold">
                         Crafting a Winning Strategy
                       </h2>
-                      <p data-aos="fade-up" className="mt-2 opacity-60 group-hover:opacity-70">
+                      <p className="mt-2 opacity-60 group-hover:opacity-70">
                         We work closely with you to develop a detailed
                         implementation plan, outlining the steps required to
                         build your online presence and achieve success. Our
@@ -367,13 +363,13 @@ export default function Home({ courses, handleEnrollment }) {
                 <div className="border-r border-gray-300 mx-3 lg:pl-20">
                   <div className="py-10 pb-3 mt-5 sm:mt-72 h-autso sm:h-4/6 relative bg-purple-100 group hover:bg-purple-200 cursor-pointer transition ease-out duration-300 overflow-hidden">
                     <div className="px-7 mt-5 sm:mt-20">
-                      <h1 data-aos="fade-right" className=" bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-red-500 text-6xl  font-bold group-hover:text-purple-300 transition ease-out duration-300">
+                      <h1 className=" bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-red-500 text-6xl  font-bold group-hover:text-purple-300 transition ease-out duration-300">
                         03.
                       </h1>
-                      <h2 data-aos="fade-left" className="text-1xl mt-4 font-bold">
+                      <h2 className="text-1xl mt-4 font-bold">
                         Delivering Ongoing Value
                       </h2>
-                      <p data-aos="fade-up" className="mt-2 opacity-60 group-hover:opacity-70">
+                      <p className="mt-2 opacity-60 group-hover:opacity-70">
                         We are committed to delivering ongoing value for our
                         clients, leveraging the latest tools and technologies to
                         help you stay ahead of the competition. We provide
@@ -396,7 +392,7 @@ export default function Home({ courses, handleEnrollment }) {
                   backgroundImage: 'url("/images/service.jpg")',
                 }}
               ></div>
-              <div data-aos="fade-up" className="container   flex flex-col md:flex-row mx-auto justify-center items-center px-4 py-8 relative z-10">
+              <div className="container   flex flex-col md:flex-row mx-auto justify-center items-center px-4 py-8 relative z-10">
                 <div className="flex flex-col flex-grow md:pl-24">
                   <h2 className="text-3xl font-bold   mb-8 pb-16 pt-4 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
                     Expertise <span className="text-amber-500">&</span> Services
@@ -512,7 +508,7 @@ export default function Home({ courses, handleEnrollment }) {
                 What makes us successful
               </h2>
               <div className="grid md:grid-cols-2 gap-8 pt-6">
-                <div data-aos="zoom-in"className="rounded-2xl bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-1 shadow-xl">
+                <div className="rounded-2xl bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-1 shadow-xl">
                   <div className="block rounded-xl bg-white p-4 sm:p-6 lg:p-8 mb-9">
                     <div className="mt-4">
                       <h3 className="text-lg font-bold text-gray-900 sm:text-xl">
@@ -529,7 +525,7 @@ export default function Home({ courses, handleEnrollment }) {
                     </div>
                   </div>
                 </div>
-                <div data-aos="zoom-in" className="rounded-2xl  bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-1 shadow-xl">
+                <div className="rounded-2xl  bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-1 shadow-xl">
                   <div className="block rounded-xl bg-white p-4 sm:p-6 lg:p-8 mb-9">
                     <div className="mt-4">
                       <h3 className="text-lg font-bold text-gray-900 sm:text-xl">
@@ -546,7 +542,7 @@ export default function Home({ courses, handleEnrollment }) {
                     </div>
                   </div>
                 </div>
-                <div data-aos="zoom-in" className="rounded-2xl bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-1 shadow-xl">
+                <div className="rounded-2xl bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-1 shadow-xl">
                   <div className="block rounded-xl bg-white p-4 sm:p-6 lg:p-8 mb-9">
                     <div className="mt-4">
                       <h3 className="text-lg font-bold text-gray-900 sm:text-xl">
@@ -563,7 +559,7 @@ export default function Home({ courses, handleEnrollment }) {
                     </div>
                   </div>
                 </div>
-                <div data-aos="zoom-in" className="rounded-2xl bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-1 shadow-xl">
+                <div className="rounded-2xl bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-1 shadow-xl">
                   <div className="block rounded-xl bg-white p-4 sm:p-6 lg:p-8 mb-9">
                     <div className="mt-4">
                       <h3 className="text-lg font-bold text-gray-900 sm:text-xl">
@@ -587,7 +583,7 @@ export default function Home({ courses, handleEnrollment }) {
           <div className="bg-gradient-to-r from-amber-500 via-red-500 to-black mt-24">
             <div className="container mx-auto py-12 px-4">
               <div className="px-4 md:px-12  mx-auto grid grid-row-2 md:grid-cols-2">
-                <div data-aos="fade-down" className=" text-center md:text-left mb-6 md:mb-0">
+                <div className=" text-center md:text-left mb-6 md:mb-0">
                   <h2 className="text-3xl font-bold text-white  drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
                     About <br />
                     The Aims Tech
@@ -604,7 +600,7 @@ export default function Home({ courses, handleEnrollment }) {
                     delivering results that exceed our clients' expectations.
                   </p>
                 </div>
-                <div data-aos="fade-up" className="pt-12">
+                <div className="pt-12">
                 <div className=" flex flex-wrap justify-center">
                   <div className="bg-gray-100 rounded-lg shadow-md p-6 m-4 w-64 md:w-56 ">
                     <h3 className="text-lg font-medium text-black-900">
@@ -639,7 +635,7 @@ export default function Home({ courses, handleEnrollment }) {
           </div>
 
           <section className=" container  mx-auto grid grid-cols-1 md:grid-cols-2 items-center py-16">
-            <div data-aos="fade-left" className="px-10 md:pl-20 text-center md:text-justify">
+            <div className="px-10 md:pl-20 text-center md:text-justify">
               <h2 className="text-4xl  mb-4">
                 Tell us about your project
               </h2>
@@ -654,7 +650,7 @@ export default function Home({ courses, handleEnrollment }) {
                 Get free estimate
               </Link>
             </div>
-            <div data-aos="fade-right" className="flex justify-center">
+            <div className="flex justify-center">
               <img
                 className=""
                 src="images/getastimate.png"
@@ -665,7 +661,7 @@ export default function Home({ courses, handleEnrollment }) {
 
           <section className="bg-gray-100 py-8">
             <div className="bg-gradient-to-r  from-red-500 to-yellow-500 p-1 shadow-xl container mx-auto px-10 -mt-14 rounded-lg shadow-lg">
-              <div data-aos="fade-up" className="flex justify-between items-center">
+              <div className="flex justify-between items-center">
                 <div className="  flex flex-col mr-4 justify-between items-center">
                   <h2 className="text-2xl font-bold text-white mb-4 p-4 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
                     Practical skills development
@@ -722,9 +718,9 @@ export default function Home({ courses, handleEnrollment }) {
                   
                 >
                   {courses.map((course) => (
-                    <SwiperSlide key={course._id} >
+                    <SwiperSlide key={course._id}>
                       <div
-                         className="bg-white rounded-lg shadow-md px-6 py-4 mx-10 "
+                        className="bg-white rounded-lg shadow-md px-6 py-4 mx-10 "
                        
                       >
                         <img
@@ -863,7 +859,7 @@ export default function Home({ courses, handleEnrollment }) {
   <div className="grid grid-cols-2 gap-1 md:grid-cols-3 md:gap-6 xl:gap-x-12">
     {team.map((Team) => (
       <div key={Team._id} className="mb-6 lg:mb-0">
-        <div data-aos="zoom-in" className="relative block rounded-lg shadow-lg bg-white p-6">
+        <div className="relative block rounded-lg shadow-lg bg-white p-6">
           <div className="lg:flex flex-row items-center">
             <div className="w-full lg:w-5/12 lg:pr-6">
               <img

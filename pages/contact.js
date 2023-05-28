@@ -2,8 +2,6 @@ import React from "react";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faMapMarkerAlt, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 function contact() {
@@ -75,7 +73,7 @@ function contact() {
               <div className="flex flex-wrap items-center justify-center">
                 <div className="grow-0 shrink-0 basis-auto w-full xl:w-7/12">
                   <div className="flex flex-wrap">
-                    <div data-aos="fade-right" className="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+                    <div className="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
                       <div className="flex items-start">
                         <div className="shrink-0">
                           <div className="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
@@ -83,13 +81,13 @@ function contact() {
                           </div>
                         </div>
                         <div className="grow ml-6">
-                          <p className="font-bold mb-1">Address</p>
-                          <p className="text-gray-500"> Multhan, Punjab, Pakistan</p>
+                          <p className="font-bold mb-1">ADDRESS</p>
+                          <p className="text-gray-500">HOUSE # 6, V BLOCK, ST # 6, NEAR GULZAR E MADINA MASJID, MULTAN, PUNJAB, PAKISTAN</p>
 
                         </div>
                       </div>
                     </div>
-                    <div data-aos="fade-left" className="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+                    <div className="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
                       <div className="flex items-start">
                         <div className="shrink-0">
                           <div className="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
@@ -98,13 +96,13 @@ function contact() {
                           </div>
                         </div>
                         <div className="grow ml-6">
-                          <p className="font-bold mb-1">Call Number</p>
-                          <p className="text-gray-500">(+92)323-8760847</p>
+                          <p className="font-bold mb-1">CALL NUMBER</p>
+                          <p className="text-gray-500">(+92)311-3471713</p>
                          
                         </div>
                       </div>
                     </div>
-                    <div data-aos="fade-right" className="mb-12 md:mb-0 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+                    <div className="mb-12 md:mb-0 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
                       <div className="flex align-start">
                         <div className="shrink-0">
                           <div className="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
@@ -112,13 +110,13 @@ function contact() {
                           </div>
                         </div>
                         <div className="grow ml-6">
-                          <p className="font-bold mb-1">Mail Address</p>
-                          <p className="text-gray-500">theaimstech@example.com</p>
+                          <p className="font-bold mb-1">MAIL ADDRESS</p>
+                          <p className="text-gray-500">support@theaimstech.com</p>
                      
                         </div>
                       </div>
                     </div>
-                    <div data-aos="fade-left" className="grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+                    <div className="grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
                       <div className="flex align-start">
                         <div className="shrink-0">
                           <div className="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
@@ -126,9 +124,9 @@ function contact() {
                           </div>
                         </div>
                         <div className="grow ml-6">
-                          <p className="font-bold mb-1">Whatapps Number</p>
+                          <p className="font-bold mb-1">WHATSAPP NUMBER</p>
                     
-                          <p className="text-gray-500">(+92)323-8760847</p>
+                          <p className="text-gray-500">(+92)311-3471713</p>
                         </div>
                       </div>
                     </div>

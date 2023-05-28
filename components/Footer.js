@@ -112,7 +112,7 @@ function Footer() {
         </h6>
         <p className="mb-4">
           <Link href="/" className="text-neutral-600 dark:text-neutral-200"
-            >Amazone</Link>
+            >Amazon</Link>
         </p>
         <p className="mb-4">
           <Link href="/" className="text-neutral-600 dark:text-neutral-200"
