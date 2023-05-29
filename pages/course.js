@@ -36,7 +36,7 @@ export default function course({ courses, handleEnrollment }) {
           className="relative overflow-hidden bg-no-repeat bg-cover h-[3]"
           style={{
             backgroundImage:
-              "url('images/learning.jpg')",
+              "url('images/course.png')",
             backgroundPosition: "50%",
             height: "300px",
           }}

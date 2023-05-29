@@ -1,9 +1,9 @@
-import { NextSeo } from 'next-seo';
-import Fade from 'react-reveal/Fade';
+import { NextSeo } from "next-seo";
+import Fade from "react-reveal/Fade";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import { useState, useEffect, useRef } from "react";
-import Zoom from 'react-reveal/Zoom';
+import Zoom from "react-reveal/Zoom";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
@@ -28,7 +28,7 @@ const reviews = [
 export default function Home({ courses, handleEnrollment }) {
   SwiperCore.use([Navigation, Pagination, Autoplay]);
   const router = useRouter();
-  const [team,setTeam]=useState("");
+  const [team, setTeam] = useState("");
   useEffect(() => {
     if (typeof window !== "undefined" && localStorage.getItem("token")) {
       setTimeout(function () {
@@ -41,13 +41,13 @@ export default function Home({ courses, handleEnrollment }) {
       try {
         const response = await fetch(`/api/team/get-teams`);
         if (!response.ok) {
-          throw new Error('Failed to fetch projects');
+          throw new Error("Failed to fetch projects");
         }
         const data = await response.json();
         setTeam(data);
       } catch (error) {
         console.error(error);
-         }
+      }
     }
     fetchData();
   }, []);
@@ -242,58 +242,59 @@ export default function Home({ courses, handleEnrollment }) {
 
   return (
     <>
-     <NextSeo
+      <NextSeo
         title="The Aims Tech | theaimstech | aimstech | Amazon Services | Ecommerce Services | Boost Your Online Business"
         description="Unlock the full potential of e-commerce with The Aims Tech Ecommerce Services. Join us to succeed in the fast-paced world of online retail. Contact us today!"
         viewport="width=device-width, initial-scale=1"
         canonical="https://theaimstech.com"
         openGraph={{
-          url: 'https://theaimstech.com',
-          title: 'The Aims Tech',
-          description: 'Unlock the full potential of e-commerce with The Aims Tech Ecommerce Services.',
-         
+          url: "https://theaimstech.com",
+          title: "The Aims Tech",
+          description:
+            "Unlock the full potential of e-commerce with The Aims Tech Ecommerce Services.",
         }}
       />
       <main>
         <div className=" bg-gray-100">
           <div className="py-5 md:pt-24  bg-gray-100 ">
-       
             <div className="container px-4 md:px-12  mx-auto grid grid-row-2 md:grid-cols-2   pt-20 sm:pt-8 ">
-            <Fade top cascade duration={2000}>
-              <div className="text-center md:text-left ">
-                <h1 className=" relative text-3xl md:text-5xl  leading-tight my-4">
-                  <span className="text-amber-500 font-bold drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
-                    The Aims Tech
-                  </span>{" "}
-                 <span className={`${styles.fontRaleway}`}>Ecommerce Services</span> 
-                </h1>
-                <p className="text-lg  leading-normal mb-8 relative ">
-                  Discover the principles and practices behind successful online
-                  businesses with top-rated e-commerce services. At{" "}
-                  <span className="text-amber-500 font-bold">
-                   The Aims Tech Ecommerce Services
-                  </span>
-                  , you'll unlock the full potential of e-commerce and unleash
-                  your entrepreneurial spirit in the digital realm. Join us
-                  today and gain a solid understanding of what it takes to
-                  succeed in the fast-paced world of online retail.
-                </p>
-                <button
-                  onClick={() => router.push("/contact")}
-                  className="bg-amber-500 text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg hover:underline focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
-                >
-                  Contact Us
-                </button>
-              </div>
+              <Fade top cascade duration={2000}>
+                <div className="text-center md:text-left ">
+                  <h1 className=" relative text-3xl md:text-5xl  leading-tight my-4">
+                    <span className="text-amber-500 font-bold drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
+                      The Aims Tech
+                    </span>{" "}
+                    <span className={`${styles.fontRaleway}`}>
+                      Ecommerce Services
+                    </span>
+                  </h1>
+                  <p className="text-lg  leading-normal mb-8 relative ">
+                    Discover the principles and practices behind successful
+                    online businesses with top-rated e-commerce services. At{" "}
+                    <span className="text-amber-500 font-bold">
+                      The Aims Tech Ecommerce Services
+                    </span>
+                    , you'll unlock the full potential of e-commerce and unleash
+                    your entrepreneurial spirit in the digital realm. Join us
+                    today and gain a solid understanding of what it takes to
+                    succeed in the fast-paced world of online retail.
+                  </p>
+                  <button
+                    onClick={() => router.push("/contact")}
+                    className="bg-amber-500 text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg hover:underline focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
+                  >
+                    Contact Us
+                  </button>
+                </div>
               </Fade>
               <Fade bottom cascade duration={2000}>
-              <div className="text-right w-full  md:order-last">
-                <Lottie
-                  animationData={hero}
-                  loop={true}
-                  className="w-full  "
-                />
-              </div>
+                <div className="text-right w-full  md:order-last">
+                  <Lottie
+                    animationData={hero}
+                    loop={true}
+                    className="w-full  "
+                  />
+                </div>
               </Fade>
             </div>
           </div>
@@ -305,19 +306,20 @@ export default function Home({ courses, handleEnrollment }) {
           <section className="bg-gray-100 py-8">
             <div className="container mx-auto px-10 -mt-24">
               <div className="bg-gradient-to-r from-amber-500 via-red-500 to-black rounded-lg shadow-lg px-9 py-9 mx-auto w-full lg:w-auto text-center">
-              <Zoom   duration={2000}>
-                <h2 className="text-2xl font-bold mb-4 text-white drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
-                  OUR WORKING PROCESS
-                </h2>
-                <p className="mb-8 text-white">
-                  We offer comprehensive e-commerce solutions to help businesses
-                  succeed in the digital marketplace. Our process involves
-                  managing and optimizing online sales channels, including
-                  popular marketplaces. We provide customized support to ensure
-                  seamless integration and a hassle-free experience for your
-                  business. Our goal is to help you achieve your e-commerce
-                  objectives and maximize your online potential.
-                </p>
+                <Zoom duration={2000}>
+                  <h2 className="text-2xl font-bold mb-4 text-white drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
+                    OUR WORKING PROCESS
+                  </h2>
+                  <p className="mb-8 text-white">
+                    We offer comprehensive e-commerce solutions to help
+                    businesses succeed in the digital marketplace. Our process
+                    involves managing and optimizing online sales channels,
+                    including popular marketplaces. We provide customized
+                    support to ensure seamless integration and a hassle-free
+                    experience for your business. Our goal is to help you
+                    achieve your e-commerce objectives and maximize your online
+                    potential.
+                  </p>
                 </Zoom>
               </div>
             </div>
@@ -328,68 +330,68 @@ export default function Home({ courses, handleEnrollment }) {
               <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 h-full pb-40 ">
                 <div className=" mx-3 lg:pl-20">
                   <div className="rounded-xl shadow-2xl py-10 pb-3 mt-5 sm:mt-5 h-auto sm:h-4/6  bg-white drop-filter backdrop-blur-sm bg-opacity-30  transition ease-out duration-300 ">
-                  <Fade bottom cascade duration={2000}>
-                    <div className="px-7 mt-5 sm:mt-5">
-                      <h1 className=" bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-red-500 text-6xl font-bold group-hover:text-pink-400 transition ease-out duration-300">
-                        01.
-                      </h1>
-                      <h2 className="text-1xl mt-4 font-bold">
-                        Discovering Your Business Needs
-                      </h2>
-                      <p className="mt-2 opacity-60 group-hover:opacity-70">
-                        We start by conducting an in-depth analysis of your
-                        business, identifying key opportunities for growth and
-                        optimization. This enables us to develop a tailored
-                        e-commerce strategy that is fully aligned with your
-                        business goals.
-                      </p>
-                    </div>
+                    <Fade bottom cascade duration={2000}>
+                      <div className="px-7 mt-5 sm:mt-5">
+                        <h1 className=" bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-red-500 text-6xl font-bold group-hover:text-pink-400 transition ease-out duration-300">
+                          01.
+                        </h1>
+                        <h2 className="text-1xl mt-4 font-bold">
+                          Discovering Your Business Needs
+                        </h2>
+                        <p className="mt-2 opacity-60 group-hover:opacity-70">
+                          We start by conducting an in-depth analysis of your
+                          business, identifying key opportunities for growth and
+                          optimization. This enables us to develop a tailored
+                          e-commerce strategy that is fully aligned with your
+                          business goals.
+                        </p>
+                      </div>
                     </Fade>
                   </div>
                 </div>
 
                 <div className=" mx-3 lg:pl-20">
                   <div className="rounded-xl shadow-2xl bg-white drop-filter backdrop-blur-sm bg-opacity-30 py-10 pb-3 mt-5 sm:mt-32 h-auto sm:h-4/6 relative  overflow-hidden">
-                  <Fade bottom cascade duration={2000}>
-                    <div className="px-7 mt-5 sm:mt-20">
-                      <h1 className=" bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-red-500  text-6xl font-bold group-hover:text-indigo-300 transition ease-out duration-300">
-                        02.
-                      </h1>
-                      <h2 className="text-1xl mt-4 font-bold">
-                        Crafting a Winning Strategy
-                      </h2>
-                      <p className="mt-2 opacity-60 group-hover:opacity-70">
-                        We work closely with you to develop a detailed
-                        implementation plan, outlining the steps required to
-                        build your online presence and achieve success. Our
-                        approach is grounded in data and insights, ensuring that
-                        we deliver measurable, meaningful results for your
-                        business.
-                      </p>
-                    </div>
+                    <Fade bottom cascade duration={2000}>
+                      <div className="px-7 mt-5 sm:mt-20">
+                        <h1 className=" bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-red-500  text-6xl font-bold group-hover:text-indigo-300 transition ease-out duration-300">
+                          02.
+                        </h1>
+                        <h2 className="text-1xl mt-4 font-bold">
+                          Crafting a Winning Strategy
+                        </h2>
+                        <p className="mt-2 opacity-60 group-hover:opacity-70">
+                          We work closely with you to develop a detailed
+                          implementation plan, outlining the steps required to
+                          build your online presence and achieve success. Our
+                          approach is grounded in data and insights, ensuring
+                          that we deliver measurable, meaningful results for
+                          your business.
+                        </p>
+                      </div>
                     </Fade>
                   </div>
                 </div>
 
                 <div className=" mx-3 lg:pl-20">
                   <div className="rounded-xl shadow-2xl bg-white drop-filter backdrop-blur-sm bg-opacity-30 py-10 pb-3 mt-5 sm:mt-72 h-autso sm:h-4/6 relative    duration-300 overflow-hidden">
-                  <Fade bottom cascade duration={2000}>
-                    <div className="px-7 mt-5 sm:mt-20">
-                      <h1 className=" bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-red-500 text-6xl  font-bold group-hover:text-purple-300 transition ease-out duration-300">
-                        03.
-                      </h1>
-                      <h2 className="text-1xl mt-4 font-bold">
-                        Delivering Ongoing Value
-                      </h2>
-                      <p className="mt-2 opacity-60 group-hover:opacity-70">
-                        We are committed to delivering ongoing value for our
-                        clients, leveraging the latest tools and technologies to
-                        help you stay ahead of the competition. We provide
-                        ongoing support and optimization, constantly refining
-                        your e-commerce strategy to ensure that you maximize
-                        your ROI and achieve your.
-                      </p>
-                    </div>
+                    <Fade bottom cascade duration={2000}>
+                      <div className="px-7 mt-5 sm:mt-20">
+                        <h1 className=" bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-red-500 text-6xl  font-bold group-hover:text-purple-300 transition ease-out duration-300">
+                          03.
+                        </h1>
+                        <h2 className="text-1xl mt-4 font-bold">
+                          Delivering Ongoing Value
+                        </h2>
+                        <p className="mt-2 opacity-60 group-hover:opacity-70">
+                          We are committed to delivering ongoing value for our
+                          clients, leveraging the latest tools and technologies
+                          to help you stay ahead of the competition. We provide
+                          ongoing support and optimization, constantly refining
+                          your e-commerce strategy to ensure that you maximize
+                          your ROI and achieve your.
+                        </p>
+                      </div>
                     </Fade>
                   </div>
                 </div>
@@ -398,7 +400,6 @@ export default function Home({ courses, handleEnrollment }) {
           </div>
 
           <section className="bg-gray-100 text-lg text-white ">
-          
             <div className="relative   " id="service_id">
               <div
                 className="absolute inset-0 bg-cover bg-no-repeat z-0 "
@@ -407,125 +408,130 @@ export default function Home({ courses, handleEnrollment }) {
                 }}
               ></div>
               <Fade bottom cascade duration={2000}>
-              <div className="container   flex flex-col md:flex-row mx-auto justify-center items-center px-4 py-8 relative z-10">
-                <div className="flex flex-col flex-grow md:pl-24">
-                  <h2 className={`${styles.fontRaleway} text-4xl font-bold   mb-8 pb-16 pt-4 pl-2 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]`}>
-                    Expertise <span className="text-amber-500">&</span> Services
-                  </h2>
-                  {services.map((service) => (
-                    <div
-                      key={service.name}
-                      className={`cursor-pointer p-4  rounded-xl   ${
-                        selectedService && service.name === selectedService.name
-                          ? "bg-amber-500 drop-filter backdrop-blur-lg bg-opacity-30"
-                          : ""
-                      }`}
-                      onClick={() => handleClick(service)}
+                <div className="container   flex flex-col md:flex-row mx-auto justify-center items-center px-4 py-8 relative z-10">
+                  <div className="flex flex-col flex-grow md:pl-24">
+                    <h2
+                      className={`${styles.fontRaleway} text-4xl font-bold   mb-8 pb-16 pt-4 pl-2 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]`}
                     >
-                      <div className="flex items-center ">
-                        <h3 className="flex items-center font-medium">
-                          <span className="pr-4 ">{service.svg}</span>
+                      Expertise <span className="text-amber-500">&</span>{" "}
+                      Services
+                    </h2>
+                    {services.map((service) => (
+                      <div
+                        key={service.name}
+                        className={`cursor-pointer p-4  rounded-xl   ${
+                          selectedService &&
+                          service.name === selectedService.name
+                            ? "bg-amber-500 drop-filter backdrop-blur-lg bg-opacity-30"
+                            : ""
+                        }`}
+                        onClick={() => handleClick(service)}
+                      >
+                        <div className="flex items-center ">
+                          <h3 className="flex items-center font-medium">
+                            <span className="pr-4 ">{service.svg}</span>
 
-                          <span>{service.name}</span>
-                        </h3>
-                        <div className="flex-grow border-r-2 border-gray-300 h-4"></div>
-                      </div>
-                      {selectedService && (
-                        <div className="md:hidden mt-2">
-                          {service.name === selectedService.name && (
-                            <ul>
-                              {selectedService.description
-                                .split(".")
-                                .map((sentence, index) => (
-                                  <li
-                                    key={index}
-                                    style={{
-                                      display: "flex",
-                                      alignItems: "center",
-                                    }}
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      viewBox="0 0 24 24"
-                                      width="24"
-                                      height="24"
-                                    >
-                                      <path
-                                        fill="#ff9800"
-                                        d="M9 16.2v-8.4c0-.4.2-.8.6-1l6-4c.4-.2.9-.2 1.3 0 .4.2.6.6.6 1v16c0 .4-.2.8-.6 1-.2.2-.5.3-.7.3-.3 0-.5-.1-.7-.3l-6-4c-.4-.3-.6-.7-.6-1z"
-                                      />
-                                    </svg>
-                                    <span
-                                      className="p-4"
-                                      style={{ marginLeft: "0.5rem" }}
-                                    >
-                                      {sentence}
-                                    </span>
-                                  </li>
-                                ))}
-                            </ul>
-                          )}
+                            <span>{service.name}</span>
+                          </h3>
+                          <div className="flex-grow border-r-2 border-gray-300 h-4"></div>
                         </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
+                        {selectedService && (
+                          <div className="md:hidden mt-2">
+                            {service.name === selectedService.name && (
+                              <ul>
+                                {selectedService.description
+                                  .split(".")
+                                  .map((sentence, index) => (
+                                    <li
+                                      key={index}
+                                      style={{
+                                        display: "flex",
+                                        alignItems: "center",
+                                      }}
+                                    >
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                        width="24"
+                                        height="24"
+                                      >
+                                        <path
+                                          fill="#ff9800"
+                                          d="M9 16.2v-8.4c0-.4.2-.8.6-1l6-4c.4-.2.9-.2 1.3 0 .4.2.6.6.6 1v16c0 .4-.2.8-.6 1-.2.2-.5.3-.7.3-.3 0-.5-.1-.7-.3l-6-4c-.4-.3-.6-.7-.6-1z"
+                                        />
+                                      </svg>
+                                      <span
+                                        className="p-4"
+                                        style={{ marginLeft: "0.5rem" }}
+                                      >
+                                        {sentence}
+                                      </span>
+                                    </li>
+                                  ))}
+                              </ul>
+                            )}
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
 
-                {selectedService && (
-                  <div className="md:w-2/3 hidden md:block">
-                    <div className="flex items-center md:pl-4">
-                      <div className="md:pl-20 ">
-                        <h3 className="font-medium mb-4 pt-4">
-                          {selectedService.name}
-                        </h3>
-                        <ul>
-                          {selectedService.description
-                            .split(".")
-                            .map((sentence, index) => (
-                              <li
-                                key={index}
-                                style={{
-                                  display: "flex",
-                                  alignItems: "center",
-                                }}
-                              >
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  viewBox="0 0 24 24"
-                                  width="24"
-                                  height="24"
+                  {selectedService && (
+                    <div className="md:w-2/3 hidden md:block">
+                      <div className="flex items-center md:pl-4">
+                        <div className="md:pl-20 ">
+                          <h3 className="font-medium mb-4 pt-4">
+                            {selectedService.name}
+                          </h3>
+                          <ul>
+                            {selectedService.description
+                              .split(".")
+                              .map((sentence, index) => (
+                                <li
+                                  key={index}
+                                  style={{
+                                    display: "flex",
+                                    alignItems: "center",
+                                  }}
                                 >
-                                  <path
-                                    fill="#ff9800"
-                                    d="M9 16.2v-8.4c0-.4.2-.8.6-1l6-4c.4-.2.9-.2 1.3 0 .4.2.6.6.6 1v16c0 .4-.2.8-.6 1-.2.2-.5.3-.7.3-.3 0-.5-.1-.7-.3l-6-4c-.4-.3-.6-.7-.6-1z"
-                                  />
-                                </svg>
-                                <span
-                                  className="p-2"
-                                  style={{ marginLeft: "0.5rem" }}
-                                >
-                                  {sentence}
-                                </span>
-                              </li>
-                            ))}
-                        </ul>
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    width="24"
+                                    height="24"
+                                  >
+                                    <path
+                                      fill="#ff9800"
+                                      d="M9 16.2v-8.4c0-.4.2-.8.6-1l6-4c.4-.2.9-.2 1.3 0 .4.2.6.6.6 1v16c0 .4-.2.8-.6 1-.2.2-.5.3-.7.3-.3 0-.5-.1-.7-.3l-6-4c-.4-.3-.6-.7-.6-1z"
+                                    />
+                                  </svg>
+                                  <span
+                                    className="p-2"
+                                    style={{ marginLeft: "0.5rem" }}
+                                  >
+                                    {sentence}
+                                  </span>
+                                </li>
+                              ))}
+                          </ul>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                )}
-              </div>
+                  )}
+                </div>
               </Fade>
             </div>
-            
           </section>
 
           <section className="bg-gray-100">
             <div className="container mx-auto pt-8 px-4 md:px-12">
-              <h2 className={`${styles.fontRaleway} leading-tight text-5xl text-center  mb-8 drop-shadow-[0_1px_1px_rgba(0, 0, 0, 0.2)] `}>
+              <h2
+                className={`${styles.fontRaleway} leading-tight text-5xl text-center  mb-8 drop-shadow-[0_1px_1px_rgba(0, 0, 0, 0.2)] `}
+              >
                 What makes us successful
               </h2>
               <div className="grid md:grid-cols-2 gap-8 pt-6">
-              <Zoom  cascade duration={2000}>
+                <Zoom cascade duration={2000}>
                   <div className="block rounded-xl shadow-2xl bg-white drop-filter backdrop-blur-sm bg-opacity-30  p-4 sm:p-6 lg:p-8 mb-9">
                     <div className="mt-4">
                       <h3 className="text-lg font-bold text-gray-900 sm:text-xl">
@@ -541,8 +547,8 @@ export default function Home({ courses, handleEnrollment }) {
                       </p>
                     </div>
                   </div>
-              </Zoom>
-              <Zoom  cascade duration={2000}>
+                </Zoom>
+                <Zoom cascade duration={2000}>
                   <div className="block rounded-xl shadow-2xl bg-white drop-filter backdrop-blur-sm bg-opacity-30  p-4 sm:p-6 lg:p-8 mb-9">
                     <div className="mt-4">
                       <h3 className="text-lg font-bold text-gray-900 sm:text-xl">
@@ -558,9 +564,9 @@ export default function Home({ courses, handleEnrollment }) {
                       </p>
                     </div>
                   </div>
-               </Zoom>
+                </Zoom>
 
-               <Zoom  cascade duration={2000}>
+                <Zoom cascade duration={2000}>
                   <div className="block rounded-xl shadow-2xl bg-white drop-filter backdrop-blur-sm bg-opacity-30  p-4 sm:p-6 lg:p-8 mb-9">
                     <div className="mt-4">
                       <h3 className="text-lg font-bold text-gray-900 sm:text-xl">
@@ -576,8 +582,8 @@ export default function Home({ courses, handleEnrollment }) {
                       </p>
                     </div>
                   </div>
-                  </Zoom>
-                  <Zoom  cascade duration={2000}>
+                </Zoom>
+                <Zoom cascade duration={2000}>
                   <div className="block rounded-xl shadow-2xl bg-white drop-filter backdrop-blur-sm bg-opacity-30  p-4 sm:p-6 lg:p-8 mb-9">
                     <div className="mt-4">
                       <h3 className="text-lg font-bold text-gray-900 sm:text-xl">
@@ -601,84 +607,89 @@ export default function Home({ courses, handleEnrollment }) {
           <div className="bg-gradient-to-r from-amber-500 via-red-500 to-black mt-24">
             <div className="container mx-auto py-12 px-4">
               <div className="px-4 md:px-12  mx-auto grid grid-row-2 md:grid-cols-2">
-              <Fade bottom cascade duration={2000}>
-                <div className=" text-center md:text-left mb-6 md:mb-0">
-                  <h2 className="text-3xl font-bold text-white  drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
-                    About <br />
-                    The Aims Tech
-                  </h2>
-                  <p className="mt-4 text-lg text-white  leading-relaxed">
-                    We focus on delivering value to our clients and believe that
-                    staying ahead of the curve is crucial for success in the
-                    ever-changing online marketplace. Our suite of e-commerce
-                    solutions helps businesses achieve their goals, from
-                    increasing sales to building brand awareness and improving
-                    customer loyalty. Our team of experts is dedicated to
-                    helping businesses of all sizes thrive online with our deep
-                    expertise in e-commerce. We are committed to excellence and
-                    delivering results that exceed our clients' expectations.
-                  </p>
-                </div>
-                </Fade>
-                <div className="pt-12">
-                <Zoom  cascade duration={2000}>
-                <div className=" flex flex-wrap justify-center">
-                  <div className="bg-gray-100 rounded-lg shadow-md p-6 m-4 w-64 md:w-56 ">
-                    <h3 className="text-lg font-medium text-black-900">
-                      Total Clients
-                    </h3>
-                    <p className="text-black-900 mt-2 text-xl font-bold">110</p>
-                  </div>
-                  <div className="bg-gray-100 rounded-lg shadow-md p-6 m-4 w-64 md:w-56">
-                    <h3 className="text-lg font-medium text-black-900">
-                      Year Experience
-                    </h3>
-                    <p className="text-black-900 mt-2 text-xl font-bold">5</p>
-                  </div>
-                  <div className="bg-gray-100 rounded-lg shadow-md p-6 m-4 w-64 md:w-56">
-                    <h3 className="text-lg font-medium text-black-900">
-                      Total Projects
-                    </h3>
-                    <p className="text-black-900 mt-2 text-xl font-bold">200</p>
-                  </div>
-                  <div className="bg-gray-100 rounded-lg shadow-md p-6 m-4 w-64 md:w-56">
-                    <h3 className="text-lg font-medium text-black-900">
-                      Total Working Hours
-                    </h3>
-                    <p className="text-black-900 mt-2 text-xl font-bold">
-                      20,000
+                <Fade bottom cascade duration={2000}>
+                  <div className=" text-center md:text-left mb-6 md:mb-0">
+                    <h2 className="text-3xl font-bold text-white  drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
+                      About <br />
+                      The Aims Tech
+                    </h2>
+                    <p className="mt-4 text-lg text-white  leading-relaxed">
+                      We focus on delivering value to our clients and believe
+                      that staying ahead of the curve is crucial for success in
+                      the ever-changing online marketplace. Our suite of
+                      e-commerce solutions helps businesses achieve their goals,
+                      from increasing sales to building brand awareness and
+                      improving customer loyalty. Our team of experts is
+                      dedicated to helping businesses of all sizes thrive online
+                      with our deep expertise in e-commerce. We are committed to
+                      excellence and delivering results that exceed our clients'
+                      expectations.
                     </p>
                   </div>
-                </div>
-                </Zoom>
+                </Fade>
+                <div className="pt-12">
+                  <Zoom cascade duration={2000}>
+                    <div className=" flex flex-wrap justify-center">
+                      <div className="bg-gray-100 rounded-lg shadow-md p-6 m-4 w-64 md:w-56 ">
+                        <h3 className="text-lg font-medium text-black-900">
+                          Total Clients
+                        </h3>
+                        <p className="text-black-900 mt-2 text-xl font-bold">
+                          110
+                        </p>
+                      </div>
+                      <div className="bg-gray-100 rounded-lg shadow-md p-6 m-4 w-64 md:w-56">
+                        <h3 className="text-lg font-medium text-black-900">
+                          Year Experience
+                        </h3>
+                        <p className="text-black-900 mt-2 text-xl font-bold">
+                          5
+                        </p>
+                      </div>
+                      <div className="bg-gray-100 rounded-lg shadow-md p-6 m-4 w-64 md:w-56">
+                        <h3 className="text-lg font-medium text-black-900">
+                          Total Projects
+                        </h3>
+                        <p className="text-black-900 mt-2 text-xl font-bold">
+                          200
+                        </p>
+                      </div>
+                      <div className="bg-gray-100 rounded-lg shadow-md p-6 m-4 w-64 md:w-56">
+                        <h3 className="text-lg font-medium text-black-900">
+                          Total Working Hours
+                        </h3>
+                        <p className="text-black-900 mt-2 text-xl font-bold">
+                          20,000
+                        </p>
+                      </div>
+                    </div>
+                  </Zoom>
                 </div>
               </div>
             </div>
           </div>
 
           <section className=" container  mx-auto gap-4 grid grid-cols-1 md:grid-cols-2 items-center py-16">
-          <Fade left cascade duration={2000}>
-            <div className="px-10 md:pl-20 text-center md:text-justify">
-           
-              <h2 className={`${styles.fontRaleway} text-4xl font-bold mb-4`}>
-                Tell us about your project
-              </h2>
+            <Fade left cascade duration={2000}>
+              <div className="px-10 md:pl-20 text-center md:text-justify">
+                <h2 className={`${styles.fontRaleway} text-4xl font-bold mb-4`}>
+                  Tell us about your project
+                </h2>
 
-              <p className="text-lg text-gray-600 mb-8">
-                Let us help you get your business online and grow it with
-                passion
-              </p>
-              
-              <Link
-                href="/contact"
-                className="  bg-blue-500 text-white rounded-lg py-2 px-4 hover:bg-blue-600 transition-colors duration-300 ease-in-out"
-              >
-                Get free estimate
-              </Link>
-              
-            </div>
+                <p className="text-lg text-gray-600 mb-8">
+                  Let us help you get your business online and grow it with
+                  passion
+                </p>
+
+                <Link
+                  href="/contact"
+                  className="  bg-blue-500 text-white rounded-lg py-2 px-4 hover:bg-blue-600 transition-colors duration-300 ease-in-out"
+                >
+                  Get free estimate
+                </Link>
+              </div>
             </Fade>
-            
+
             <div className="flex justify-center">
               <img
                 className=""
@@ -686,42 +697,41 @@ export default function Home({ courses, handleEnrollment }) {
                 alt="Course photo"
               />
             </div>
-            
           </section>
 
           <section className="bg-gray-100 py-8">
             <div className="bg-gradient-to-r from-amber-500 via-red-500 to-black p-1 shadow-xl container mx-auto px-10 -mt-14 rounded-lg shadow-lg">
               <div className="flex justify-between items-center">
-              <Fade bottom cascade duration={2000}>
-                <div className="  flex flex-col mr-4 justify-between items-center">
-                  <h2 className="text-2xl font-bold text-white mb-4 p-4 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
-                    Practical skills development
-                  </h2>
-                  <p className="mb-8 text-1xl text-white text-center">
-                    Our courses are not just about acquiring new skills, but
-                    also about personal growth and development, helping students
-                    to become the best version of themselves.{" "}
-                  </p>
-                </div>
-                <div className="flex items-center border-l pl-4">
-                  <button
-                    onClick={() => router.push("/course")}
-                    className="flex items-center justify-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-                  >
-                    Enroll Course
-                    <svg
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      className="chevron-right w-6 h-6 ml-2"
+                <Fade bottom cascade duration={2000}>
+                  <div className="  flex flex-col mr-4 justify-between items-center">
+                    <h2 className="text-2xl font-bold text-white mb-4 p-4 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
+                      Practical skills development
+                    </h2>
+                    <p className="mb-8 text-1xl text-white text-center">
+                      Our courses are not just about acquiring new skills, but
+                      also about personal growth and development, helping
+                      students to become the best version of themselves.{" "}
+                    </p>
+                  </div>
+                  <div className="flex items-center border-l pl-4">
+                    <button
+                      onClick={() => router.push("/course")}
+                      className="flex items-center justify-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
                     >
-                      <path
-                        fillRule="evenodd"
-                        d="M7.293 15.707a1 1 0 001.414 0l5.707-5.707a2 2 0 000-2.828L8.707 4.293a1 1 0 00-1.414 1.414L11.586 10l-4.293 4.293a1 1 0 000 1.414z"
-                        clipRule="evenodd"
-                      ></path>
-                    </svg>
-                  </button>
-                </div>
+                      Enroll Course
+                      <svg
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        className="chevron-right w-6 h-6 ml-2"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M7.293 15.707a1 1 0 001.414 0l5.707-5.707a2 2 0 000-2.828L8.707 4.293a1 1 0 00-1.414 1.414L11.586 10l-4.293 4.293a1 1 0 000 1.414z"
+                          clipRule="evenodd"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
                 </Fade>
               </div>
             </div>
@@ -735,26 +745,20 @@ export default function Home({ courses, handleEnrollment }) {
               <div className=" max-w-screen-lg w-full swiper-container">
                 <Swiper
                   pagination={{ clickable: true, dynamicBullets: true }}
-                  
                   loop={true}
                   centeredSlides={true}
                   grabCursor={true}
                   navigation
                   slidesPerView={3}
-                  
                   breakpoints={{
                     0: { slidesPerView: 1 },
                     520: { slidesPerView: 2 },
                     950: { slidesPerView: 3 },
                   }}
-                  
                 >
                   {courses.map((course) => (
                     <SwiperSlide key={course._id}>
-                      <div
-                        className="bg-white drop-filter backdrop-blur-sm bg-opacity-30 rounded-lg shadow-md px-6 py-4 mx-10 "
-                       
-                      >
+                      <div className="bg-white drop-filter backdrop-blur-sm bg-opacity-30 rounded-lg shadow-md px-6 py-4 mx-10 ">
                         <img
                           className="w-full h-48 object-cover rounded-md mb-4"
                           src={course.photo}
@@ -798,11 +802,9 @@ export default function Home({ courses, handleEnrollment }) {
             </div>
           </section>
           <h2 class={`text-5xl mb-12 text-center pt-8 ${styles.fontRaleway}`}>
-          What Our <span class="text-amber-500">Customers</span> Are Saying 
-    </h2>
+            What Our <span class="text-amber-500">Customers</span> Are Saying
+          </h2>
           <section className="py-8 mx-2">
-           
-
             <div
               className=" py-6 flex items-center justify-center bg-gray-100"
               style={{ fontFamily: "Arial, sans-serif" }}
@@ -812,11 +814,9 @@ export default function Home({ courses, handleEnrollment }) {
                   pagination={{ clickable: true, dynamicBullets: true }}
                   spaceBetween={16}
                   loop={true}
-                  
                   slidesPerView={1}
                   autoplay={{
                     delay: 5000,
-
                   }}
                 >
                   {reviews.map((card) => (
@@ -832,13 +832,69 @@ export default function Home({ courses, handleEnrollment }) {
                               alt=""
                             />
                             <h4 className="w-full md:w-auto text-xl font-heading font-medium">
-                              Faustina H. Fawn
+                              Majid Chaudhary
                             </h4>
                             <div className="w-full md:w-px h-2 md:h-8 mx-8 bg-transparent md:bg-gray-200"></div>
                             <span className="mr-4 text-xl font-heading font-medium">
                               5.0
                             </span>
                             <div className="inline-flex">
+                              <a className="inline-block mr-1" href="#">
+                                <svg
+                                  width="20"
+                                  height="20"
+                                  viewbox="0 0 20 20"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M20 7.91677H12.4167L10 0.416763L7.58333 7.91677H0L6.18335 12.3168L3.81668 19.5834L10 15.0834L16.1834 19.5834L13.8167 12.3168L20 7.91677Z"
+                                    fill="#FFCB00"
+                                  ></path>
+                                </svg>
+                              </a>{" "}
+                              <a className="inline-block mr-1" href="#">
+                                <svg
+                                  width="20"
+                                  height="20"
+                                  viewbox="0 0 20 20"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M20 7.91677H12.4167L10 0.416763L7.58333 7.91677H0L6.18335 12.3168L3.81668 19.5834L10 15.0834L16.1834 19.5834L13.8167 12.3168L20 7.91677Z"
+                                    fill="#FFCB00"
+                                  ></path>
+                                </svg>
+                              </a>{" "}
+                              <a className="inline-block mr-1" href="#">
+                                <svg
+                                  width="20"
+                                  height="20"
+                                  viewbox="0 0 20 20"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M20 7.91677H12.4167L10 0.416763L7.58333 7.91677H0L6.18335 12.3168L3.81668 19.5834L10 15.0834L16.1834 19.5834L13.8167 12.3168L20 7.91677Z"
+                                    fill="#FFCB00"
+                                  ></path>
+                                </svg>
+                              </a>{" "}
+                              <a className="inline-block mr-1" href="#">
+                                <svg
+                                  width="20"
+                                  height="20"
+                                  viewbox="0 0 20 20"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M20 7.91677H12.4167L10 0.416763L7.58333 7.91677H0L6.18335 12.3168L3.81668 19.5834L10 15.0834L16.1834 19.5834L13.8167 12.3168L20 7.91677Z"
+                                    fill="#FFCB00"
+                                  ></path>
+                                </svg>
+                              </a>
                               <a className="inline-block mr-1" href="#">
                                 <svg
                                   width="20"
@@ -860,14 +916,16 @@ export default function Home({ courses, handleEnrollment }) {
                           <div className="flex flex-wrap ">
                             <div className="w-full md:w-2/3 mb-6 md:mb-0">
                               <p className="mb-8 max-w-2xl text-darkBlueGray-400 leading-loose ">
-                                I haretra neque non mi aliquam, finibus hart
-                                bibendum molestie. Vestibulum suscipit sagittis
-                                dignissim mauris.
+                                I recently had the pleasure of utilizing
+                                Amazon's services, and I must say, it was an
+                                exceptional experience. From start to finish,
+                                the entire process was seamless and efficient,
+                                leaving me thoroughly satisfied as a customer.
                               </p>
                             </div>
                             <div className="w-full md:w-1/3 text-right">
                               <p className="mb-8 text-sm text-gray-300">
-                                Added 2 months ago
+                                12/03/2023
                               </p>
                             </div>
                           </div>
@@ -880,48 +938,44 @@ export default function Home({ courses, handleEnrollment }) {
             </div>
           </section>
 
-          
-          
-<div class="container py-24 px-4 md:px-12 mx-auto">
-  <section class="pb-32 text-center lg:text-left">
-    <h2 class={`text-5xl mb-12 text-center ${styles.fontRaleway}`}>
-      Meet The <span class="text-amber-500">Team</span>
-    </h2>
-    <Zoom  cascade duration={2000}>
-    {team.length > 0 ? (
-  <div className="grid grid-cols-2 gap-1 md:grid-cols-3 md:gap-6 xl:gap-x-12">
-    {team.map((Team) => (
-      <div key={Team._id} className="mb-6 lg:mb-0">
-        <div className="relative block rounded-lg shadow-lg bg-white drop-filter backdrop-blur-sm bg-opacity-30 p-6">
-          <div className="lg:flex flex-row items-center">
-            <div className="w-full lg:w-5/12 lg:pr-6">
-              <img
-                src={Team.photo}
-                alt={Team.name}
-                className="w-full rounded-md mb-6 lg:mb-0"
-              />
-            </div>
-            <div className="w-full lg:w-7/12">
-              <h5 className="text-lg font-bold mb-2">{Team.name}</h5>
-              <p className="text-gray-500 mb-4">{Team.description}</p>
-            </div>
+          <div class="container py-24 px-4 md:px-12 mx-auto">
+            <section class="pb-32 text-center lg:text-left">
+              <h2 class={`text-5xl mb-12 text-center ${styles.fontRaleway}`}>
+                Meet The <span class="text-amber-500">Team</span>
+              </h2>
+              <Zoom cascade duration={2000}>
+                {team.length > 0 ? (
+                  <div className="grid grid-cols-2 gap-1 md:grid-cols-3 md:gap-6 xl:gap-x-12">
+                    {team.map((Team) => (
+                      <div key={Team._id} className="mb-6 lg:mb-0">
+                        <div className="relative block rounded-lg shadow-lg bg-white drop-filter backdrop-blur-sm bg-opacity-30 p-6">
+                          <div className="lg:flex flex-row items-center">
+                            <div className="w-full lg:w-5/12 lg:pr-6">
+                              <img
+                                src={Team.photo}
+                                alt={Team.name}
+                                className="w-full rounded-md mb-6 lg:mb-0"
+                              />
+                            </div>
+                            <div className="w-full lg:w-7/12">
+                              <h5 className="text-lg font-bold mb-2">
+                                {Team.name}
+                              </h5>
+                              <p className="text-gray-500 mb-4">
+                                {Team.description}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <p>Not found.</p>
+                )}
+              </Zoom>
+            </section>
           </div>
-        </div>
-      </div>
-    ))}
-  </div>
-) : (
-  <p>Not found.</p>
-)}
-</Zoom>
-
-   
-  </section>
-
-
-</div>
-
-          
         </div>
       </main>
     </>

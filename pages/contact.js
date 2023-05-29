@@ -95,7 +95,7 @@ function contact() {
             className="relative overflow-hidden bg-no-repeat bg-cover h-[3]"
             style={{
               backgroundImage:
-                "url('https://img.freepik.com/free-vector/blue-contact-icons-background_23-2147607328.jpg?w=740&t=st=1678330723~exp=1678331323~hmac=cdd14c56270db4a0746282ad8a8b50fd46fd014dd7ee5b340f4db8eccda1ca5e')",
+                "url('images/contact.png')",
               backgroundPosition: "50%",
               height: "300px",
             }}
