@@ -4,14 +4,13 @@ import eye from "./lotti/eye.json";
 import Lottie from "lottie-react";
 import { useEffect, useState } from "react";
 export default function portfolio() {
-  
   const [projects, setProjects] = useState([]);
   useEffect(() => {
     async function fetchData() {
       try {
         const response = await fetch(`/api/project/get-projects`);
         if (!response.ok) {
-          throw new Error('Failed to fetch projects');
+          throw new Error("Failed to fetch projects");
         }
         const data = await response.json();
         setProjects(data);
@@ -28,13 +27,22 @@ export default function portfolio() {
         <div className="pt-[25px] bg-gray-100 pb-24">
           <div className="container px-4 md:px-12 py-12 mx-auto flex flex-wrap flex-col md:flex-row items-center">
             <div className="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left pt-4">
-            <h1 className={`${styles.fontRaleway} relative my-6 text-4xl  text-black leading-tight`} >
-
-              BY EMPOWERING OUR CLIENTS WITH <span className="font-bold text-amber-500">INNOVATIVE TECHNOLOGIES</span>, WE ENABLE THEIR SUCCESS AND GROWTH. </h1>
-              
+              <h1
+                className={`${styles.fontRaleway} relative my-6 text-4xl  text-black leading-tight`}
+              >
+                BY EMPOWERING OUR CLIENTS WITH{" "}
+                <span className="font-bold text-amber-500">
+                  INNOVATIVE TECHNOLOGIES
+                </span>
+                , WE ENABLE THEIR SUCCESS AND GROWTH.{" "}
+              </h1>
             </div>
             <div className="  w-full md:w-3/5 py-6 text-center md:order-last ">
-              <img src="images/portfolio.png"  className=" md:w-5/6 md:ml-auto" alt="" />
+              <img
+                src="images/portfolio.png"
+                className=" md:w-5/6 md:ml-auto"
+                alt=""
+              />
             </div>
           </div>
         </div>
@@ -50,10 +58,9 @@ export default function portfolio() {
           >
             <div className="container mx-auto py-4">
               <div className="justify-center text-center pb-6">
-              <h2 className="text-4xl font-bold text-black mb-6">
-              OUR PROJECTS
-              </h2>
-              
+                <h2 className="text-4xl font-bold text-black mb-6">
+                  OUR PROJECTS
+                </h2>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {projects.map((project) => (
@@ -85,79 +92,85 @@ export default function portfolio() {
               </div>
             </div>
           </div>
+        </div>
+        <section className="text-black p-1 shadow-xl py-20 mt-16">
+          <div className="container px-2 md:px-12 mx-auto">
+            <div className="max-w-lg mx-auto text-center">
+              <h2 className="text-4xl font-bold  mb-8">OUR MISSION</h2>
+              <p className="relative text-xl  leading-relaxed mb-8">
+                <span>&#8220;</span>Our mission is to provide top-rated
+                e-commerce services that unlock the full potential of online
+                businesses, empowering entrepreneurs to succeed in the digital
+                realm.&#8221;
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+              <div className="bg-white drop-filter backdrop-blur-sm bg-opacity-30  rounded-xl shadow-2xl overflow-hidden">
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-800 mb-4">
+                    Expertise
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    With years of experience and in-depth expertise in the
+                    e-commerce industry, our team of professionals excels in
+                    delivering top-notch e-commerce services.
+                  </p>
+                </div>
+              </div>
+              <div className="bg-white drop-filter backdrop-blur-sm bg-opacity-30  rounded-xl shadow-2xl  overflow-hidden">
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-800 mb-4">
+                    Online Growth
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    we create customized strategies that maximize their online
+                    growth potential. Our innovative approach ensures that each
+                    client receives a personalized plan for e-commerce success.
+                  </p>
+                </div>
+              </div>
+              <div className="bg-white drop-filter backdrop-blur-sm bg-opacity-30 rounded-xl shadow-2xl  overflow-hidden">
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-800 mb-4">
+                    Top Priority
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed ">
+                    We prioritize maintaining open and transparent communication
+                    with our clients throughout the entire process. Our team is
+                    readily available to address any questions or concerns,
+                    ensuring customer satisfaction at every step.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-          <section className="text-black p-1 shadow-xl py-20 mt-16">
-  <div className="container px-2 md:px-12 mx-auto">
-    <div className="max-w-lg mx-auto text-center">
-      <h2 className="text-4xl font-bold  mb-8">OUR MISSION</h2>
-      <p className="relative text-xl  leading-relaxed mb-8">
-  <span>&#8220;</span>Our mission is to provide top-rated e-commerce services that unlock the full potential of online businesses, empowering entrepreneurs to succeed in the digital realm.&#8221;
-</p>
- 
-    </div>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-      
-      <div className="bg-white rounded-xl shadow-2xl overflow-hidden">
-        <div className="p-6">
-          <h3 className="text-xl font-semibold text-gray-800 mb-4">
-          Expertise
-          </h3>
-          <p className="text-gray-600 leading-relaxed">
-          With years of experience and in-depth expertise in the e-commerce industry, our team of professionals excels in delivering top-notch e-commerce services.
-          </p>
-        </div>
-      </div>
-      <div className="bg-white rounded-xl shadow-2xl  overflow-hidden">
-        <div className="p-6">
-          <h3 className="text-xl font-semibold text-gray-800 mb-4">
-          Online Growth
-          </h3>
-          <p className="text-gray-600 leading-relaxed">
-          we create customized strategies that maximize their online growth potential. Our innovative approach ensures that each client receives a personalized plan for e-commerce success.
-          </p>
-        </div>
-      </div>
-      <div className="bg-white rounded-xl shadow-2xl  overflow-hidden">
-        <div className="p-6">
-          <h3 className="text-xl font-semibold text-gray-800 mb-4">
-          Top Priority
-          </h3>
-          <p className="text-gray-600 leading-relaxed ">
-          We prioritize maintaining open and transparent communication with our clients throughout the entire process. Our team is readily available to address any questions or concerns, ensuring customer satisfaction at every step.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+        </section>
 
-
-          <section className="bg-gray-100 py-20">
-  <div className="container px-2 md:px-12 mx-auto">
-    <div className="flex flex-wrap justify-between items-center mb-20">
-      <div className="w-full md:w-1/2 mb-10 md:mb-0 text-center p-4">
-        <h2 className="text-4xl font-bold leading-tight mb-6">
-          OUR VISSION
-        </h2>
-        <p className="text-gray-600 text-xl leading-relaxed">
-          "Our vision is to be a collaborative and results-driven e-commerce service provider, measured by the success of our clients. We are dedicated to helping our clients achieve their goals and delivering exceptional results that propel their businesses forward.".
-        </p>
-      </div>
-      <div className="w-full md:w-1/2">
-      <Lottie
-                animationData={eye}
-                loop={true}
-                className=" md:w-5/6 md:ml-auto"
-              />
-      </div>
-    </div>
-    
-</div>
-</section>
-
-
-          
-       
+        <section className="bg-gray-100 py-20">
+          <div className="container px-2 md:px-12 mx-auto">
+            <div className="flex flex-wrap justify-between items-center mb-20">
+              <div className="w-full md:w-1/2 mb-10 md:mb-0 text-center p-4">
+                <h2 className="text-4xl font-bold leading-tight mb-6">
+                  OUR VISSION
+                </h2>
+                <p className="text-gray-600 text-xl leading-relaxed">
+                  "Our vision is to be a collaborative and results-driven
+                  e-commerce service provider, measured by the success of our
+                  clients. We are dedicated to helping our clients achieve their
+                  goals and delivering exceptional results that propel their
+                  businesses forward.".
+                </p>
+              </div>
+              <div className="w-full md:w-1/2">
+                <Lottie
+                  animationData={eye}
+                  loop={true}
+                  className=" md:w-5/6 md:ml-auto"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </>
   );

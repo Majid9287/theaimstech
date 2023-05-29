@@ -326,8 +326,8 @@ export default function Home({ courses, handleEnrollment }) {
           <div className="h-full">
             <div className="container mx-auto lg:px-20">
               <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 h-full pb-40 ">
-                <div className="border-r border-gray-300 mx-3 lg:pl-20">
-                  <div className="rounded-xl shadow-2xl py-10 pb-3 mt-5 sm:mt-5 h-auto sm:h-4/6  bg-white drop-filter backdrop-blur-sm bg-opacity-30 cursor-pointer transition ease-out duration-300 ">
+                <div className=" mx-3 lg:pl-20">
+                  <div className="rounded-xl shadow-2xl py-10 pb-3 mt-5 sm:mt-5 h-auto sm:h-4/6  bg-white drop-filter backdrop-blur-sm bg-opacity-30  transition ease-out duration-300 ">
                   <Fade bottom cascade duration={2000}>
                     <div className="px-7 mt-5 sm:mt-5">
                       <h1 className=" bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-red-500 text-6xl font-bold group-hover:text-pink-400 transition ease-out duration-300">
@@ -348,8 +348,8 @@ export default function Home({ courses, handleEnrollment }) {
                   </div>
                 </div>
 
-                <div className="border-r border-gray-300 mx-3 lg:pl-20">
-                  <div className="rounded-xl shadow-2xl bg-white drop-filter backdrop-blur-sm bg-opacity-30 py-10 pb-3 mt-5 sm:mt-32 h-auto sm:h-4/6 relative bg-indigo-100 group hover:bg-indigo-200 cursor-pointer transition ease-out duration-300 overflow-hidden">
+                <div className=" mx-3 lg:pl-20">
+                  <div className="rounded-xl shadow-2xl bg-white drop-filter backdrop-blur-sm bg-opacity-30 py-10 pb-3 mt-5 sm:mt-32 h-auto sm:h-4/6 relative  overflow-hidden">
                   <Fade bottom cascade duration={2000}>
                     <div className="px-7 mt-5 sm:mt-20">
                       <h1 className=" bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-red-500  text-6xl font-bold group-hover:text-indigo-300 transition ease-out duration-300">
@@ -371,8 +371,8 @@ export default function Home({ courses, handleEnrollment }) {
                   </div>
                 </div>
 
-                <div className="border-r border-gray-300 mx-3 lg:pl-20">
-                  <div className="rounded-xl shadow-2xl bg-white drop-filter backdrop-blur-sm bg-opacity-30 py-10 pb-3 mt-5 sm:mt-72 h-autso sm:h-4/6 relative bg-purple-100 group hover:bg-purple-200 cursor-pointer transition ease-out duration-300 overflow-hidden">
+                <div className=" mx-3 lg:pl-20">
+                  <div className="rounded-xl shadow-2xl bg-white drop-filter backdrop-blur-sm bg-opacity-30 py-10 pb-3 mt-5 sm:mt-72 h-autso sm:h-4/6 relative    duration-300 overflow-hidden">
                   <Fade bottom cascade duration={2000}>
                     <div className="px-7 mt-5 sm:mt-20">
                       <h1 className=" bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-red-500 text-6xl  font-bold group-hover:text-purple-300 transition ease-out duration-300">
@@ -526,7 +526,7 @@ export default function Home({ courses, handleEnrollment }) {
               </h2>
               <div className="grid md:grid-cols-2 gap-8 pt-6">
               <Zoom  cascade duration={2000}>
-                  <div className="block rounded-xl shadow-2xl bg-white p-4 sm:p-6 lg:p-8 mb-9">
+                  <div className="block rounded-xl shadow-2xl bg-white drop-filter backdrop-blur-sm bg-opacity-30  p-4 sm:p-6 lg:p-8 mb-9">
                     <div className="mt-4">
                       <h3 className="text-lg font-bold text-gray-900 sm:text-xl">
                         Years of Experience and Expertise in E-commerce
@@ -543,7 +543,7 @@ export default function Home({ courses, handleEnrollment }) {
                   </div>
               </Zoom>
               <Zoom  cascade duration={2000}>
-                  <div className="block rounded-xl shadow-2xl bg-white p-4 sm:p-6 lg:p-8 mb-9">
+                  <div className="block rounded-xl shadow-2xl bg-white drop-filter backdrop-blur-sm bg-opacity-30  p-4 sm:p-6 lg:p-8 mb-9">
                     <div className="mt-4">
                       <h3 className="text-lg font-bold text-gray-900 sm:text-xl">
                         Innovative and Customized E-commerce Solutions
@@ -561,7 +561,7 @@ export default function Home({ courses, handleEnrollment }) {
                </Zoom>
 
                <Zoom  cascade duration={2000}>
-                  <div className="block rounded-xl shadow-2xl bg-white p-4 sm:p-6 lg:p-8 mb-9">
+                  <div className="block rounded-xl shadow-2xl bg-white drop-filter backdrop-blur-sm bg-opacity-30  p-4 sm:p-6 lg:p-8 mb-9">
                     <div className="mt-4">
                       <h3 className="text-lg font-bold text-gray-900 sm:text-xl">
                         Customer Satisfaction is Our Top Priority
@@ -578,7 +578,7 @@ export default function Home({ courses, handleEnrollment }) {
                   </div>
                   </Zoom>
                   <Zoom  cascade duration={2000}>
-                  <div className="block rounded-xl shadow-2xl bg-white p-4 sm:p-6 lg:p-8 mb-9">
+                  <div className="block rounded-xl shadow-2xl bg-white drop-filter backdrop-blur-sm bg-opacity-30  p-4 sm:p-6 lg:p-8 mb-9">
                     <div className="mt-4">
                       <h3 className="text-lg font-bold text-gray-900 sm:text-xl">
                         Collaborative Approach to E-commerce Services
@@ -752,7 +752,7 @@ export default function Home({ courses, handleEnrollment }) {
                   {courses.map((course) => (
                     <SwiperSlide key={course._id}>
                       <div
-                        className="bg-white rounded-lg shadow-md px-6 py-4 mx-10 "
+                        className="bg-white drop-filter backdrop-blur-sm bg-opacity-30 rounded-lg shadow-md px-6 py-4 mx-10 "
                        
                       >
                         <img
@@ -856,7 +856,7 @@ export default function Home({ courses, handleEnrollment }) {
                             </div>
                           </div>
                         </div>
-                        <div className="px-4 overflow-hidden md:px-16 pt-8  bg-white">
+                        <div className="px-4 overflow-hidden md:px-16 pt-8  bg-white drop-filter backdrop-blur-sm bg-opacity-30">
                           <div className="flex flex-wrap ">
                             <div className="w-full md:w-2/3 mb-6 md:mb-0">
                               <p className="mb-8 max-w-2xl text-darkBlueGray-400 leading-loose ">
@@ -892,7 +892,7 @@ export default function Home({ courses, handleEnrollment }) {
   <div className="grid grid-cols-2 gap-1 md:grid-cols-3 md:gap-6 xl:gap-x-12">
     {team.map((Team) => (
       <div key={Team._id} className="mb-6 lg:mb-0">
-        <div className="relative block rounded-lg shadow-lg bg-white p-6">
+        <div className="relative block rounded-lg shadow-lg bg-white drop-filter backdrop-blur-sm bg-opacity-30 p-6">
           <div className="lg:flex flex-row items-center">
             <div className="w-full lg:w-5/12 lg:pr-6">
               <img

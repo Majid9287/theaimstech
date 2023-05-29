@@ -42,10 +42,10 @@ function Footer() {
     setIsInstagramHovered(false);
   };
 
-  const whatsappIconColor = isWhatsappHovered ? "gray" : "green";
-  const facebookIconColor = isFacebookHovered ? "gray" : "blue";
-  const linkedinIconColor = isLinkedinHovered ? "gray" : "blue";
-  const instagramIconColor = isInstagramHovered ? "gray" : "purple";
+  const whatsappIconColor = isWhatsappHovered ? "green" : " gray";
+  const facebookIconColor = isFacebookHovered ? "blue" : "gray";
+  const linkedinIconColor = isLinkedinHovered ? "blue" : "gray";
+  const instagramIconColor = isInstagramHovered ? "purple" : "gray";
 
   return (
     
@@ -55,7 +55,7 @@ function Footer() {
 <div className="flex justify-center items-center pt-6">
       <a
         target="_blank"
-        href="https://wa.link/5nlokc"
+        href="https://wa.me/923113471713"
         onMouseEnter={handleWhatsappMouseEnter}
         onMouseLeave={handleWhatsappMouseLeave}
         className="mr-6 text-neutral-600 dark:text-neutral-200"
