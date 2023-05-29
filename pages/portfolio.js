@@ -86,17 +86,18 @@ export default function portfolio() {
             </div>
           </div>
           </div>
-          <section className="bg-gradient-to-r from-pink-400 via-red-500 to-yellow-500 p-1 shadow-xl py-20 mt-16">
+          <section className="text-black p-1 shadow-xl py-20 mt-16">
   <div className="container px-2 md:px-12 mx-auto">
     <div className="max-w-lg mx-auto text-center">
-      <h2 className="text-4xl font-bold text-white mb-8">OUR MISSION</h2>
-      <p className="relative text-xl text-white leading-relaxed mb-8">
+      <h2 className="text-4xl font-bold  mb-8">OUR MISSION</h2>
+      <p className="relative text-xl  leading-relaxed mb-8">
   <span>&#8220;</span>Our mission is to provide top-rated e-commerce services that unlock the full potential of online businesses, empowering entrepreneurs to succeed in the digital realm.&#8221;
 </p>
  
     </div>
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-      <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+      
+      <div className="bg-white rounded-xl shadow-2xl overflow-hidden">
         <div className="p-6">
           <h3 className="text-xl font-semibold text-gray-800 mb-4">
           Expertise
@@ -106,7 +107,7 @@ export default function portfolio() {
           </p>
         </div>
       </div>
-      <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+      <div className="bg-white rounded-xl shadow-2xl  overflow-hidden">
         <div className="p-6">
           <h3 className="text-xl font-semibold text-gray-800 mb-4">
           Online Growth
@@ -116,7 +117,7 @@ export default function portfolio() {
           </p>
         </div>
       </div>
-      <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+      <div className="bg-white rounded-xl shadow-2xl  overflow-hidden">
         <div className="p-6">
           <h3 className="text-xl font-semibold text-gray-800 mb-4">
           Top Priority
