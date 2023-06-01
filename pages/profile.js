@@ -7,8 +7,8 @@ function UserProfile({ UserId,token ,isLogout}) {
   const [email, setEmail] = useState("");
   const [isAdmin, setIsAdmin] = useState("");
   const router = useRouter();
-
   const [password, setPassword] = useState("");
+  const [oldpassword, setOldPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [confirmPasswordError, setConfirmPasswordError] = useState("");
   const [passwordError, setpasswordError] = useState("");
@@ -174,7 +174,32 @@ function UserProfile({ UserId,token ,isLogout}) {
               disabled // email cannot be changed
             />
           </div>
-          <div className="mb-4">
+        
+          <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="submit"
+          >
+            Update Profile
+          </button>
+        </form>
+         <form action="">
+         <div className="mb-4 mt-12">
+            <label
+              className="block text-gray-700 font-bold mb-2"
+              htmlFor="email"
+            >
+              Old Password
+            </label>
+            <input
+              type="password"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              name="password"
+              placeholder="Password"
+              value={oldpassword}
+              onChange={(event) => setOldPassword(event)}
+            />
+          </div>
+         <div className="mb-4 mt-4">
             <label
               className="block text-gray-700 font-bold mb-2"
               htmlFor="email"
@@ -223,13 +248,13 @@ function UserProfile({ UserId,token ,isLogout}) {
             <div className="text-red-500">{confirmPasswordError}</div>
           )}
 
-          <button
+         <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="submit"
           >
-            Update Profile
+            Update Password
           </button>
-        </form>
+         </form>
       </div>
     </div>
   );
