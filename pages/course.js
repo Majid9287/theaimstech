@@ -5,7 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import styles from "../styles/Home.module.css";
 import { useRouter } from "next/router";
-export default function course({ courses, handleEnrollment }) {
+export default function course({ courses, handleEnrollment,token }) {
   const [confirmId, setConfirmId] = useState(null);
   const showConfirmation = (id) => {
     setConfirmId(id);
@@ -16,6 +16,7 @@ export default function course({ courses, handleEnrollment }) {
   };
   const handleClick = (e) => {
     handleEnrollment(e);
+    if(token){
     toast.success("Course is Enrolled Successfully", {
       position: "top-right",
       autoClose: 1000,
@@ -26,6 +27,19 @@ export default function course({ courses, handleEnrollment }) {
       progress: undefined,
       theme: "colored",
     });
+  }
+  else{
+    toast.error("Please login for Enroll course!", {
+      position: "top-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  }
     hideConfirmation();
   };
   const router = useRouter();
@@ -89,10 +103,10 @@ export default function course({ courses, handleEnrollment }) {
                       {course.name}
                     </h3>
                     <p className="text-gray-700 text-sm mb-2">
-                      price: {course.price}
+                      price: {course.price} k
                     </p>
                     <p className="text-gray-700 text-sm mb-2">
-                      Duration: {course.duration}
+                      Duration: {course.duration} months
                     </p>
                     <p className="text-gray-700 text-sm mb-2">
                       Enrollment: {course.enrollment}

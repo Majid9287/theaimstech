@@ -115,13 +115,13 @@ function CourseForm() {
               className="block text-gray-700 font-bold mb-2"
               htmlFor="duration"
             >
-              Duration
+              Duration in months
             </label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="duration"
               type="number"
-              placeholder="Enter course duration"
+              placeholder="Enter course duration in months i.e 2 "
               value={duration}
               onChange={(e) => setDuration(e.target.value)}
               required
@@ -132,13 +132,13 @@ function CourseForm() {
               className="block text-gray-700 font-bold mb-2"
               htmlFor="duration"
             >
-              price
+              price in k
             </label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="duration"
               type="number"
-              placeholder="Enter course duration"
+              placeholder="Enter course price like 20"
               value={price}
               onChange={(e) => setPrice(e.target.value)}
               required

@@ -112,6 +112,15 @@ const AdminLayout = ({ children }) => {
           >
             Enrolled Course
           </button>
+          <button
+            onClick={() => router.push("/admin/team/team")}
+            type="button"
+            className={` text-black border border-current py-2 px-4 rounded-md ${
+              router.pathname === "/admin/team/team" ? "bg-amber-500" : ""
+            }`}
+          >
+            Team
+          </button>
         </div>
       </nav>
       <main className="flex-1">{children}</main>

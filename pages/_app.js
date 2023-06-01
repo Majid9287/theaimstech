@@ -77,30 +77,26 @@ export default function App({ Component, pageProps }) {
       .catch((error) => console.error(error));
   }, []);
   const handleEnrollment = (courseId) => {
-    if (isUserLoggedIn) {
-      // Call API for adding enrollment with user and course ID
-      console.log(`Enrolling in course ${courseId}...`);
-      console.log(`Enrolling user ${UserId}...`);
-
+    if (token) {
       fetch('/api/enrollment/add-enrollment', {
         method: 'POST',
         body: JSON.stringify({
           course: courseId,
-          user: UserId // assuming you have a function to retrieve the user ID from the authentication token
+          user: UserId 
         }),
         headers: {
           "Content-Type": "application/json",
         },
       })
       .then(response => {
-        // handle response from the API call
+       
       })
       .catch(error => {
-        // handle error from the API call
+        
       });
     } else {
-      // Redirect to login page
-      router.push("/login");
+      
+      router.push("/signin");
     }
   };
   return (

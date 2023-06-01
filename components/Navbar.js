@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Image from 'next/image';
 
 function Navbar({ isUserLoggedIn, isAdmin, isLogout, token }) {
   const [scrollpos, setScrollpos] = useState(0);
@@ -46,11 +47,9 @@ function Navbar({ isUserLoggedIn, isAdmin, isLogout, token }) {
               href="/"
               className="no-underline font-bold  toggleColour  hover:no-underline"
             >
-              <img
-                className="w-64 "
-                src="images/aims11.png"
-                alt="Course photo"
-              />
+              <Image src="/images/aims11.png"  alt="theaimstech" className="w-64" width={500} height={100}  />
+
+            
             </Link>
           </div>
           <div className="lg:hidden pr-4 text-black">
