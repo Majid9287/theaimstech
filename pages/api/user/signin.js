@@ -14,7 +14,7 @@ const handler = async (req, res) => {
        var originalText = bytes.toString(CryptoJS.enc.Utf8);
     if (user) {
         if(req.body.email==user.email && req.body.password== originalText){
-          var token = jwt.sign({ _id:user._id,isAdmin:user.isAdmin}, 'majidmuskankey0306',{ expiresIn: '1d' });
+          var token = jwt.sign({ _id:user._id,isAdmin:user.isAdmin}, privateKey ,{ expiresIn: '1d' });
             res.status(200).json({ success: true,token });
         }
         else{

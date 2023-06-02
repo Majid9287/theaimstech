@@ -12,9 +12,9 @@ import jwt from "jsonwebtoken";
 
 export default function App({ Component, pageProps }) {
   const [isAdmin, setIsAdmin] = useState(false);
+  
   const [token, setToken] = useState(null);
   const router = useRouter();
-  
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
   const [UserId, setUserId] = useState(false);
   const [expirationTime, setExpirationTime] = useState(null);
@@ -34,6 +34,7 @@ export default function App({ Component, pageProps }) {
       if (decoded._id) {
         setIsUserLoggedIn(true);
         setUserId(decoded._id);
+       
         if (decoded.isAdmin) {
           setIsAdmin(true);
         }
@@ -103,7 +104,7 @@ export default function App({ Component, pageProps }) {
   <>
    
    <Navbar  isUserLoggedIn={isUserLoggedIn} isAdmin={isAdmin} isLogout={handleLogout} token={token}/>
-   <Component LoggedIn={handleSignIn} isAdmin={isAdmin}  isLogout={handleLogout} token={token}  isUserLoggedIn={isUserLoggedIn} courses={courses} UserId={UserId} handleEnrollment={handleEnrollment} {...pageProps} />
+   <Component LoggedIn={handleSignIn}  isAdmin={isAdmin}  isLogout={handleLogout} token={token}  isUserLoggedIn={isUserLoggedIn} courses={courses} UserId={UserId} handleEnrollment={handleEnrollment} {...pageProps} />
    <FloatingWhatsAppButton />
    <Footer/>
    </>); 

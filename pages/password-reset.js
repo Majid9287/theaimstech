@@ -37,9 +37,6 @@ function PasswordReset() {
     }
 
     setLoading(true);
-
-    // Call your API here with the password data
-    // Replace the API_URL with your actual API endpoint
     fetch("/api/user/password-update", {
       method: 'POST',
       headers: {
@@ -79,8 +76,18 @@ function PasswordReset() {
 
       })
       .catch((error) => {
-        console.log(error);
-        alert(error.message);
+        
+      
+        toast.error(error.message, {
+          position: "top-right",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       })
       .finally(() => {
         setLoading(false);

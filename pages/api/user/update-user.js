@@ -1,7 +1,7 @@
 import User from "../../../models/User";
 import connectDb from "../../../middlewhare/mongoos";
 import nextConnect from "next-connect";
-import CryptoJS from "crypto-js";
+
 
 const apiRoute = nextConnect({
   onError(error, req, res) {
@@ -13,7 +13,7 @@ const apiRoute = nextConnect({
 });
 
 apiRoute.put(async (req, res) => {
-  const { name, password, phone, address, isAdmin } = req.body;
+  const { name, phone, address, isAdmin } = req.body;
   const { id } = req.query;
 
   try {
@@ -24,7 +24,6 @@ apiRoute.put(async (req, res) => {
     }
 
     user.name = name || user.name;
-    user.password = CryptoJS.AES.encrypt(password, "majidmuskan123").toString() || user.password;
     user.phone = phone || user.phone;
     user.address = address || user.address;
     user.isAdmin = isAdmin !== undefined ? isAdmin : user.isAdmin;

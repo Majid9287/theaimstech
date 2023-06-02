@@ -75,10 +75,6 @@ function signup() {
             address,
             password,
           };
-
-          console.log(formData);
-
-          // Make an API call to your backend server to save the user data
           fetch("/api/user/signup", {
             method: "POST",
             body: JSON.stringify(formData),
