@@ -61,6 +61,7 @@ function CourseForm() {
   
   return (
     <AdminLayout>
+        <div className="h-full bg-gray-100 relative">
       <div className="container mx-auto px-4 relative bg-gray-100 py-24 min-h-screen">
         <form onSubmit={handleSubmit} enctype="multipart/form-data">
           <div className="mb-4">
@@ -119,6 +120,7 @@ function CourseForm() {
             </button>
           </div>
         </form>
+      </div>
       </div>
     </AdminLayout>
   );

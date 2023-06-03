@@ -1,0 +1,10 @@
+.list ul {
+    list-style-type: disc; 
+    margin-left: 30px;
+  }
+  
+  .list ol {
+    list-style-type: decimal; 
+    margin-left: 30px;
+  }
+  

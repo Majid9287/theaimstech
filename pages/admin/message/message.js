@@ -76,7 +76,7 @@ function message() {
     };
   return (
     <AdminLayout > 
-
+  <div className="h-full bg-gray-100 relative">
 <div className="container mx-auto py-24 px-2 bg-gray-100 relative h-full">
   <div className="flex justify-between items-center mb-6 relative">
     <h2 className="text-xl font-bold"> Messages</h2>
@@ -137,7 +137,7 @@ function message() {
     </table>
   </div>
 </div>
-
+</div>
     </AdminLayout>
   )
 }

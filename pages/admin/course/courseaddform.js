@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import 'node_modules/react-quill/dist/quill.snow.css'
 import React from "react";
 import dynamic from "next/dynamic";
 const QuillNoSSRWrapper = dynamic(import("react-quill"), {
@@ -71,6 +71,7 @@ function CourseForm() {
 
   return (
     <AdminLayout>
+        <div className="h-full bg-gray-100 relative">
       <div className="container mx-auto px-4 relative bg-gray-100 py-24">
         <form onSubmit={handleSubmit} encType="multipart/form-data">
           <div className="mb-4">
@@ -187,6 +188,7 @@ function CourseForm() {
         </form>
         
       </div>
+     </div>
     </AdminLayout>
   );
 }

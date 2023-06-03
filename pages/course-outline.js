@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import parse from 'html-react-parser';
+import styles from "../styles/Styles.module.css";
 const CoursePage = () => {
   const [course, setCourse] = useState(null);
   const router = useRouter();
@@ -22,8 +22,6 @@ const CoursePage = () => {
     }
   }, [courseId]);
 
-  
-  
   return (
     <div className="bg-gray-100 relative">
       <div className="container mx-auto h-full relative py-24 ">
@@ -31,10 +29,10 @@ const CoursePage = () => {
           {course && (
             <>
               <h1 className="text-3xl font-bold my-4">{course.name}</h1>
-              
-              <div>{parse(course.description)}</div>
-                <div dangerouslySetInnerHTML={{ __html: course.description}} />
-               
+              <div
+                className={styles.list}
+                dangerouslySetInnerHTML={{ __html: course.description }}
+              />
             </>
           )}
         </div>
