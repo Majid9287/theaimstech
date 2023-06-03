@@ -28,7 +28,7 @@ export default function App({ Component, pageProps }) {
   }, []);
   
   useEffect(() => {
-    if (token) {
+    if (isUserLoggedIn) {
       const decoded = jwt.decode(token);
       setExpirationTime(decoded.expirationTime);
       if (decoded._id) {

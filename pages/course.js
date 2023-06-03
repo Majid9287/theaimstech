@@ -5,7 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import styles from "../styles/Home.module.css";
 import { useRouter } from "next/router";
-export default function course({ courses, handleEnrollment,token }) {
+export default function course({ courses, handleEnrollment,isUserLoggedIn }) {
   const [confirmId, setConfirmId] = useState(null);
   const showConfirmation = (id) => {
     setConfirmId(id);
@@ -16,7 +16,7 @@ export default function course({ courses, handleEnrollment,token }) {
   };
   const handleClick = (e) => {
     handleEnrollment(e);
-    if(token){
+    if(isUserLoggedIn){
     toast.success("Course is Enrolled Successfully", {
       position: "top-right",
       autoClose: 1000,
