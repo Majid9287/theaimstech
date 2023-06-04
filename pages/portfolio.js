@@ -3,6 +3,7 @@ import styles from "@/styles/Home.module.css";
 import eye from "./lotti/eye.json";
 import Lottie from "lottie-react";
 import { useEffect, useState } from "react";
+import Image from 'next/image';
 export default function portfolio() {
   const [projects, setProjects] = useState([]);
   useEffect(() => {
@@ -38,11 +39,9 @@ export default function portfolio() {
               </h1>
             </div>
             <div className="  w-full md:w-3/5 py-6 text-center md:order-last ">
-              <img
-                src="images/portfolio.png"
-                className=" md:w-5/6 md:ml-auto"
-                alt=""
-              />
+             
+                <Image src="/images/portfolio.png"  alt="theaimstech"  className=" md:w-5/6 md:ml-auto" width={500} height={100}  />
+
             </div>
           </div>
         </div>

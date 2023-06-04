@@ -28,7 +28,7 @@ export default function App({ Component, pageProps }) {
   }, []);
   
   useEffect(() => {
-    if (isUserLoggedIn) {
+    if (token!=null) {
       const decoded = jwt.decode(token);
       setExpirationTime(decoded.expirationTime);
       if (decoded._id) {
@@ -43,7 +43,8 @@ export default function App({ Component, pageProps }) {
         console.error("Invalid token");
         return;
       }
-    } else {
+    } 
+   else{
       setIsUserLoggedIn(false);
     }
   }, [token]);
