@@ -133,6 +133,7 @@ function contact() {
                         </div>
                         <div className="grow ml-6">
                           <p className="font-bold mb-1">ADDRESS</p>
+                          <p className="text-gray-500">50 D Market Shah Rukn e Alam Colony Multan at tea Chock, MULTAN, PUNJAB, PAKISTAN</p>
                           <p className="text-gray-500">HOUSE # 6, V BLOCK, ST # 6, NEAR GULZAR E MADINA MASJID, MULTAN, PUNJAB, PAKISTAN</p>
 
                         </div>
@@ -148,6 +149,8 @@ function contact() {
                         </div>
                         <div className="grow ml-6">
                           <p className="font-bold mb-1">CALL NUMBER</p>
+                         
+                          <p className="text-gray-500">(+92)3238760847</p>
                           <p className="text-gray-500">(+92)311-3471713</p>
                          
                         </div>
@@ -177,7 +180,7 @@ function contact() {
                         <div className="grow ml-6">
                           <p className="font-bold mb-1">WHATSAPP NUMBER</p>
                     
-                          <p className="text-gray-500">(+92)311-3471713</p>
+                          <p className="text-gray-500">(+92)3238760847</p>
                         </div>
                       </div>
                     </div>

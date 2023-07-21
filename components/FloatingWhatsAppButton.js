@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 const FloatingWhatsAppButton = () => {
   const openWhatsAppChat = () => {
-    window.open("https://wa.me/923113471713", "_blank");
+    window.open("https://wa.me/923238760847", "_blank");
   };
 
   return (
