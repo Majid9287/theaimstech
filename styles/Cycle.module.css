@@ -73,15 +73,24 @@
 @media screen and (max-width: 479px) {
   .cycle-container {
 width: 70%;
-    height: 400px;
+    height: 500px;
     margin: 0 auto;
   }
-  .cycle-item--prev {
-    transform: translate(-50%, -50%) rotateY(72deg) translateZ(100px);
-  }
+  
   .cycle-item {
-    width: 200px;
-    height: 200px;
-    
+    width: 220px;
+    height: 300px;
+   
+  }
+  .cycle-item--active {
+    transform: translate(-50%, -50%) rotateY(0deg) translateZ(110px); /* Adjusted translateZ for smaller screens */
+  }
+
+  .cycle-item--next {
+    transform: translate(-50%, -50%) rotateY(-72deg) translateZ(120px); /* Adjusted translateZ for smaller screens */
+  }
+
+  .cycle-item--prev {
+    transform: translate(-50%, -50%) rotateY(72deg) translateZ(120px); /* Adjusted translateZ for smaller screens */
   }
 }

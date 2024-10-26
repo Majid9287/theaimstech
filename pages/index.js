@@ -77,6 +77,7 @@ export default function Home({ courses, handleEnrollment }) {
 
   const services = [
     {
+      id:"amazon-detail",
       name: "𝐀𝐦𝐚𝐳𝐨𝐧",
       description: `Boost Amazon sales.
         Register and protect your brand on Amazon.
@@ -119,6 +120,7 @@ export default function Home({ courses, handleEnrollment }) {
       ),
     },
     {
+      id:"ebay-detail",
       name: "𝐞𝐁𝐚𝐲 ",
       description: `Data Entry.
       Sales Increase.
@@ -146,6 +148,7 @@ export default function Home({ courses, handleEnrollment }) {
       ),
     },
     {
+      id:"walmart-detail",
       name: "𝐖𝐚𝐥𝐦𝐚𝐫𝐭",
       description: `Setup Walmart products for online sales.
       Write effective content for Walmart product listings.
@@ -172,6 +175,7 @@ export default function Home({ courses, handleEnrollment }) {
       ),
     },
     {
+      id:"etsy-detail",
       name: "𝐄𝐓𝐒𝐘, 𝐒𝐇𝐎𝐏𝐈𝐅𝐘, 𝐖𝐎𝐑𝐃𝐏𝐑𝐄𝐒𝐒 ",
       description: `Efficient data entry and listings creation for Etsy and Shopify.
       Boost sales and increase traffic for both platforms.
@@ -207,6 +211,7 @@ export default function Home({ courses, handleEnrollment }) {
       ),
     },
     {
+      id:"web-detail",
       name: " 𝐖eb Development",
       description: `Develop custom web applications using (MongoDB, Express, React, NodeJs).
       Utilize MERN Stack to build responsive and user-friendly web interfaces.
@@ -408,7 +413,7 @@ export default function Home({ courses, handleEnrollment }) {
                 }}
               ></div>
               <Fade bottom cascade duration={2000}>
-                <div className="container   flex flex-col md:flex-row mx-auto justify-center items-center px-4 py-8 relative z-10">
+                <div  id="services-details" className="container   flex flex-col md:flex-row mx-auto justify-center items-center px-4 py-8 relative z-10">
                   <div className="flex flex-col flex-grow md:pl-24">
                     <h2
                       className={`${styles.fontRaleway} text-4xl font-bold   mb-8 pb-16 pt-4 pl-2 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]`}
@@ -416,7 +421,7 @@ export default function Home({ courses, handleEnrollment }) {
                       Expertise <span className="text-amber-500">&</span>{" "}
                       Services
                     </h2>
-                    {services.map((service) => (
+                    {services?.map((service) => (
                       <div
                         key={service.name}
                         className={`cursor-pointer p-4  rounded-xl   ${
@@ -426,6 +431,7 @@ export default function Home({ courses, handleEnrollment }) {
                             : ""
                         }`}
                         onClick={() => handleClick(service)}
+                        id={service.id}
                       >
                         <div className="flex items-center ">
                           <h3 className="flex items-center font-medium">
@@ -756,7 +762,7 @@ export default function Home({ courses, handleEnrollment }) {
                     950: { slidesPerView: 3 },
                   }}
                 >
-                  {courses.map((course) => (
+                  {courses.length>0 && courses?.map((course) => (
                     <SwiperSlide key={course._id}>
                       <div className="bg-white drop-filter backdrop-blur-sm bg-opacity-30 rounded-lg shadow-md px-6 py-4 mx-10 ">
                         <img
@@ -819,7 +825,7 @@ export default function Home({ courses, handleEnrollment }) {
                     delay: 5000,
                   }}
                 >
-                  {reviews.map((card) => (
+                  {reviews?.map((card) => (
                     <SwiperSlide key={card.id}>
                       <div className="mb-2 border border-gray-300 shadow-lg rounded-lg rounded-t-8xl rounded-b-5xl overflow-hidden">
                         <div className="pt-3  pb-3 md:pb-1 px-4 md:px-16 bg-gray-300 bg-opacity-40">
@@ -946,7 +952,7 @@ export default function Home({ courses, handleEnrollment }) {
               <Zoom cascade duration={2000}>
                 {team.length > 0 ? (
                   <div className="grid grid-cols-2 gap-1 md:grid-cols-3 md:gap-6 xl:gap-x-12">
-                    {team.map((Team) => (
+                    {team?.map((Team) => (
                       <div key={Team._id} className="mb-6 lg:mb-0">
                         <div className="relative block rounded-lg shadow-lg bg-white drop-filter backdrop-blur-sm bg-opacity-30 p-6">
                           <div className="lg:flex flex-row items-center">

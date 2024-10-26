@@ -133,10 +133,8 @@ function contact() {
                         </div>
                         <div className="grow ml-6">
                           <p className="font-bold mb-1">ADDRESS</p>
-                          <p className="text-gray-500">50 D Market Shah Rukn e Alam Colony Multan at tea Chock, MULTAN, PUNJAB, PAKISTAN</p>
-                          .......................................................................
-                          <p className="text-gray-500">HOUSE # 6, V BLOCK, ST # 6, NEAR GULZAR E MADINA MASJID, MULTAN, PUNJAB, PAKISTAN</p>
-
+                          <p className="text-gray-500">T block Street No 5 House No 52 New Multan</p>
+                          
                         </div>
                       </div>
                     </div>
@@ -151,8 +149,8 @@ function contact() {
                         <div className="grow ml-6">
                           <p className="font-bold mb-1">CALL NUMBER</p>
                          
-                          <p className="text-gray-500">(+92)3238760847</p>
-                          <p className="text-gray-500">(+92)311-3471713</p>
+                          <p className="text-gray-500">(+92) 3238760847</p>
+                          <p className="text-gray-500">(+1) 7868876404</p>
                          
                         </div>
                       </div>
@@ -166,7 +164,7 @@ function contact() {
                         </div>
                         <div className="grow ml-6">
                           <p className="font-bold mb-1">MAIL ADDRESS</p>
-                          <p className="text-gray-500">support@theaimstech.com</p>
+                          <p className="text-gray-500">theaimstech@gmail.com</p>
                      
                         </div>
                       </div>
@@ -181,7 +179,7 @@ function contact() {
                         <div className="grow ml-6">
                           <p className="font-bold mb-1">WHATSAPP NUMBER</p>
                     
-                          <p className="text-gray-500">(+92)3238760847</p>
+                          <p className="text-gray-500">(+1) 7868876404</p>
                         </div>
                       </div>
                     </div>

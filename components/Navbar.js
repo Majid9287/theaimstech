@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import Image from 'next/image';
+import Image from "next/image";
 
 function Navbar({ isUserLoggedIn, isAdmin, isLogout, token }) {
   const [scrollpos, setScrollpos] = useState(0);
@@ -13,7 +13,7 @@ function Navbar({ isUserLoggedIn, isAdmin, isLogout, token }) {
   useEffect(() => {
     setLoggedIn(isUserLoggedIn);
   }, [isUserLoggedIn, token, router.query]);
-  
+
   useEffect(() => {
     const handleScroll = () => {
       setScrollpos(window.scrollY);
@@ -47,9 +47,13 @@ function Navbar({ isUserLoggedIn, isAdmin, isLogout, token }) {
               href="/"
               className="no-underline font-bold  toggleColour  hover:no-underline"
             >
-              <Image src="/images/aims11.png"  alt="theaimstech" className="w-64" width={500} height={100}  />
-
-            
+              <Image
+                src="/images/aims11.png"
+                alt="theaimstech"
+                className="w-64"
+                width={500}
+                height={100}
+              />
             </Link>
           </div>
           <div className="lg:hidden pr-4 text-black">
@@ -58,32 +62,36 @@ function Navbar({ isUserLoggedIn, isAdmin, isLogout, token }) {
               id="nav-toggle"
               onClick={handleNavToggle}
             >
-               {isNavOpen ? (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 20 20"
-        className="fill-current h-8 w-8"
-      >
-        <title>Close</title>
-        <path
-          fillRule="evenodd"
-          d="M14.349 14.849a.5.5 0 0 1-.707 0L10 10.707l-3.646 3.646a.5.5 0 0 1-.707-.707L9.293 10l-3.646-3.646a.5.5 0 0 1 .707-.707L10 9.293l3.646-3.646a.5.5 0 0 1 .707.707L10.707 10l3.646 3.646a.5.5 0 0 1 0 .707z"
-        />
-      </svg>
-    ) : (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 20 20"
-        className="fill-current h-6 w-6"
-      >
-        <title>Menu</title>
-        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-      </svg>
-    )}
+              {isNavOpen ? (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  className="fill-current h-8 w-8"
+                >
+                  <title>Close</title>
+                  <path
+                    fillRule="evenodd"
+                    d="M14.349 14.849a.5.5 0 0 1-.707 0L10 10.707l-3.646 3.646a.5.5 0 0 1-.707-.707L9.293 10l-3.646-3.646a.5.5 0 0 1 .707-.707L10 9.293l3.646-3.646a.5.5 0 0 1 .707.707L10.707 10l3.646 3.646a.5.5 0 0 1 0 .707z"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  className="fill-current h-6 w-6"
+                >
+                  <title>Menu</title>
+                  <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                </svg>
+              )}
             </button>
           </div>
           <di
-            className={`w-full  lg:w-auto lg:flex-grow lg:flex lg:items-center ${ isNavOpen ? " block flex text-center lg:text-left bg-amber-500    h-screen pt-12 lg:static lg:h-auto lg:pt-0": "hidden"}  lg:bg-transparent   lg:p-0 mt-2 lg:mt-0 z-20 transition-opacity duration-300 ease-in-out`}
+            className={`w-full  lg:w-auto lg:flex-grow lg:flex lg:items-center ${
+              isNavOpen
+                ? " block flex text-center lg:text-left bg-amber-500    h-screen pt-12 lg:static lg:h-auto lg:pt-0"
+                : "hidden"
+            }  lg:bg-transparent   lg:p-0 mt-2 lg:mt-0 z-20 transition-opacity duration-300 ease-in-out`}
             id="nav-content"
           >
             <ul className="list-reset flex-1 items-center justify-end lg:flex">
@@ -91,7 +99,9 @@ function Navbar({ isUserLoggedIn, isAdmin, isLogout, token }) {
                 <Link
                   href="/"
                   onClick={handleNavToggle}
-                  className={`no-underline font-bold py-2 px-4 inline-block  ${router.pathname === "/" ? "text-black" : "" }`}
+                  className={`no-underline font-bold py-2 px-4 inline-block  ${
+                    router.pathname === "/" ? "text-black" : ""
+                  }`}
                 >
                   Home
                 </Link>
@@ -101,7 +111,9 @@ function Navbar({ isUserLoggedIn, isAdmin, isLogout, token }) {
                 <Link
                   href="/portfolio"
                   onClick={handleNavToggle}
-                  className={`no-underline font-bold py-2 px-4 inline-block   ${router.pathname === "/portfolio" ? "text-black" : "" }`}
+                  className={`no-underline font-bold py-2 px-4 inline-block   ${
+                    router.pathname === "/portfolio" ? "text-black" : ""
+                  }`}
                 >
                   Portfolio
                 </Link>
@@ -111,7 +123,9 @@ function Navbar({ isUserLoggedIn, isAdmin, isLogout, token }) {
                 <Link
                   href="/contact"
                   onClick={handleNavToggle}
-                  className={`no-underline font-bold py-2 px-4 inline-block ${router.pathname === "/contact" ? "text-black" : "" }`}
+                  className={`no-underline font-bold py-2 px-4 inline-block ${
+                    router.pathname === "/contact" ? "text-black" : ""
+                  }`}
                 >
                   Contact Us
                 </Link>
@@ -121,7 +135,9 @@ function Navbar({ isUserLoggedIn, isAdmin, isLogout, token }) {
                 <Link
                   href="/course"
                   onClick={handleNavToggle}
-                  className={`no-underline font-bold py-2 px-4  ${router.pathname === "/course" ? "text-black" : "" }`}
+                  className={`no-underline font-bold py-2 px-4  ${
+                    router.pathname === "/course" ? "text-black" : ""
+                  }`}
                 >
                   Courses
                 </Link>
@@ -184,7 +200,6 @@ function Navbar({ isUserLoggedIn, isAdmin, isLogout, token }) {
                           <li>
                             <button
                               onClick={isLogout}
-                              
                               className="block px-4 py-2 text-black hover:bg-indigo-500 hover:text-white w-full text-left"
                             >
                               Logout
@@ -195,7 +210,9 @@ function Navbar({ isUserLoggedIn, isAdmin, isLogout, token }) {
                     </li>
                   </div>
                   <div
-                    className={` ${isNavOpen ? " block  " : "hidden" } lg:hidden`}
+                    className={` ${
+                      isNavOpen ? " block  " : "hidden"
+                    } lg:hidden`}
                   >
                     <hr className="mx-4" />
                     <li className="mr-3 py-3">
@@ -207,7 +224,7 @@ function Navbar({ isUserLoggedIn, isAdmin, isLogout, token }) {
                         Profile
                       </Link>
                     </li>
-                    <hr className="mx-4"/>
+                    <hr className="mx-4" />
                     {isAdmin ? (
                       <li className="py-3">
                         <Link
@@ -218,9 +235,7 @@ function Navbar({ isUserLoggedIn, isAdmin, isLogout, token }) {
                           Admin Dashboard
                         </Link>
                       </li>
-                      
                     ) : (
-                      
                       <li className="py-3">
                         <Link
                           href="/enrollcourse"
@@ -231,7 +246,7 @@ function Navbar({ isUserLoggedIn, isAdmin, isLogout, token }) {
                         </Link>
                       </li>
                     )}
-                    <hr className="mx-4"/>
+                    <hr className="mx-4" />
                     <li className="pb-12 pt-5">
                       {" "}
                       <button

@@ -111,19 +111,19 @@ function Footer() {
           Services
         </h6>
         <p className="mb-4">
-          <Link href="/" className="text-neutral-600 dark:text-neutral-200"
+          <Link href="#services-details" className="text-neutral-600 dark:text-neutral-200"
             >Amazon</Link>
         </p>
         <p className="mb-4">
-          <Link href="/" className="text-neutral-600 dark:text-neutral-200"
+          <Link href="#services-details" className="text-neutral-600 dark:text-neutral-200"
             >eBay</Link>
         </p>
         <p className="mb-4">
-          <Link href="/" className="text-neutral-600 dark:text-neutral-200"
+          <Link href="#services-details" className="text-neutral-600 dark:text-neutral-200"
             >Walmart</Link>
         </p>
         <p>
-          <Link href="/" className="text-neutral-600 dark:text-neutral-200"
+          <Link href="#services-details" className="text-neutral-600 dark:text-neutral-200"
             >Shopify</Link>
         </p>
       </div>
@@ -154,6 +154,7 @@ function Footer() {
           className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
           Contact
         </h6>
+       
         <p className="mb-4 flex items-center justify-center md:justify-start">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -165,20 +166,7 @@ function Footer() {
             <path
               d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" />
           </svg>
-          House # 6, V Block, St # 6, Near Guilar E Madina Majisd, Multan, Punjab, Pakistan
-        </p>
-        <p className="mb-4 flex items-center justify-center md:justify-start">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            className="mr-3 h-5 w-5">
-            <path
-              d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z" />
-            <path
-              d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" />
-          </svg>
-          50 D Market Shah Rukn e Alam Colony Multan at tea Chock, Multan, Punjab, Pakistan
+          T block Street No 5 House No 52 New Multan
         </p>
         <p className="mb-4 flex items-center justify-center md:justify-start">
           <svg
@@ -191,7 +179,7 @@ function Footer() {
             <path
               d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
           </svg>
-          support@theaimstech.com
+          theaimstech@gmail.com
         </p>
         <p className="mb-4 flex items-center justify-center md:justify-start">
           <svg
@@ -205,7 +193,7 @@ function Footer() {
               clipRule="evenodd" />
           </svg>
           (+92)03238760847<br></br>
-          (+92)311-3471713
+          (+1) 7868876404
         </p>
         
       </div>

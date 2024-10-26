@@ -85,7 +85,7 @@ export default function course({ courses, handleEnrollment,isUserLoggedIn }) {
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {courses.map((course, index) => (
+              {courses?.map((course, index) => (
                 <div
                   key={index}
                   className={`opacity-100 transition-opacity duration-500 ease-in-out mx-4 ${styles.courseCard}`}
