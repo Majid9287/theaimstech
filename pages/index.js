@@ -33,6 +33,12 @@ export default function Home({ courses, handleEnrollment }) {
       photo: "./images/ceo.jpg",
       description: "CEO and Founder at The Aims Tech"
     },
+    {
+      _id: "2",
+      name: "Abdul Majid",
+      photo: "./images/coo.jpg",
+      description: "COO/ Managing Director"
+    },
     
   ];
   
@@ -960,35 +966,32 @@ export default function Home({ courses, handleEnrollment }) {
                 Meet The <span class="text-amber-500">Team</span>
               </h2>
               <Zoom cascade duration={2000}>
-                {teamData.length > 0 ? (
-                  <div className="grid grid-cols-2 gap-1 md:grid-cols-3 md:gap-6 xl:gap-x-12">
-                    {teamData?.map((Team) => (
-                      <div key={Team._id} className="mb-6 lg:mb-0">
-                        <div className="relative block rounded-lg shadow-lg bg-white drop-filter backdrop-blur-sm bg-opacity-30 p-6">
-                          <div className="lg:flex flex-row items-center">
-                            <div className="w-full lg:w-5/12 lg:pr-6">
-                              <img
-                                src={Team.photo}
-                                alt={Team.name}
-                                className="w-full rounded-md mb-6 lg:mb-0"
-                              />
-                            </div>
-                            <div className="w-full lg:w-7/12">
-                              <h5 className="text-lg font-bold mb-2">
-                                {Team.name}
-                              </h5>
-                              <p className="text-gray-500 mb-4">
-                                {Team.description}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                ) : (
-                  <p>Not found.</p>
-                )}
+              {teamData.length > 0 ? (
+  <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 xl:gap-12">
+    {teamData.map((teamMember) => (
+      <div key={teamMember._id} className="mb-8 lg:mb-0">
+        <div className="relative block rounded-lg shadow-lg bg-white bg-opacity-90 p-6 transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+          <div className="flex flex-col items-center text-center">
+            <div className="w-full h-64 overflow-hidden rounded-lg mb-6">
+              <img
+                src={teamMember.photo}
+                alt={teamMember.name}
+                className="object-cover w-full h-full rounded-lg transition-transform duration-300 hover:scale-105"
+              />
+            </div>
+            <h5 className="text-xl font-semibold text-gray-800 mb-1">
+              {teamMember.name}
+            </h5>
+            <p className="text-gray-600 text-sm mb-4">{teamMember.description}</p>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+) : (
+  <p className="text-center text-gray-600">No team members found.</p>
+)}
+
               </Zoom>
             </section>
           </div>
