@@ -26,6 +26,16 @@ const reviews = [
 ];
 
 export default function Home({ courses, handleEnrollment }) {
+  const teamData = [
+    {
+      _id: "1",
+      name: "Abdul Qadeer",
+      photo: "./images/ceo.jpg",
+      description: "CEO and Founder at The Aims Tech"
+    },
+    
+  ];
+  
   SwiperCore.use([Navigation, Pagination, Autoplay]);
   const router = useRouter();
   const [team, setTeam] = useState("");
@@ -950,9 +960,9 @@ export default function Home({ courses, handleEnrollment }) {
                 Meet The <span class="text-amber-500">Team</span>
               </h2>
               <Zoom cascade duration={2000}>
-                {team.length > 0 ? (
+                {teamData.length > 0 ? (
                   <div className="grid grid-cols-2 gap-1 md:grid-cols-3 md:gap-6 xl:gap-x-12">
-                    {team?.map((Team) => (
+                    {teamData?.map((Team) => (
                       <div key={Team._id} className="mb-6 lg:mb-0">
                         <div className="relative block rounded-lg shadow-lg bg-white drop-filter backdrop-blur-sm bg-opacity-30 p-6">
                           <div className="lg:flex flex-row items-center">
