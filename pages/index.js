@@ -39,6 +39,18 @@ export default function Home({ courses, handleEnrollment }) {
       photo: "./images/coo.jpg",
       description: "COO/ Managing Director"
     },
+    {
+      _id: "3",
+      name: "Farrukh Umair",
+      photo: "./images/manager.jpg",
+      description: "Full-Stack Developer"
+    },
+    {
+      _id: "4",
+      name: "Mubashir Ali",
+      photo: "./images/helper.jpg",
+      description: "Client Support Manager"
+    },
     
   ];
   
