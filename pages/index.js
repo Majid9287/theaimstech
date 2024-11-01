@@ -41,29 +41,30 @@ export default function Home({ courses, handleEnrollment }) {
     },
     {
       _id: "3",
+      name: "Joyce Sanchez",
+      photo: "./images/team5.jpg",
+      description: "Full-Stack Developer"
+    },
+    {
+      _id: "4",
       name: "Farrukh Umair",
       photo: "./images/manager.jpg",
       description: "Social Media Marketing Specialist"
     },
     {
-      _id: "4",
+      _id: "5",
       name: "Mubashir Ali",
       photo: "./images/helper.jpg",
       description: "Client Support Manager"
     },
     {
-      _id: "5",
+      _id: "6",
       name: "Muhammad Naveed",
       photo: "./images/team1.jpg",
       description: "Operations and Execution Specialist"
     },
     ,
-    {
-      _id: "6",
-      name: "Muhammad Awais",
-      photo: "./images/team2.jpg",
-      description: "Head of Recruitment Operations"
-    },
+    
     {
       _id: "7",
       name: "Muhammad Bilal",
@@ -72,16 +73,17 @@ export default function Home({ courses, handleEnrollment }) {
     },
     {
       _id: "8",
+      name: "Muhammad Awais",
+      photo: "./images/team2.jpg",
+      description: "Head of Recruitment Operations"
+    },
+    {
+      _id: "9",
       name: "Muhammad Shahzad",
       photo: "./images/team4.jpg",
       description: "Corporate Sales Manager"
     },
-    {
-      _id: "9",
-      name: "Joyce Sanchez",
-      photo: "./images/team5.jpg",
-      description: "Full-Stack Developer"
-    },
+   
     
 
 
