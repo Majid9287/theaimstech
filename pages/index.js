@@ -77,7 +77,7 @@ export default function Home({ courses, handleEnrollment }) {
       description: "Corporate Sales Manager"
     },
     {
-      _id: "8",
+      _id: "9",
       name: "Joyce Sanchez",
       photo: "./images/team5.jpg",
       description: "Full-Stack Developer"
@@ -1062,7 +1062,7 @@ export default function Home({ courses, handleEnrollment }) {
               </h2>
               <Zoom cascade duration={2000}>
               {teamData.length > 0 ? (
-  <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 xl:gap-12">
+  <div className="grid  gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:gap-12">
     {teamData.map((teamMember) => (
       <div key={teamMember._id} className="mb-8 lg:mb-0">
         <div className="relative block rounded-lg shadow-lg bg-white bg-opacity-90 p-6 transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
