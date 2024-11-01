@@ -43,7 +43,7 @@ export default function Home({ courses, handleEnrollment }) {
       _id: "3",
       name: "Farrukh Umair",
       photo: "./images/manager.jpg",
-      description: "Full-Stack Developer"
+      description: "Social Media Marketing Specialist"
     },
     {
       _id: "4",
@@ -51,7 +51,41 @@ export default function Home({ courses, handleEnrollment }) {
       photo: "./images/helper.jpg",
       description: "Client Support Manager"
     },
+    {
+      _id: "5",
+      name: "Muhammad Naveed",
+      photo: "./images/team1.jpg",
+      description: "Operations and Execution Specialist"
+    },
+    ,
+    {
+      _id: "6",
+      name: "Muhammad Awais",
+      photo: "./images/team2.jpg",
+      description: "Head of Recruitment Operations"
+    },
+    {
+      _id: "7",
+      name: "Muhammad Bilal",
+      photo: "./images/team3.jpg",
+      description: "Marketplace Expansion Manager"
+    },
+    {
+      _id: "8",
+      name: "Muhammad Shahzad",
+      photo: "./images/team4.jpg",
+      description: "Corporate Sales Manager"
+    },
+    {
+      _id: "8",
+      name: "Joyce Sanchez",
+      photo: "./images/team5.jpg",
+      description: "Full-Stack Developer"
+    },
     
+
+
+
   ];
   
   SwiperCore.use([Navigation, Pagination, Autoplay]);
